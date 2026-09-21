@@ -368,6 +368,12 @@ provereno-ui/
 
 ---
 
+## Future Concepts
+
+The concept and architecture of the future implementation of the system is described in [CONCEPT.en.md](concept/CONCEPT.en.md) and [CONCEPT.ru.md](concept/CONCEPT.ru.md) documents.
+
+---
+
 ## Contributing
 
 Contributions are welcome. Please open an issue before starting significant work.
