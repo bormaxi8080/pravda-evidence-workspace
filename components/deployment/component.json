@@ -1,0 +1,28 @@
+{
+  "$schema": "../../release/component.schema.json",
+  "schema_version": 1,
+  "name": "deployment",
+  "display_name": "Deployment",
+  "version": "0.1.0",
+  "status": "prototype",
+  "runtime": "mixed",
+  "planned_path": null,
+  "owned_paths": [
+    "components/deployment/component.json",
+    "provereno-ui/Dockerfile",
+    "provereno-ui/docker-compose.yml",
+    "provereno-ui/nginx.conf"
+  ],
+  "responsibilities": [
+    "prototype-container-topology"
+  ],
+  "must_not_own": [
+    "untested-backup-or-production-guarantees"
+  ],
+  "depends_on": [
+    "application"
+  ],
+  "checks": [
+    "python3 scripts/validate_workspace.py"
+  ]
+}

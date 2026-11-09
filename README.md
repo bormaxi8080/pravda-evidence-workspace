@@ -8,6 +8,14 @@
 
 # Provereno UI for Pravda
 
+> **Current status (2026-11-09): prototype source + production concept.** The
+> inherited package version `1.1.0` does not declare a production Workspace release.
+> Some features and deployment commands below describe intended behavior and differ
+> from this checkout. Read the [source/target review](docs/04-current-state.md) before
+> deployment. Start development with [AGENTS.md](AGENTS.md), [CONTRIBUTING.md](CONTRIBUTING.md),
+> the [vision](docs/01-vision.md), [component catalog](docs/03-components.md) and
+> [CHANGELOG](CHANGELOG.md). Detailed implementation design is the next phase.
+
 **Self-hostable web archive interface for fact-checkers and newsrooms**
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-teal.svg)](https://www.gnu.org/licenses/agpl-3.0)
@@ -376,7 +384,9 @@ The concept and architecture of the future implementation of the system is descr
 
 ## Contributing
 
-Contributions are welcome. Please open an issue before starting significant work.
+Contributions are welcome. Follow [CONTRIBUTING.md](CONTRIBUTING.md) for the active
+workflow, component versions, changelog and required checks. Discuss significant
+new scope before implementation; existing user/session authorization still applies.
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/your-feature`

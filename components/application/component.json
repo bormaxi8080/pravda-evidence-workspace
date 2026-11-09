@@ -1,0 +1,28 @@
+{
+  "$schema": "../../release/component.schema.json",
+  "schema_version": 1,
+  "name": "application",
+  "display_name": "Application",
+  "version": "1.1.0",
+  "status": "prototype",
+  "runtime": "python",
+  "planned_path": null,
+  "owned_paths": [
+    "components/application/component.json",
+    "provereno-ui/provereno/**",
+    "provereno-ui/pyproject.toml",
+    "provereno-ui/.env.example"
+  ],
+  "responsibilities": [
+    "capture-and-editorial-prototype",
+    "auth-audit-jobs-and-export-prototype"
+  ],
+  "must_not_own": [
+    "production-readiness-claims-without-evidence"
+  ],
+  "depends_on": [],
+  "checks": [
+    "python3 -m compileall -q provereno-ui/provereno",
+    "python3 scripts/validate_workspace.py"
+  ]
+}

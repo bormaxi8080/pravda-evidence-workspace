@@ -1,0 +1,18 @@
+{
+  "$schema": "./versions.schema.json",
+  "schema_version": 1,
+  "project": {
+    "stage": "development",
+    "design_revision": "0.1",
+    "release": null,
+    "release_date": null
+  },
+  "components": {
+    "application": "1.1.0",
+    "deployment": "0.1.0",
+    "evidence-contracts": "0.0.0",
+    "governance": "0.1.0",
+    "specification": "0.1.0",
+    "ui-prototype": "0.1.0"
+  }
+}

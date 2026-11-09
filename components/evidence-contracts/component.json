@@ -1,0 +1,22 @@
+{
+  "$schema": "../../release/component.schema.json",
+  "schema_version": 1,
+  "name": "evidence-contracts",
+  "display_name": "Evidence Contracts",
+  "version": "0.0.0",
+  "status": "planned",
+  "runtime": "none",
+  "planned_path": "shared-contracts/",
+  "owned_paths": [
+    "components/evidence-contracts/component.json"
+  ],
+  "responsibilities": [
+    "future-evidence-and-manifest-contracts"
+  ],
+  "must_not_own": [
+    "capture-execution",
+    "unimplemented-contract-claims"
+  ],
+  "depends_on": [],
+  "checks": []
+}

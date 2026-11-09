@@ -1,0 +1,33 @@
+{
+  "$schema": "../../release/component.schema.json",
+  "schema_version": 1,
+  "name": "specification",
+  "display_name": "Specification",
+  "version": "0.1.0",
+  "status": "documentation",
+  "runtime": "none",
+  "planned_path": null,
+  "owned_paths": [
+    "components/specification/component.json",
+    "README.md",
+    "concept/**",
+    "docs/01-vision.md",
+    "docs/04-current-state.md",
+    "docs/05-next-design-phase.md",
+    "docs/reference/specification-template.md"
+  ],
+  "responsibilities": [
+    "product-vision",
+    "requirements-and-design",
+    "source-target-traceability"
+  ],
+  "must_not_own": [
+    "unverified-production-claims"
+  ],
+  "depends_on": [],
+  "checks": [
+    "python3 scripts/validate_workspace.py",
+    "python3 -m unittest discover -s tests -p 'test_*.py' -v",
+    "git diff --check"
+  ]
+}

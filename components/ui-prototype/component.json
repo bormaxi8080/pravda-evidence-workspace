@@ -1,0 +1,24 @@
+{
+  "$schema": "../../release/component.schema.json",
+  "schema_version": 1,
+  "name": "ui-prototype",
+  "display_name": "UI Prototype",
+  "version": "0.1.0",
+  "status": "prototype",
+  "runtime": "html-js",
+  "planned_path": null,
+  "owned_paths": [
+    "components/ui-prototype/component.json",
+    "index.html"
+  ],
+  "responsibilities": [
+    "interactive-design-reference"
+  ],
+  "must_not_own": [
+    "runtime-proof"
+  ],
+  "depends_on": [],
+  "checks": [
+    "python3 scripts/validate_workspace.py"
+  ]
+}
