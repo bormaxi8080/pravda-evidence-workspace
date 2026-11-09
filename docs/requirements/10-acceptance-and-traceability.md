@@ -190,3 +190,12 @@ The 88 later-stage requirements have coverage in the
 [investigation matrix](33-investigation-roadmap-and-acceptance.md) and
 [browser companion matrix](38-companion-roadmap-and-acceptance.md).
 Their gates apply to their stated later stages, not as hidden V0 prerequisites.
+
+## Integrated refinement verification
+
+[Document 43](43-contract-catalog-and-delivery-gates.md) adds SYS-ACC-01–10 without
+new requirement definitions. V0 qualification includes only the actual core subset
+of purpose eligibility, dependencies/removal, reservations and rollout/restore;
+SYS-ACC-09 and other disabled C/H/B interactions remain stage-specific. Existing
+70-ID V0 coverage above is unchanged. All 158 IDs retain complete owning matrices
+in 10/26/33/38; the additional matrix is refinement evidence, not duplicate scope.

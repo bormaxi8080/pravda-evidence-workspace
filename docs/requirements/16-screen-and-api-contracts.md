@@ -160,3 +160,14 @@ capture labels. Do not add browser-byte or token fields to POST `/captures` abov
 separate `/api/companion/v1` DTOs/scopes govern those operations. Uploaded/validating
 is not ready; client detail displays claimed capture time and separate server receipt.
 Unknown/ineligible browser profile cannot pass the existing publication command.
+
+## Integrated eligibility/status behavior
+
+Documents 40/42 refine internal operation decisions and safe feature/readiness states.
+An authenticated detail view can explain why its particular action is unsupported,
+incomplete, unavailable, awaiting qualification or capacity-blocked. Missing/foreign
+resources still receive generic denial; diagnostic convenience cannot enumerate
+private evidence. GET remains read-only. Every command/worker/download rechecks
+current authority/revisions/fences rather than trusting an earlier rendered button.
+The future mixed-stage DTO/cursor makes archive time basis explicit; V0's existing
+captured_at ordering is unchanged until that adapter/version is qualified.

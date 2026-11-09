@@ -167,3 +167,19 @@ cursors/date-filter semantics explicitly; UI names the actual time basis. Source
 history remains server requested_at/ID descending, with browser intake intent time
 versus claimed observation time displayed separately. No legacy V0 record is
 rewritten to a client timestamp. EWP-48 qualifies paging/date/source behavior.
+
+## Integrated policy/serialization refinement
+
+ADR-008/documents 40–43 govern purpose-specific profile eligibility, dependent-copy
+removal, aggregate capacity and exact contract fixtures. A valid 24 MiB browser
+MHTML can pass this 32 MiB intake cap yet exceed C1's 16 MiB analysis cap: keep the
+original valid and show analysis unsupported-by-limit, never invalidate the capture
+or silently truncate text. Each H/C adapter applies its own supported-input budget.
+
+Use the project JSON integer/string/boolean/null rules for new profile fields:
+zoom_milli and device_pixel_ratio_milli are positive integer thousandths with
+explicit measurement precision/rounding, not JSON floats or exact pixel-coordinate
+truth. Optional raw measured decimal claims, if retained, are bounded decimal
+strings under the schema. Crop anchors always use verified original PNG pixels.
+Original submitted JSON bytes remain unchanged after acceptance; no server rewrite
+of client metadata to normalize a previously accepted record.

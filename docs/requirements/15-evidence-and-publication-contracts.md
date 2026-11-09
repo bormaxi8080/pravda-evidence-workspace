@@ -150,3 +150,13 @@ inventory, prove HTTP/network fidelity or supply missing WARC. Initial browser
 submissions are private-only; legacy generic publish/export handlers must reject
 these profiles until their particular adapter/gate is qualified. H3/H4 support is
 an explicit EWP-51 subgate, not automatic acceptance of all client files.
+
+## Purpose and dependent-copy refinement
+
+[Document 40](40-evidence-eligibility-and-provenance-policy.md) is the cross-profile
+operation policy: complete/integrity-valid is necessary but not sufficient for a
+baseline, particular adapter or publication. [Document 41](41-dependencies-retention-and-removal.md)
+requires exact dependency/pin records and immediate root fences before deferred
+cleanup. Current-read authorization, integrity and fences cover ready packages and
+public assets; safe diagnosis is distinct from serving corrupt/removed content.
+These controls never rewrite the original capture/export manifest or self-hash rules.

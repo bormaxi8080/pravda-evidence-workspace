@@ -155,3 +155,10 @@ export C1 diff outputs or C2/C3/C4 definitions/payloads. A shareable comparison-
 profile remains separate work. H1 anchors/H2 runs reuse exact versioned C1 input
 references and the bounded derived-data dependency policy; pinned context cannot be
 evicted as ordinary cache. Original export inventories remain unchanged.
+
+ADR-008/documents 40–42 refine these existing contracts across all implemented
+stages. Per-type budgets are ceilings under one initial shared heavy permit and
+a shared reservation authority; pending/byte capacity cannot multiply per worker.
+Document 41 owns exact dependency/pin/root-fence semantics. Document 42 owns safe
+feature/schema/qualification/restore gates. Existing C1/C2/C3/C4 profile/payload/
+algorithm limits and stage requirements remain unchanged.

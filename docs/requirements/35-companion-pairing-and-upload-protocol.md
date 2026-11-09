@@ -188,8 +188,23 @@ until reviewed upload. Linked uploads pin session_id/epoch/observation_id but us
 their own upload consent and ownership; accepted capture history is not erased by
 session stop. No more than one active session/grant and one local session/profile.
 
-A stopped/revoked session cannot receive a new observation. Already approved upload
-intents follow the explicit keep/cancel disposition and finalizer race rules;
-unknown/expired session linkage fails rather than inventing history. Server records
-session start/pause/stop actors/times and accepted observation references, not an
-unbounded page-visit trail. Session status never grants browsing or publication rights.
+A stopped/revoked session cannot register a new acquisition observation. ADR-008/
+document 40 clarifies historical linkage: a descriptor registered while its acquisition
+lease was active can be explicitly upload-approved after stop; current upload/grant/
+actor authority and keep/cancel disposition still gate finalization. Historical valid
+linkage does not require recording to remain active. Unknown/changed linkage or
+new registration under a stopped epoch fails; it cannot invent history. Server
+records control actions and registered/accepted observation references, not an
+unbounded page-visit trail. Session status never grants publication rights.
+
+B2 POST `/sessions/{id}/observations` registers client observation ID, epoch, fixed
+artifact-inventory/context digest and claimed acquisition interval under the active
+lease, ownership and idempotency checks. It sends no page URL/body/original bytes;
+this minimal registration is disclosed in session consent. Own bounded status can
+resolve lost acknowledgement. Registration freezes the descriptor; it is not upload
+consent, server receipt of original bytes or attestation of the client clock. After
+stop, a matching registered descriptor may receive explicit item/batch upload approval.
+An offline/unregistered local item cannot be inserted retroactively into that epoch:
+retain it for explicit manual B1 review/new intent with an unverified historical
+session claim, preserving original bytes/metadata rather than fabricating B2 proof.
+Grant/session revoke still rejects continuation; no automatic fallback or recapture.

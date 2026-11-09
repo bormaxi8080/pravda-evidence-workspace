@@ -139,3 +139,13 @@ verifier observations; origin_client_submitted is distinct from origin_imported 
 server acquisition. Existing review/publication/context/triage state stays separate.
 A Source groups claimed URL identity, not independently attested source ownership.
 Unknown browser profiles are ineligible for automatic baselines/publication.
+
+## Integrated authority records
+
+Documents 40–42 refine existing state separation with exact typed DependencyEdge,
+PinReference, RemovalFence/epoch, ResourceReservation/generation and FeatureDescriptor/
+qualification applicability. These are future logical contracts, not tables already
+present in source. Dependency writes commit with consumer identity; pins/counters
+are reconciled from authoritative references; no cached policy answer grants access.
+Core V0 uses only actual capture/export/publication dependencies. Channel-specific
+foreign/browser claims remain separate from receipt/integrity/permission facts.

@@ -95,3 +95,10 @@ itself; checksum file covers package files/manifests except itself, following th
 established byte/path rules. Reference-only profile distinguishes package integrity
 from absent-original verification. Independent verification reports what was actually
 included and what remains a reference, never a universal "all evidence verified".
+
+ADR-008/document 41 distinguishes ordinary annotation retraction from operator
+removal: retracted pinned input blocks new generation, while an existing exact
+historical output may remain with a visible warning unless removal/integrity/access
+policy blocks it. Root removal fences block affected ready downloads immediately,
+including embedded copies, before paged cleanup. Edits never silently change frozen
+report selection. Document 40 applies purpose-specific eligibility per source/profile.

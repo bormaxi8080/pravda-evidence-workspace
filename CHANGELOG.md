@@ -15,9 +15,27 @@ The inherited Python package 1.1.0 is a prototype baseline, not a newly issued r
 | Deployment (`deployment`) | `0.1.0` | prototype |
 | Evidence Contracts (`evidence-contracts`) | `0.0.0` | planned |
 | Governance (`governance`) | `0.1.2` | tooling |
-| Specification (`specification`) | `0.1.5` | documentation |
+| Specification (`specification`) | `0.1.6` | documentation |
 | UI Prototype (`ui-prototype`) | `0.1.0` | prototype |
 <!-- component-versions:end -->
+
+### Refined — integrated evidence policy and delivery gates, 2026-11-09
+
+- Review the existing server, C/H and browser design together; resolve profile/
+  provenance eligibility, mixed archive time basis and B2 stop/upload-consent ambiguity.
+- Select ADR-008 and English specifications for exact dependencies/pins, immediate
+  removal fences, bounded cleanup, shared permits/reservations/fairness and effective
+  feature/schema/qualification/restore state.
+- Add executable contract/fixture catalogues, SYS-ACC-01–10 and EWP-53–60; update
+  existing task prerequisites without adding product requirements or future-feature
+  prerequisites to V0. Totals remain 158 requirements, now 60 tasks/56 scenarios.
+- Select one aggregate heavy permit, 100 interactive positions within the existing
+  1,000 pending cap and a shared 1 GiB temporary-output pool; retain per-operation
+  ceilings and require actual host/resource qualification.
+
+Specification advances to 0.1.6; design revision to 0.7. Runtime, machine schemas,
+planned components and product release remain unchanged; no tests of proposed
+runtime behavior, cleanup, migration or external delivery are claimed.
 
 ### Added — optional browser companion implementation design, 2026-11-09
 

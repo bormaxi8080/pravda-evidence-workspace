@@ -4,7 +4,8 @@ Date: 2026-11-09. Status: **selected documentation design; runtime not implement
 Owner: product/evidence/engineering/security. Authority: ADR-006. Add 27 requirements
 to the stable prior 107: two H0/V0, 25 later-stage. Total 134; V0 has 70 applicable
 requirements, and later stages have 64 in this adoption pass. ADR-007/document 38
-subsequently bring current totals to 158, 70 V0 / 88 later and 52 tasks.
+subsequently bring requirement totals to 158, 70 V0 / 88 later and 52 tasks in that
+pass. ADR-008/document 43 refines delivery to 60 tasks/56 scenarios with IDs unchanged.
 Original IDs/scenarios stay stable.
 
 ## Stage boundaries and original implementation
@@ -32,14 +33,14 @@ for this prose. No runtime component/dependency is created here.
 | --- | --- | --- | --- |
 | EWP-31 V0 context/importance refinement | EWP-10/11; UX/backend | Pinned collection/rationale submission and CSV context, separate triage revision/filter, migration defaults | HUN-ACC-01/02, no worker overwrite of pending editorial edits or review/public side effects; prerequisite for EWP-15 |
 | EWP-32 Annotation contract/derivation | EWP-16/21; evidence/backend | Real quote/crop/comment schemas, exact anchors, bounded derivative jobs and revision/retraction mapping | HUN-ACC-03/04/09; multibyte/repeated quote, stale/missing input and pixel/scale/bounds fixtures |
-| EWP-33 H1 working context/UI | EWP-32; product/UX/backend | Annotation detail/history, tasks and personal/shared saved views with explicit context | HUN-ACC-03/04/05/09; actual browser conflict/access/GET-no-mutation tests and no changed evidence/review |
+| EWP-33 H1 working context/UI | EWP-32/59; product/UX/backend | Annotation detail/history, tasks and personal/shared saved views with explicit context | HUN-ACC-03/04/05/09; actual browser conflict/access/GET-no-mutation tests and no changed evidence/review |
 | EWP-34 H2 corpus/index/cue contracts | EWP-33/20; search/backend | Versioned unfiltered text index/coverage, literal cue revisions and exact source hit records | HUN-ACC-06/07/09; no-index versus no-hit, original-byte spans and query/private-context boundaries |
-| EWP-35 H2 search and observation qualification | EWP-34; UX/evidence/security | First gate: search/literal cues UI; later gate: only qualified maintained email/IP extractors | HUN-ACC-06/07/09/10; coverage/limits/reindex/purge, no identity/truth/graph or automatic notification claims |
+| EWP-35 H2 search and observation qualification | EWP-34/59; UX/evidence/security | First gate: search/literal cues UI; later gate: only qualified maintained email/IP extractors | HUN-ACC-06/07/09/10; coverage/limits/reindex/purge, no identity/truth/graph or automatic notification claims |
 | EWP-36 Report profiles/snapshot contracts | EWP-33/13; evidence/API | Reference-only and original-evidence report inventories, frozen selection/preview and citation contracts | HUN-ACC-08; unknown/purged/retracted dependency and changing live collection fixtures |
-| EWP-37 H3 report generation/UI | EWP-36; product/evidence/security | Ordered report editor/preview, bounded HTML/package job and independent verification | HUN-ACC-08/09/10; safe renderer, exact disclosure, no silent missing output/latest-revision substitution |
+| EWP-37 H3 report generation/UI | EWP-36/59; product/evidence/security | Ordered report editor/preview, bounded HTML/package job and independent verification | HUN-ACC-08/09/10; safe renderer, exact disclosure, no silent missing output/latest-revision substitution |
 | EWP-38 Transfer profile/quarantine contracts | EWP-33/13; evidence/security | Own native profile, bounded archive validation, foreign namespace/identity mapping and preview | HUN-ACC-09/10; no authority import, unsafe archive/unknown profile/collision/false-trust cases |
-| EWP-39 H4 acceptance/export/restore | EWP-38/14; backend/operator | Idempotent atomic import/selection export, anomaly/quarantine disposition and recovery/purge paths | HUN-ACC-09/10; real DB/filesystem crash/restore, preserved original hashes and no auto publish/send/watch |
-| EWP-40 Integrated investigation handoff | EWP-35/37/39; engineering/operator | Cross-stage user/operations guide, provenance/trust/inclusion matrix and compatibility evidence | Applicable HUN scenarios plus relevant core/C/MON regressions; enabled flags and exact unsupported features visible |
+| EWP-39 H4 acceptance/export/restore | EWP-38/14/59; backend/operator | Idempotent atomic import/selection export, anomaly/quarantine disposition and recovery/purge paths | HUN-ACC-09/10; real DB/filesystem crash/restore, preserved original hashes and no auto publish/send/watch |
+| EWP-40 Integrated investigation handoff | EWP-35/37/39/59; engineering/operator | Cross-stage user/operations guide, provenance/trust/inclusion matrix and compatibility evidence | Applicable HUN scenarios plus relevant core/C/MON regressions; enabled flags and exact unsupported features visible |
 
 EWP-31 depends on existing editorial/CSV work, not EWP-15; adding it to V0 qualification
 does not form a cycle. H1 gates at EWP-33, H2 at the explicit EWP-35 substage, H3 at

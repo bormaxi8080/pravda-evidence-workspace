@@ -155,3 +155,10 @@ manual B1 save can retain explicitly consented bytes within spool/TTL limits, bu
 cannot claim current server authority or upload until interactive reconnect/review.
 No raw MHTML preview is rendered in the extension or Workspace: thumbnail/escaped
 metadata only, with original files as protected attachments.
+
+ADR-008/document 40 refines the stop/consent boundary: B2 registers minimal frozen
+descriptors while the acquisition lease is active, separately from original-byte
+upload approval. Registered historical observations can be reviewed/uploaded after
+stop under current upload/actor authority. Never retroactively register offline
+items under a stopped epoch; explicit manual B1 review/new intent can preserve
+unchanged bytes with an unverified historical session claim. No silent fallback.

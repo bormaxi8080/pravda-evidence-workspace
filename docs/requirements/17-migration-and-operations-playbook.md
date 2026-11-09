@@ -165,3 +165,18 @@ quarantine is temporary, and restored upload metadata cannot assert missing byte
 survived. No token/session/recording restart after restore; deliberate re-pairing,
 reconciliation and removal-ledger replay precede serving. Intake uses separate
 one-slot bounded validation and existing installation admission/disk reserves.
+
+## Integrated admission, removal and rollout refinement
+
+ADR-008/documents 41/42 specify shared reservations/permit recovery, root removal
+fences with ledger-before-reopen containment, and effective feature/schema/
+qualification/restore state. Preflight validates actual enabled job budgets and
+compatibility. Individual one-slot services cannot all run concurrently under the
+initial one-heavy-task ceiling. Drain/reconcile actual processes before releasing
+stale reservations; do not subtract a successor generation's capacity.
+
+Removal ledger and DB are not one atomic store: any ambiguous step keeps a durable
+serving hold until reconciled. Restore replays the protected ledger, rotates epochs,
+verifies accepted bytes and marks missing temporary uploads interrupted before any
+resume. EWP-57/58 qualify the core procedure; EWP-59 exercises each later enabled
+branch. Commands/procedures remain target interfaces, not executed operations.

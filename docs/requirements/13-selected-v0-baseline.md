@@ -1,6 +1,6 @@
 # Selected V0 baseline and parameter register
 
-Date: 2026-11-09. Revision: 0.6. Status: **engineering choices selected; runtime
+Date: 2026-11-09. Revision: 0.7. Status: **engineering choices selected; runtime
 qualification pending**. Owner: engineering lead; reviewer roles remain unassigned
 to individuals. This continuation resolves design alternatives without claiming
 human sign-off, tested behavior, a production release or implementation of contracts.
@@ -32,6 +32,7 @@ Empirical feasibility can reopen a choice; it cannot waive evidence/privacy inva
 | DEC-13 | ADR-005: C0 history in V0, C1–C4 comparison/monitoring later | Stage gates and extension resource/permission contracts in documents 21–26 |
 | DEC-14 | ADR-006: explicit private submission context and independent importance in V0; H1–H4 investigation/handoff later | EWP-31 before V0 qualification; HUN-ACC and stage gates in document 33 |
 | DEC-15 | ADR-007: optional post-V0 MV3 companion, explicit server/local modes and narrow paired intake | EWP-41–52, B-ACC-01–12; native API/permission/fidelity/restore gates before enablement |
+| DEC-16 | ADR-008: shared profile policy, dependency fences, capacity and feature/restore state; registered B2 observation versus upload consent | EWP-53–60 and applicable SYS-ACC-01–10, no new product requirement or V0 extension dependency |
 
 ADR-005 supersedes the earlier optional-candidate treatment: C0 Source history is
 explicit V0 scope; C1–C4 are selected later-stage work. Documents 21–26 define the
@@ -51,7 +52,10 @@ retroactively relabel incomplete output as complete.
 | Confirmable batch jobs | At most 500 selected valid rows | Admission of all selected jobs is atomic |
 | Pending jobs | 1,000 installation-wide | Includes queued/retry_wait and reservations; serialize admission |
 | Capture slots | 1 by default | Do not start another runner until old process terminated or proven absent |
-| Export slots | 1 by default | Independent bounded job/spool/renderer budget; no unbounded web-thread exports |
+| Export slots | 1 by default | Separate operation ceiling; shares the aggregate heavy permit below, no unbounded web-thread exports |
+| Shared heavy permit | 1 installation-wide initially | Capture, parsing, rendering and intake validation share this ceiling; higher concurrency needs measured host qualification |
+| Interactive pending reserve | 100 of the existing 1,000 | Small URL/export commands may use the reserve; bulk/automatic/derived combined <=900, explicit overload disposition |
+| Shared temporary-output pool | 1 GiB initially | Existing per-operation ceilings plus one total reservation authority; actual disk reserve still applies |
 | Navigation / entire attempt | 60 / 120 seconds | Entire deadline includes conditions and output; cancellation teardown grace 10 seconds |
 | Screenshot | At most 40,000,000 pixels | Inspect dimensions before allocation; never silently crop to meet completeness |
 | Artifact / attempt total | 100 / 250 MiB | Enforce while writing and validating runner output |
@@ -113,3 +117,13 @@ all parameters above remain unchanged. Browser limits are authoritative in 35–
 100 MiB/20-item local spool, 24h pending expiry and one-tab 30min assisted sessions.
 These smaller channel-specific caps never silently truncate larger valid V0 evidence.
 Native browser allocation/fidelity and exact supported versions remain EWP-41 gates.
+
+## Integrated policy/resource refinement
+
+ADR-008/documents 39–43 refine existing IDs and limits without adding V0 features.
+Per-operation slots are ceilings under the shared heavy permit, not simultaneous
+capacity promises. Document 42 owns the shared counter/fairness details; documents
+40/41 own purpose-specific profile eligibility and dependency/removal authority.
+Current totals remain 158 requirements (70 V0 / 88 later), with 60 implementation
+tasks and 56 named scenario definitions. Measured environment and real runtime
+qualification remain pending.

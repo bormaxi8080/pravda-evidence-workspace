@@ -160,3 +160,18 @@ future Evidence Contracts component when implemented. Browser Extension remains
 planned 0.0.0; no existing runtime depends on its build. Per-slot offsets, generation,
 reservations and accepted byte identity reuse DB/finalization authority; isolated
 validators have no source-fetch authority. See documents 35–37 for the contracts.
+
+## Shared policy, dependency and admission authority
+
+ADR-008/documents 40–43 refine the modular monolith with one purpose-specific
+eligibility service, transactional dependency/removal-fence authority, shared
+reservation/claiming service and effective-feature preflight. SSR, web/companion
+APIs, workers and downloads reuse these services. No external policy engine or
+production graph service is introduced. The development CodeBase MCP index is
+not part of application execution or evidence dependency resolution.
+
+One aggregate heavy-task permit initially bounds the sum of per-operation slots;
+only bounded control/chunk/dispatch paths use their separately specified budgets.
+Root fences deny affected reads/promotions before paged cleanup completes. These
+core contracts are materialized with V0; C/H/B-specific adapters arrive only with
+their stages. Actual memory/egress/DB/filesystem qualification is still required.

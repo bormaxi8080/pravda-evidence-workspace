@@ -3,7 +3,9 @@
 Date: 2026-11-09. Status: **assignable design; no runtime tasks completed**.
 Owner: browser/backend/evidence/security/operations. Authority: ADR-007.
 Documents 34–37 add 24 later-stage requirements to the prior 134. Current total:
-158 requirements, 70 V0 / 88 later; 52 assignable implementation tasks.
+158 requirements, 70 V0 / 88 later; this pass has 52 implementation tasks.
+ADR-008/document 43 subsequently refine delivery to 60 tasks and 56 scenarios,
+without adding product requirements or changing stage scope.
 
 ## Stages and independence
 
@@ -29,14 +31,14 @@ No arbitrary automatic server commands, browser session restore, AI runtime or S
 | EWP-42 Companion machine contracts | EWP-41/02; evidence/API | Authoritative companion/1 request/error schemas, browser profile/receipt/export schema, state/offset examples and generated TypeScript types | Positive/negative example validation, inventory/self-hash/version/ownership review; activate planned components only with real files/checks |
 | EWP-43 Pairing, scopes and revoke service | EWP-42/05/06; security/backend | Pairing approval UI, opaque token digests, narrow authorization, grant lifecycle, epoch and abuse limits | B-ACC-01/02/07 real DB/HTTP/browser; replay/race/lost token/denied actor/Origin cases |
 | EWP-44 MV3 B0 shell and URL handoff | EWP-43/31; browser/UX | Build/package, options/action UI, exact host permission, pairing/status/context, explicit server capture intent, escaped messages | B-ACC-02/03/12, real gesture/permissions, no cookie/private-read/publication scope; unknown capabilities fail |
-| EWP-45 B0 qualification and onboarding | EWP-44/14; browser/operator | Supported B0 package, server feature flag/config/runbook, upgrade/uninstall/revoke guidance | B-ACC-01/02/03/11/12 and relevant core identity/SSRF/queue regressions; standalone B0 usable |
+| EWP-45 B0 qualification and onboarding | EWP-44/14/59; browser/operator | Supported B0 package, server feature flag/config/runbook, upgrade/uninstall/revoke guidance | B-ACC-01/02/03/11/12 and relevant core identity/SSRF/queue regressions; standalone B0 usable |
 | EWP-46 B1 capture and local spool | EWP-45/42; browser/evidence | Same-target coordinator, viewport/optional MHTML inventory, journal/limits/preview/consent and local migrations | B-ACC-04/05/08/12, real worker death/quota/tab race fixtures and no hidden recapture |
 | EWP-47 B1 intake and durable finalization | EWP-45/42/08; backend/evidence/security | Owned reservations/chunks/offset reconciliation, isolated verifier/quarantine, fenced one-capture acceptance, revoke cleanup | B-ACC-05/06/07/11, real DB/filesystem crash points, hostile bytes/resource limits and authority races |
 | EWP-48 B1 detail/history and independent export | EWP-46/47/13; evidence/UX | Channel/time/fidelity labels, private original access, context/editorial integration and browser-export verifier | B-ACC-03/05/10, external independent digest verification and denied unknown-profile publication/baseline |
-| EWP-49 B1 qualification and operations | EWP-48/14; security/operator/browser | Supported profile matrix, bounded cleanup/restore/re-pair, disconnect/incident UX and B1 evidence dossier | All applicable B-ACC cases except B2-only recording; no mock-only DB/browser/restore proof |
-| EWP-50 B2 assisted session and qualification | EWP-49; browser/UX/security | Side panel/badge, one-tab/origin session generation, same-origin debounce/quota, pause/stop and explicit batch-upload review | B-ACC-04/07/08/09/12 real browser, no cross-origin/background collection or automatic restart |
+| EWP-49 B1 qualification and operations | EWP-48/14/59; security/operator/browser | Supported profile matrix, bounded cleanup/restore/re-pair, disconnect/incident UX and B1 evidence dossier | All applicable B-ACC cases except B2-only recording; no mock-only DB/browser/restore proof |
+| EWP-50 B2 assisted session and qualification | EWP-49/59; browser/UX/security | Side panel/badge, one-tab/origin session generation, minimal active-lease descriptor registration, debounce/quota, pause/stop and explicit batch-upload review | B-ACC-04/07/08/09/12 real browser, no cross-origin/background collection or automatic restart |
 | EWP-51 Browser-profile H/C adapters | EWP-49/21/33/35/37/39; evidence/UX | Separate qualified adapters for C1/H1/H2/H3/H4 with exact provenance/dependency/export mapping | B-ACC-05/10/11 plus relevant HUN/MON cases; each subgate needs only its corresponding completed stage |
-| EWP-52 Companion release/handoff dossier | EWP-45/49/50; browser/operator/product | Current supported build matrix, editor/operator guide, SBOM/source/artifact identities, privacy/distribution checklist and limitations | Full enabled-stage B-ACC evidence; explicit supported adapter list; release/store/push/deploy separately authorized |
+| EWP-52 Companion release/handoff dossier | EWP-45/49/50/59; browser/operator/product | Current supported build matrix, editor/operator guide, SBOM/source/artifact identities, privacy/distribution checklist and limitations | Full enabled-stage B-ACC evidence; explicit supported adapter list; release/store/push/deploy separately authorized |
 
 EWP-51 lists the prerequisites for the complete adapter set; its C1/H1/H2/H3/H4
 subtasks can qualify independently after EWP-49 plus their respective EWP-21/33/35/

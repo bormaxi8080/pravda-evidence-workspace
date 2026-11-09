@@ -148,3 +148,13 @@ Upload receipt, accepted capture ID and unique actor/instance/client_capture_id
 commit through fenced finalization; stale grant/cancel cannot bypass that boundary.
 B2 session consent/generation does not grant unlimited upload/publication authority.
 Actual tables/FKs/indexes/migrations/DTO schemas are EWP-42/43/47, not implemented here.
+
+## Cross-service refinement authority
+
+ADR-008/documents 40–42 specify versioned internal eligibility results, typed exact
+DependencyEdge/PinReference and RemovalFence epochs, ResourceReservation generations
+and effective FeatureDescriptor state. Admission/consumer references and their
+counter/edge/audit writes share transactions. Root removal fences and current actor
+checks are revalidated before commit/serving; a precomputed allowed result is not
+authority. Claiming uses both per-type slots and the shared one-heavy-task ceiling.
+Existing immutable evidence/revision semantics remain unchanged.

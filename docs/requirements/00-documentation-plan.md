@@ -126,3 +126,12 @@ UI/API/migration/operations; and complete B acceptance/task mapping. Primary Chr
 and RFC sources are recorded separately from unperformed feasibility tests.
 Current registry: 158 requirements, 70 V0 / 88 later and 52 assignable tasks.
 B0/B1/B2 are later independent gates; V0 and baseline production scope is unchanged.
+
+## Revision 0.7 integration refinement
+
+[The integrated review](39-integration-review-and-refinement.md) identifies gaps
+across the already selected branches. Documents 40–43 specify operation eligibility,
+dependency/removal authority, shared capacity/feature compatibility and executable
+contract/fixture materialization. ADR-008 resolves the named conflicts; this is a
+refinement of 158 existing requirements, with 60 tasks and 56 scenario definitions.
+V0 implements only its current core subset; later branch adapters remain disabled.

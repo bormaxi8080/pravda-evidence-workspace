@@ -1,6 +1,6 @@
 # Evidence Workspace requirements package
 
-Date: 2026-11-09. Revision: 0.6. Status: **selected engineering design baseline;
+Date: 2026-11-09. Revision: 0.7. Status: **selected engineering design baseline;
 runtime qualification pending**.
 Owner: product/engineering roles; individual assignees are not yet designated.
 Versioned component: Specification. No runtime feature, independent review sign-off,
@@ -34,6 +34,9 @@ ADR-007 now selects the browser companion in documents 34–38: B0 URL handoff,
 B1 explicit local acquisition and B2 bounded assisted recording, all post-V0.
 This supersedes the former browser-companion deferral without changing baseline
 production obligations or granting cookies/admin/publication authority.
+ADR-008/documents 39–43 refine the existing requirements across profile eligibility,
+dependencies/removal, shared resources, rollout/restore and executable contract gates.
+They resolve integration conflicts without adding product requirements.
 
 ## Reading order and deliverables
 
@@ -78,6 +81,11 @@ production obligations or granting cookies/admin/publication authority.
 | [36 Browser evidence/intake](36-browser-evidence-and-intake.md) | New profiles, exact submitted bytes, fidelity, verification and eligibility |
 | [37 Companion lifecycle/operations](37-companion-lifecycle-security-and-operations.md) | Local spool, consent/recovery, revoke/restore, build and distribution |
 | [38 Companion acceptance/roadmap](38-companion-roadmap-and-acceptance.md) | 24 requirement mappings, B scenarios, EWP-41–52 and adapter subgates |
+| [39 Integrated design review](39-integration-review-and-refinement.md) | Source-document findings, selected resolutions and responsibility boundaries |
+| [40 Evidence policy](40-evidence-eligibility-and-provenance-policy.md) | Purpose/profile/channel eligibility, time basis and frozen observation/consent |
+| [41 Dependencies/removal](41-dependencies-retention-and-removal.md) | Exact dependency edges, pins, expiry, root fences and emergency cleanup |
+| [42 Capacity/rollout](42-capacity-rollout-and-recovery.md) | Shared permits/reservations/fairness, effective feature state and recovery |
+| [43 Contracts/delivery gates](43-contract-catalog-and-delivery-gates.md) | Executable contract catalogue, synthetic fixtures, SYS scenarios and EWP-53–60 |
 
 Related source research: [changedetection.io review](../reference/changedetection-io-review.md).
 The [Hunchly comparison](../reference/hunchly-comparison.md) distinguishes public
@@ -95,7 +103,10 @@ ADR-007 records browser-channel adoption, supported by the
 [primary platform review](../reference/browser-extension-platform-review.md).
 The registry now has 158 selected requirements: 70 V0 (67 original, history and two
 context/triage requirements), 88 later-stage, all with explicit acceptance coverage.
-The implementation registry has 52 tasks across documents 18, 26, 33 and 38.
+The implementation registry has 60 tasks across documents 18, 26, 33, 38 and 43.
+ADR-008 refines existing IDs; 56 scenario definitions cover core/stage/integration
+verification. The complete requirement matrices remain 10/26/33/38; document 43
+adds refinement traceability and never duplicates a normative definition.
 
 Core invariants apply to V0 as well as production: private by default, explicit
 publication, immutable captured bytes, editable editorial context, durable job state,

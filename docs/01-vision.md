@@ -135,3 +135,11 @@ upload. These stages do not delay or become a dependency of baseline V0/producti
 Private submitted bytes are verified on receipt, not represented as independently
 witnessed server captures. [The browser delivery plan](requirements/38-companion-roadmap-and-acceptance.md)
 defines permissions, expiring pairing, offline recovery, trust and release gates.
+
+[ADR-008](decisions/0008-integrated-evidence-policy-and-delivery.md) consolidates
+these branches into one consistent implementation boundary: purpose-specific
+eligibility preserves acquisition/provenance distinctions; dependencies prevent
+removed content from resurfacing; shared reservations protect the one-host model;
+and qualified feature/schema gates control rollout/restore. The
+[integrated contract and delivery catalogue](requirements/43-contract-catalog-and-delivery-gates.md)
+refines the existing 158 requirements rather than expanding the product scope.

@@ -97,7 +97,7 @@ independent review or implementation claim follows from this documentation pass.
 ## Revision 0.6 companion refinement
 
 ADR-007/documents 34–38 select the optional browser channel with a primary-platform
-source register and explicit B0/B1/B2 boundary. Current totals: 158 requirements
+source register and explicit B0/B1/B2 boundary. That pass totals 158 requirements
 (70 V0, 88 later), 52 tasks and 46 named acceptance scenarios across four registries.
 New 24 requirements map to B-ACC-01–12; no previous ID is removed/renumbered.
 
@@ -107,3 +107,18 @@ from server byte verification; fence target/consent/upload generations; quaranti
 before acceptance; keep private browser profile publication/baselines disabled;
 rotate epoch on restore. MV3 permission/native-memory/timing behavior remains a
 real feasibility/qualification gate, not a tested property of this prose.
+
+## Revision 0.7 integration self-review
+
+ADR-008/documents 39–43 refine existing 158 IDs, 70 V0 / 88 later. Current delivery
+registry: 60 tasks and 56 named scenarios. The new review records cross-profile
+eligibility, byte/provenance/time distinctions, dependent-copy removal, shared
+resource pressure, feature/schema/restore gates, contract materialization and the
+B2 stop-versus-upload distinction. Baseline task prerequisites now include only
+applicable core refinements; later C/H/B work remains independently disabled.
+
+The document-level inconsistency findings and selected dispositions are recorded
+in 39. Original complete matrices stay in 10/26/33/38; 43 adds refinement mapping.
+No new runtime, schema file, production policy engine or readiness claim is created.
+Future proof must use actual recorded fixtures/commands/environment and independently
+verifiable artifacts; a coherent specification still requires measured feasibility.
