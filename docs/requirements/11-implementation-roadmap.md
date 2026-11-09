@@ -208,3 +208,13 @@ not a plausible Compose file. EWP-69/70/71 deliver U1/U2/U3 after qualified V0;
 EWP-72 hands off the actual supported technical feature set without waiting for
 unimplemented identity stages. No new product release/deployment is authorized by
 the roadmap, and no user-facing role changes exist until their migration is implemented.
+
+## Production preservation and core byte-serving detail
+
+[Document 53](53-preservation-delivery-and-production-gates.md) adds EWP-73–78.
+EWP-77 supplies the existing core protected read contract before publication/export
+and depends on core policy/dependency/admission only. EWP-73/74/75 qualify recording/
+production schemas and one provider; EWP-76 qualifies safe receipt/export; EWP-78
+assembles independent replay/format/recovery proof before EWP-17. EWP-17 retains
+its availability/automated-operations scope, and EWP-18 keeps separate production
+security/pilot/release gates. A failed recorder spike blocks production, not V0.

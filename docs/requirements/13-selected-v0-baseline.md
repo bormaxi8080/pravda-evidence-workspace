@@ -1,6 +1,6 @@
 # Selected V0 baseline and parameter register
 
-Date: 2026-11-09. Revision: 0.8. Status: **engineering choices selected; runtime
+Date: 2026-11-09. Revision: 0.9. Status: **engineering choices selected; runtime
 qualification pending**. Owner: engineering lead; reviewer roles remain unassigned
 to individuals. This continuation resolves design alternatives without claiming
 human sign-off, tested behavior, a production release or implementation of contracts.
@@ -34,6 +34,7 @@ Empirical feasibility can reopen a choice; it cannot waive evidence/privacy inva
 | DEC-15 | ADR-007: optional post-V0 MV3 companion, explicit server/local modes and narrow paired intake | EWP-41–52, B-ACC-01–12; native API/permission/fidelity/restore gates before enablement |
 | DEC-16 | ADR-008: shared profile policy, dependency fences, capacity and feature/restore state; registered B2 observation versus upload consent | EWP-53–60 and applicable SYS-ACC-01–10, no new product requirement or V0 extension dependency |
 | DEC-17 | ADR-009: concrete Docker/job isolation, PostgreSQL/schema/pool, deployment/maintenance and later U1/U2/U3 | Documents 44–49; real OPS gates and explicit future-role/access migration, not live configuration changes |
+| DEC-18 | ADR-010: production WARC/PDF profiles, strict recording engine/2 and protected read snapshots | EWP-73–78, PRD-ACC-01–08; actual provider/replay/renderer/IO proof pending |
 
 ADR-005 supersedes the earlier optional-candidate treatment: C0 Source history is
 explicit V0 scope; C1–C4 are selected later-stage work. Documents 21–26 define the
@@ -127,7 +128,7 @@ capacity promises. Document 42 owns the shared counter/fairness details; documen
 40/41 own purpose-specific profile eligibility and dependency/removal authority.
 The ADR-008 pass totals 158 requirements (70 V0 / 88 later), with 60 implementation
 tasks and 56 named scenario definitions. ADR-009/document 49 subsequently bring
-current totals to 170 requirements (70 V0 / 100 later), 72 tasks and 68 scenarios.
+that pass to 170 requirements (70 V0 / 100 later), 72 tasks and 68 scenarios.
 Measured environment and real runtime qualification remain pending.
 
 ## Detailed operational parameter authority
@@ -139,3 +140,18 @@ mount and 150s stop-grace design; 45 owns PG16 role/pool/query/migration budgets
 upgrade/maintenance/recovery defaults. Those operation-specific authorities refine
 this register without changing evidence profile inventories or enabling features.
 Document 48 owns future IAM scope/caps; no U-stage default applies to V0 users.
+
+## Production preservation and read-plane parameters
+
+Documents 50–52 own named production WARC/receipt and shared protected-read limits:
+WARC 100 MiB stored/256 MiB decoded, 64 MiB record block/10,000 records; production
+attempt remains 120s (80 acquisition, 30 validation, 10 promotion/commit); receipt
+HTML 2 MiB/PDF 16 MiB/100 pages and renderer 60s within the parent 120s export.
+Protected read snapshots share the existing temp pool with 512 MiB aggregate,
+two active transfers and finite validation/transfer/idle/recheck limits in 52.
+These are selected ceilings to qualify, not already measured throughput.
+
+V0 profiles/defaults remain historical and independently supported; EWP-77 implements
+only the actual V0 byte-serving subset. Production recorder/schema/renderer support
+must pass its owning gates before default-profile migration. Requirement counts
+remain 170 (70 V0 / 100 later); current delivery has 78 tasks and 76 scenarios.

@@ -29,6 +29,7 @@ the table below retains alternative/context and qualification obligations.
 | DEC-15 Browser companion | ADR-007: independent MV3 B0/B1/B2, narrow expiring pairing/API, client-claimed acquisition profiles and verified quarantine; no baseline dependency | Browser + evidence/security/operations | Documents 34–38; real native API/permission/target/memory feasibility, B acceptance and EWP-41–52 |
 | DEC-16 Integrated policy/delivery | ADR-008: shared purpose eligibility, dependency/removal authority, aggregate resource reservations, feature/schema gates and registered-observation upload consent | Evidence/backend/security/operator | Documents 39–43; EWP-53–60 with actual core/owning-stage SYS evidence, not added product requirements |
 | DEC-17 Technical deployment and future identity | ADR-009: pinned role-specific images, host-trusted bounded launcher, DB role/pool/migration authority, operator lifecycle and later U1/U2/U3 | Deployment/database/security/product | Documents 44–49; real OPS gates, 12 post-V0 IAM IDs, no baseline U-stage dependency |
+| DEC-18 Production preservation and read plane | ADR-010: same-attempt recorded HTTP WARC, safe required PDF/export, independent replay/verifier and bounded protected byte snapshots | Capture/evidence/rendering/security/operator | Documents 50–53; recorder feasibility and PRD proof, no MHTML-wrapper or historical profile upgrade |
 
 V0 written design choices now have selected dispositions in ADR-002–004 and
 documents 13–17. Production WARC fidelity and measured operational objectives remain

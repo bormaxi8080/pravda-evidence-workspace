@@ -1,6 +1,6 @@
 # Evidence Workspace requirements package
 
-Date: 2026-11-09. Revision: 0.8. Status: **selected engineering design baseline;
+Date: 2026-11-09. Revision: 0.9. Status: **selected engineering design baseline;
 runtime qualification pending**.
 Owner: product/engineering roles; individual assignees are not yet designated.
 Versioned component: Specification. No runtime feature, independent review sign-off,
@@ -40,6 +40,9 @@ They resolve integration conflicts without adding product requirements.
 ADR-009/documents 44–49 refine Docker, PostgreSQL, deployment and maintenance,
 and select future U1/U2/U3 identity/access stages. Only these future stages add
 12 IAM definitions; V0's shared two-role scope remains unchanged.
+ADR-010/documents 50–53 refine existing production WARC/PDF/export obligations
+and the already required protected-byte read path. No additional product IDs or
+hidden WARC/PDF gate for V0 are introduced.
 
 ## Reading order and deliverables
 
@@ -95,6 +98,10 @@ and select future U1/U2/U3 identity/access stages. Only these future stages add
 | [47 Maintenance/recovery](47-maintenance-observability-and-recovery.md) | Schedules, safe telemetry, incidents, backups and clean-host drills |
 | [48 Future identity/access](48-future-users-roles-and-access-spaces.md) | U1 users/capability bundles, U2 AccessSpace scope and U3 federation/workloads |
 | [49 Infrastructure/IAM delivery](49-infrastructure-and-identity-delivery.md) | 12 IAM mappings, OPS scenarios, EWP-61–72 and core/later-stage gates |
+| [50 Production preservation](50-production-preservation-and-replay.md) | Same-attempt HTTP WARC scope, engine/2, record validation and isolated replay |
+| [51 Production export/PDF](51-production-export-pdf-and-verifier.md) | Exact production inventory, safe required receipt PDF and independent verifier |
+| [52 Protected byte serving](52-protected-byte-serving-and-read-budgets.md) | Pre-header integrity snapshots, read/transfer budgets and revoke/stream races |
+| [53 Preservation delivery](53-preservation-delivery-and-production-gates.md) | Existing-ID refinement, PRD scenarios, EWP-73–78 and production transitions |
 
 Related source research: [changedetection.io review](../reference/changedetection-io-review.md).
 The [Hunchly comparison](../reference/hunchly-comparison.md) distinguishes public
@@ -112,11 +119,13 @@ ADR-007 records browser-channel adoption, supported by the
 [primary platform review](../reference/browser-extension-platform-review.md).
 The registry now has 170 selected requirements: 70 V0 (67 original, history and two
 context/triage requirements), 100 later-stage, all with explicit acceptance coverage.
-The implementation registry has 72 tasks across documents 18/26/33/38/43/49 and
-68 scenario definitions. Complete matrices are 10/26/33/38 plus the 12 future IAM
+The implementation registry has 78 tasks across documents 18/26/33/38/43/49/53
+and 76 scenario definitions. Complete matrices are 10/26/33/38 plus the 12 future IAM
 IDs in 49; documents 43/49 also add existing-requirement refinement traceability.
 No normative ID is duplicated. The [technical platform review](../reference/deployment-and-database-platform-review.md)
 separates current source/primary references from unperformed operational tests.
+The [preservation/rendering review](../reference/preservation-rendering-and-replay-review.md)
+records format/renderer/replay sources and unqualified provider boundaries.
 
 Core invariants apply to V0 as well as production: private by default, explicit
 publication, immutable captured bytes, editable editorial context, durable job state,

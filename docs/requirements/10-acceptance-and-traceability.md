@@ -205,3 +205,9 @@ OPS-ACC-01–08 in document 49 refine actual core container/DB/deploy/recovery c
 OPS-ACC-09–12 apply only to corresponding implemented U stages; they cannot become
 hidden V0/baseline-production identity prerequisites. V0 still has 70 requirement
 IDs. The twelve new IAM definitions have complete later-stage coverage in 49.
+
+PRD-ACC-01–08 in [document 53](53-preservation-delivery-and-production-gates.md)
+refine existing IDs, not a new complete requirement registry. PRD-ACC-07 applies
+to actual V0 file authorization/integrity/resources; WARC/replay/required production
+PDF and mode migration remain ACC-12 production work. C/H/B/U implementations
+still are not prerequisites for either baseline stage.

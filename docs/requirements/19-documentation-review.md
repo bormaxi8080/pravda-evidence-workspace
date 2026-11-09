@@ -130,10 +130,24 @@ connection/query/maintenance, environment/config/install/upgrade, and measurable
 operator backup/telemetry/recovery. The source/primary register distinguishes
 reviewed static files/vendor facts from unperformed daemon/DB/browser tests.
 
-Twelve new IAM IDs select U1–U3 without changing V0's 70 requirements. Current
-totals: 170 requirements (100 later-stage), 72 tasks and 68 scenario definitions.
+Twelve new IAM IDs selected U1–U3 without changing V0's 70 requirements. That
+pass totaled 170 requirements (100 later-stage), 72 tasks and 68 scenarios.
 Core parent dependencies now use actual build/runner/DB/deployment/recovery subtasks;
 no U stage is a baseline prerequisite. Future AccessSpace, fixed role bundles and
 qualified federation are architecture/data/API migrations, not hidden flags on the
 existing collections or imported credentials. Runtime and planned-component status
 remain unchanged; no real account, build, SQL migration or restore is claimed.
+
+## Revision 0.9 preservation and protected-read review
+
+ADR-010/documents 50–53 close written gaps in required production WARC/PDF,
+self-contained inventories, same-attempt scope, strict engine negotiation, bounded
+validation/isolated replay and independent export verification. They also refine
+core pre-header integrity into a bounded read-snapshot/transfer service rather than
+unlimited request-thread work. Historical profiles/time/provenance stay unchanged.
+
+Current totals remain 170 requirements (70 V0/100 later), now 78 tasks and 76
+scenarios. EWP-77 is core-only before EWP-12/13; production recorder/rendering tasks
+remain outside V0, and no C/H/B/U implementation becomes a baseline prerequisite.
+Primary source observations are separated from untested provider suitability; no
+runtime WARC/PDF, replay service, schema or release is produced by the prose.

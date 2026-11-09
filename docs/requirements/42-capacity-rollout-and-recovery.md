@@ -164,3 +164,18 @@ scope-complete readers/writers for every actually enabled adapter; disabling an
 unsupported optional adapter is explicit, never a cross-space access fallback.
 Permission/schema changes preserve the same admission/worker/serving rechecks and
 restore hold. No U stage becomes a condition for core V0/baseline production.
+
+## Protected read and preservation budgets
+
+ADR-010/documents 50–52 retain shared counters while adding explicit read snapshot/
+transfer accounting: 512 MiB aggregate snapshots inside the same 1 GiB temp pool,
+two transfer leases and finite validation/stream deadlines. Compute permits are
+released before slow clients; generators/validators cannot acquire a nested heavy
+permit while retaining the sole one. Sequential production phase ceilings fit the
+same attempt/export deadline, not additional hidden execution time.
+
+Production profile/mode enablement additionally needs exact recorder/engine/reader/
+renderer/schema qualification. Default change preserves completed profiles and
+queued/idempotent intent snapshots. Qualification-only replay has no live fallback
+or shared application-origin authority. No new PDF/WARC capability is inferred
+from changing the Application version or installing a package.

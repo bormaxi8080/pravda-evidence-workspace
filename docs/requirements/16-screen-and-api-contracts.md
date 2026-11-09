@@ -182,3 +182,13 @@ The U1 migration replaces literal admin/editor checks with reviewed capabilities
 while U2 filters every list/count/history/download/derived path by current custody
 scope. Old unscoped clients cannot silently fall back to shared when a restricted
 scope is required. Provider linkage is never inferred from email/name.
+
+## Production profile and protected download continuation
+
+ADR-010/documents 50–53 require actual profile/recording-scope/omission/renderer
+availability in capture/export/status UI. A production-required request cannot
+quietly return V0/PDF-less output. Old intents/replays retain their pinned profile;
+new default migration needs compatible producer/reader/client qualification.
+Protected GET/HEAD/conditional/range/slow-stream paths use document 52's current
+authority and finite resources; rendering a permitted button or a prior hash is
+not download authority. Raw archive/receipt HTML stays attachment-only.

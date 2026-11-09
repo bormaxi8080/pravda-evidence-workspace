@@ -4,7 +4,7 @@ Date: 2026-11-09. Status: **implementation specification; artifacts/tests not cr
 Owner: engineering/evidence/API/security/operator. Authority: ADR-008.
 This ADR-008 pass refines 158 requirements (70 V0 / 88 later), adding EWP-53–60
 and SYS-ACC-01–10 for task/scenario totals of 60/56. ADR-009/document 49 later add
-12 future IAM IDs and technical detail: current totals 170 requirements, 72 tasks
+12 future IAM IDs and technical detail: that pass totals 170 requirements, 72 tasks
 and 68 scenarios. Named roles are assignment slots, not fabricated individuals or approvals.
 
 ## Materialization order and contract ownership
@@ -202,3 +202,9 @@ when activated. U contracts cannot make V0 depend on planned schemas/runtime. Us
 existing fixture/evidence rules and OPS scenarios, with actual role/host/DB/process
 proof. The added IAM complete matrix is in 49; the original 158 IDs keep their
 existing owning coverage, with no duplicated definitions.
+
+ADR-010/documents 50–53 subsequently add CTR-17 production capture/export/recording
+engine/2, CTR-18 controlled ReceiptModel/PDF/verifier and CTR-19 ReadSnapshot/
+TransferLease materialization. All 170 requirement IDs stay unchanged; current
+delivery is 78 tasks/76 scenarios. Existing complete matrices remain authoritative;
+53 adds refinement evidence and provider feasibility, not new required features.

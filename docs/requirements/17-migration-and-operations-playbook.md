@@ -196,3 +196,13 @@ only after complete installed-adapter qualification. Preserve unknown historic
 privacy; do not label old collections restricted. Host/DB operator recovery remains
 separate from application role administration. Restore invalidates old grants and
 keeps stage-specific automation disabled until authority/scope/ledger checks pass.
+
+## Preservation/read-plane qualification continuation
+
+Documents 50–53 add strict production recording/profile and safe receipt/verifier
+contracts without mutating old evidence. Restore accepted WARC/receipt/dependency
+inventories under ledger/epoch holds; temporary read snapshots confer no restored
+transfer authority. Replay qualification has no app cookies or live fallback, and
+is not a newly published archive viewer. Shared read temp/stream/compute limits
+are included in preflight/incident diagnostics. Actual provider/replay/renderer/
+file-substitution/slow-client proof remains EWP-73–78 work.

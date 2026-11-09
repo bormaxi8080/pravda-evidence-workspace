@@ -160,3 +160,13 @@ requires exact dependency/pin records and immediate root fences before deferred
 cleanup. Current-read authorization, integrity and fences cover ready packages and
 public assets; safe diagnosis is distinct from serving corrupt/removed content.
 These controls never rewrite the original capture/export manifest or self-hash rules.
+
+## Production profiles and protected read materialization
+
+ADR-010/documents 50/51 now specify exact production PNG/MHTML/WARC/capture-metadata
+and required PDF/export inventories, while all V0/browser/foreign identities remain
+unchanged. Document 52 implements this document's pre-success hash/spool rule
+through globally bounded verified snapshots and transfer leases, with current
+permission/root/publication checks and no raw proxy alias. Only actual core types
+are needed for V0; production parser/renderer/reader adapters need their own proof.
+No original capture manifest includes its PDF receipt or a self-digest.

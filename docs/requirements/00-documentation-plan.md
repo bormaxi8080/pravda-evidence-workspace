@@ -144,3 +144,12 @@ add 12 explicitly later-stage identity/access definitions. Current totals: 170
 requirements (70 V0 / 100 later), 72 tasks and 68 scenario definitions. Complete
 IAM coverage and technical refinement gates live in 49; runtime qualification remains
 pending. No source config, account, live deployment or backup was changed.
+
+## Revision 0.9 preservation/read-plane refinement
+
+ADR-010/documents 50–53 make the existing production WARC/PDF and core protected-
+read obligations concrete: inventories, recording scope, negotiation/limits,
+independent replay/verifier, renderer containment and byte snapshot/stream races.
+Requirements stay 170 (70 V0/100 later); delivery becomes 78 tasks/76 scenarios.
+Core EWP-77 knows only supported V0 reads; WARC/required PDF remain production,
+with actual provider qualification rather than an untested dependency adoption.

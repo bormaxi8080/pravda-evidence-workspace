@@ -15,9 +15,25 @@ The inherited Python package 1.1.0 is a prototype baseline, not a newly issued r
 | Deployment (`deployment`) | `0.1.0` | prototype |
 | Evidence Contracts (`evidence-contracts`) | `0.0.0` | planned |
 | Governance (`governance`) | `0.1.2` | tooling |
-| Specification (`specification`) | `0.1.7` | documentation |
+| Specification (`specification`) | `0.1.8` | documentation |
 | UI Prototype (`ui-prototype`) | `0.1.0` | prototype |
 <!-- component-versions:end -->
+
+### Refined — production preservation and protected byte delivery, 2026-11-09
+
+- Select ADR-010 and English same-attempt WARC/recording scope, production capture/
+  export inventory, engine/2 negotiation and isolated independent replay contracts.
+- Specify controlled safe PDF receipts, required-output semantics, nested decode/
+  inventory limits, independent verifier evidence and no historical profile relabeling.
+- Refine the core protected read path with pre-header verified snapshots, shared
+  temp/compute/transfer accounting, bounded reauthorization and revoke/IO races.
+- Add EWP-73–78 and PRD-ACC-01–08 without new requirement IDs: 170 requirements,
+  78 acyclic planned tasks and 76 scenarios. Keep WARC/required PDF production-only
+  and later C/H/B/U features independent of the baseline.
+
+Specification advances to 0.1.8; design revision to 0.9. Recorder/reader/renderer
+selection needs actual qualification; no runtime/provider/schema dependency, PDF,
+WARC, deployment or product release is created by this documentation change.
 
 ### Added — technical deployment and future identity design, 2026-11-09
 

@@ -127,3 +127,13 @@ See [the baseline register](13-selected-v0-baseline.md),
 [contracts and operator procedures](README.md) and
 [assignable work packages](18-assignable-work-packages.md).
 Implementation/qualification remain pending; source presence is not test evidence.
+
+## Selected production refinement
+
+ADR-010/documents 50–53 select workspace-capture-production/1 and
+workspace-export-production/1, same-attempt HTTP representation recording, explicit
+scope/omissions, safe required receipt PDF and independent verification/replay.
+The existing V0 profiles are unchanged. A network.warc.gz filename, later MHTML
+conversion or PDF generation cannot establish missing historic traffic/fidelity.
+Protected pre-header byte validation and read budgets are specified in document 52;
+its core subset applies before V0 qualification without requiring production formats.

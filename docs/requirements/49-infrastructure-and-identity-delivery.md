@@ -175,3 +175,9 @@ follow document 43: source/artifact/schema/config/fixture/environment identity,
 exact commands/results, safe failure references and limitations. Empty/skipped/
 metadata-only checks cannot pass real host/DB/browser/recovery/identity gates.
 All described runtime scenarios remain unexecuted by this documentation pass.
+
+ADR-010/document 53 later refines existing preservation/read obligations with
+EWP-73–78/PRD-ACC-01–08. Current overall totals are 170 requirements, 78 tasks
+and 76 scenarios; this document's twelve IAM IDs/owning matrix and technical task
+scope stay unchanged. Neither production WARC nor U-stage implementation becomes
+a new V0 dependency.

@@ -150,3 +150,11 @@ make Docker job isolation, PostgreSQL authority, deployment and maintenance conc
 Future U1–U3 add explicit capability bundles, AccessSpace custody and qualified
 federation/workload identities. V0 keeps the shared two-role newsroom; restricted
 spaces do not pretend the trusted host/DB operator cannot access stored evidence.
+
+[ADR-010](decisions/0010-production-preservation-and-byte-serving.md) and
+[the preservation delivery plan](requirements/53-preservation-delivery-and-production-gates.md)
+refine the production obligations: actual same-attempt HTTP WARC with declared
+scope, safe required PDF/export, independent verification/replay and bounded
+protected byte serving. Recorder/renderer feasibility remains proof to obtain;
+old V0/browser/foreign captures never gain stronger historical provenance from
+an app upgrade or later receipt generation.

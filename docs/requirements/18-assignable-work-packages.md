@@ -24,12 +24,12 @@ or throughput commitment is inferred from this table.
 | EWP-09 Isolated capture vertical slice | EWP-01/05/06/07/08/53; capture/security | Actual engine contract, readiness options/provenance and private submit -> complete capture detail flow | ACC-01/04/08 synthetic real browser + DB; limits/partial/HTTP404 outcomes, no browser execution in web lifespan |
 | EWP-10 Editorial UI and revision service | EWP-06/08/09; UX/backend | Archive/detail/dashboard/Source history (REQ-HIS-001), bounded filters, notes/tags/collections, revision-aware review, accessible themes/errors | ACC-01/06/10/11 and MON-ACC-07 real browser; identical/partial history retained, conflicts/edits preserve hashes; group deletion preserves evidence |
 | EWP-11 CSV preview-confirm | EWP-06/07/10; backend/UX | Strict grammar/limits, actor-bound preview, dedupe choices, atomic capacity/idempotent confirmation and mixed batch progress | ACC-02/04/11 malformed/oversize/stale/duplicate/queue-full cases; no preview jobs/silent truncation/partial admission |
-| EWP-12 Publication and safe public viewer | EWP-05/06/08/10; publication/security/UX | Exact admin preview, pinned projection, new slug, revoke, no-store asset authorization and legacy mapping | ACC-05/06/10 anonymous/private/old slug/proxy asset tests, no raw evidence/notes/usernames; no GET state mutations |
-| EWP-13 Private export and verifier | EWP-02/06/08/10/54; evidence | Bounded ZIP/HTML/export job, independent verifier, explicit profile/PDF/metadata options, expiry | ACC-07 real package independent verification, empty/damaged/duplicate/path cases; safe receipt and required-PDF failure |
+| EWP-12 Publication and safe public viewer | EWP-05/06/08/10/77; publication/security/UX | Exact admin preview, pinned projection, new slug, revoke, no-store asset authorization and legacy mapping | ACC-05/06/10 anonymous/private/old slug/proxy asset tests, no raw evidence/notes/usernames; no GET state mutations |
+| EWP-13 Private export and verifier | EWP-02/06/08/10/54/77; evidence | Bounded ZIP/HTML/export job, independent verifier, explicit profile/PDF/metadata options, expiry | ACC-07 real package independent verification, empty/damaged/duplicate/path cases; safe receipt and required-PDF failure |
 | EWP-14 Install/backup/restore/upgrade | EWP-01/04/05/07/08/12/13/65/66; operations | Implement target workspace-admin interfaces from 17; maintenance boundary, coherent backup, isolated restore, emergency purge ledger and upgrade runbooks | ACC-09/10 clean install/restore with matching IDs/bytes/audit; old sessions/egress/publication disabled in rehearsal; no untested shell-command claim |
 | EWP-15 Integrated V0 qualification | EWP-09–14/31/55/56/57/58/64/67/68; engineering + security/operations/UX | Full 70-requirement V0 dossier including HUN-ACC-01/02, applicable ACC-01–11 and core SYS scenarios, measured environment/limits, browser/accessibility review and defect triage | All mandatory gates pass, no skipped required evidence; explicit optional PDF/monitoring gaps and no unresolved critical privacy/loss/isolation defect |
 | EWP-16 V0 operator handoff | EWP-15; product/operator | Known limitations, editor/operator onboarding, support/incident path and reproducible pilot package manifest | Named operator can execute core/recovery runbooks on test environment; separate release decision, no automatic push/tag/deploy |
-| EWP-17 Production format/monitoring delta | EWP-16 + production design; evidence/operations | Explicit WARC fidelity profile/validator, safe required PDF, availability probes and automated monitored backups/upgrade | ACC-12 format/interoperability/security/restore evidence; old V0 profiles retain historical identity |
+| EWP-17 Production format/monitoring delta | EWP-16/75/76/78; evidence/operations | Explicit WARC fidelity profile/validator, safe required PDF, availability probes and automated monitored backups/upgrade | ACC-12 format/interoperability/security/restore evidence; old V0 profiles retain historical identity |
 | EWP-18 Production review and pilots | EWP-17; product/security/operations | Security/dependency review, measured supported limits/RPO/RTO, concept-target pilot evidence and release-candidate dossier | All concept section 33 conditions and critical defects closed; release/version/tag/publication separately authorized |
 
 EWP-13 intentionally precedes EWP-14 and depends only on the private evidence flow;
@@ -101,3 +101,12 @@ upgrade subwork and EWP-64/67/68 core DB/maintenance/recovery qualification.
 Parent prerequisites are updated without duplicating implementation deliverables.
 EWP-69–71 are U1/U2/U3 later identity stages and never prerequisites of V0 or the
 baseline production release. EWP-72 hands off the actual supported technical scope.
+
+## Preservation and protected-read refinement
+
+[Document 53](53-preservation-delivery-and-production-gates.md) adds EWP-73–78;
+current total is 78 tasks. EWP-77 implements existing core pre-header integrity/
+authorization/resource rules before EWP-12/13, without depending on WARC/PDF.
+EWP-73–76/78 refine the already mandatory production format gate EWP-17; none
+requires C/H/B/U implementation. EWP-17 retains availability/automated-operations
+scope and EWP-18 retains independent production/security/pilot release conditions.

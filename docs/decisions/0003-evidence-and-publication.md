@@ -43,3 +43,10 @@ gates. The selected V0 profile does not claim legal authenticity or trusted time
 ACC-01/04/05/06/07/09/10 must prove completeness, immutable originals, transactional
 review/publication, byte tampering detection, proxy withdrawal and clean recovery.
 No such runtime result is claimed by this decision record.
+
+## Subsequent production contract
+
+[ADR-010](0010-production-preservation-and-byte-serving.md) and requirements 50–53
+now specify the production recording/export/PDF/read contracts and qualification
+sequence. This preserves V0/old-profile bytes and scope; provider suitability,
+replay/render/isolation/independent verification remain empirical gates.

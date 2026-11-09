@@ -174,3 +174,12 @@ budgets. Future U1 role bundles and U2 custody relationships in 48 are separate
 application-domain migrations: collections stay within a capture's one AccessSpace,
 and role/scope changes affect current long-running authority without changing bytes.
 The current shared V0 dictionary and approved publication semantics remain intact.
+
+## Later recording negotiation and core read leases
+
+ADR-010/document 50 selects a strict capture-engine/2 recording contract only for
+a qualified production profile/provider. V0 engine/1 is not silently widened.
+Generation/actor/fence/deadline authority remains the same; production phases fit
+the existing 120s attempt budget, with recording/validation/finalization visible.
+Document 52 refines actual core ReadSnapshot/TransferLease ownership and counters;
+it creates no alternate artifact-write authority, capture or review state on GET.
