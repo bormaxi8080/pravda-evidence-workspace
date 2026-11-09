@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="680" viewBox="0 0 960 680">
+<rect width="960" height="680" fill="#fffdf8"/><rect width="960" height="9" fill="#234b45"/>
+<text x="65" y="65" font-family="Georgia,serif" font-size="28" fill="#234b45">THE CIVIC RECORD</text>
+<text x="700" y="62" font-family="Arial,sans-serif" font-size="12" fill="#68645c">SYNTHETIC SOURCE</text>
+<path d="M65 90H895" stroke="#d6d2c7"/><text x="65" y="122" font-family="Arial,sans-serif" font-size="11" fill="#68645c" letter-spacing="2">CITY DESK / PUBLIC SPENDING</text>
+<text x="65" y="175" font-family="Georgia,serif" font-size="37" fill="#29271f">Riverfront contract enters</text><text x="65" y="220" font-family="Georgia,serif" font-size="37" fill="#29271f">a second review period</text>
+<text x="65" y="260" font-family="Arial,sans-serif" font-size="13" fill="#68645c">Example newsroom · 9 November 2026 · 10:42 UTC</text>
+<rect x="65" y="290" width="830" height="200" rx="2" fill="#e0e7dd"/>
+<path d="M65 458L237 360L415 425L606 331L895 428V490H65Z" fill="#bdcbbc"/><path d="M65 467C300 389 610 532 895 414" stroke="#719898" stroke-width="35" fill="none"/>
+<path d="M376 390H584M405 380V448M555 380V454" stroke="#536e62" stroke-width="9"/>
+<text x="65" y="520" font-family="Arial,sans-serif" font-size="11" fill="#68645c">Illustration generated from geometric shapes. No real location or investigation.</text>
+<text x="65" y="560" font-family="Georgia,serif" font-size="17" fill="#38352d">The committee extended the public review period to 21 days.</text>
+<text x="65" y="590" font-family="Georgia,serif" font-size="17" fill="#38352d">Documents will remain available through the city notice register.</text>
+<path d="M65 620H860M65 640H802" stroke="#ddd9cf" stroke-width="8"/>
+</svg>

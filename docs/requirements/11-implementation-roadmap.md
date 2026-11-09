@@ -11,6 +11,11 @@ EWP-10/15; EWP-19–30 implement comparison/profiles/watches/delivery after qual
 V0. The production IMP-08/09 requirements remain independent and cannot be postponed
 or relabeled complete because an extension stage ships.
 
+The [versioned implementation plan](55-versioned-implementation-plan.md) now expands
+all 78 tasks into primary milestones and concrete engineering steps, with proposed
+product targets. This document retains the high-level dependency rationale; task
+registries remain authoritative and optional stages do not block production.
+
 ## Sequencing principles
 
 Work in verifiable vertical increments. Establish authorization, isolation and

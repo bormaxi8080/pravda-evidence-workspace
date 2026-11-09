@@ -1,6 +1,6 @@
 # Evidence Workspace requirements package
 
-Date: 2026-11-09. Revision: 0.9. Status: **selected engineering design baseline;
+Date: 2026-11-09. Revision: 0.10. Status: **selected engineering design baseline;
 runtime qualification pending**.
 Owner: product/engineering roles; individual assignees are not yet designated.
 Versioned component: Specification. No runtime feature, independent review sign-off,
@@ -43,6 +43,10 @@ and select future U1/U2/U3 identity/access stages. Only these future stages add
 ADR-010/documents 50–53 refine existing production WARC/PDF/export obligations
 and the already required protected-byte read path. No additional product IDs or
 hidden WARC/PDF gate for V0 are introduced.
+
+ADR-011/documents 54–55 add local interactive Workspace/companion UI blueprints and
+a detailed versioned implementation plan for all 78 existing tasks. Future product
+numbers are planning targets; runtime qualification and release remain pending.
 
 ## Reading order and deliverables
 
@@ -102,6 +106,8 @@ hidden WARC/PDF gate for V0 are introduced.
 | [51 Production export/PDF](51-production-export-pdf-and-verifier.md) | Exact production inventory, safe required receipt PDF and independent verifier |
 | [52 Protected byte serving](52-protected-byte-serving-and-read-budgets.md) | Pre-header integrity snapshots, read/transfer budgets and revoke/stream races |
 | [53 Preservation delivery](53-preservation-delivery-and-production-gates.md) | Existing-ID refinement, PRD scenarios, EWP-73–78 and production transitions |
+| [54 UI blueprints](54-ui-blueprints-and-interaction-map.md) | Workspace/companion screen inventory, visual direction, state/consent/role contracts and design evidence |
+| [55 Versioned implementation plan](55-versioned-implementation-plan.md) | Eleven delivery milestones, all 78 expanded tasks, proposed product versions, dependencies, technical work, migration and evidence gates |
 
 Related source research: [changedetection.io review](../reference/changedetection-io-review.md).
 The [Hunchly comparison](../reference/hunchly-comparison.md) distinguishes public

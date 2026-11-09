@@ -3,7 +3,7 @@
   "schema_version": 1,
   "name": "specification",
   "display_name": "Specification",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "status": "documentation",
   "runtime": "none",
   "planned_path": null,
@@ -29,7 +29,8 @@
     "docs/decisions/0009-deployment-database-and-future-identity.md",
     "docs/reference/deployment-and-database-platform-review.md",
     "docs/decisions/0010-production-preservation-and-byte-serving.md",
-    "docs/reference/preservation-rendering-and-replay-review.md"
+    "docs/reference/preservation-rendering-and-replay-review.md",
+    "docs/decisions/0011-ui-blueprints-and-versioned-delivery.md"
   ],
   "responsibilities": [
     "product-vision",

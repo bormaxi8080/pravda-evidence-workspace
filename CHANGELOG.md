@@ -15,9 +15,27 @@ The inherited Python package 1.1.0 is a prototype baseline, not a newly issued r
 | Deployment (`deployment`) | `0.1.0` | prototype |
 | Evidence Contracts (`evidence-contracts`) | `0.0.0` | planned |
 | Governance (`governance`) | `0.1.2` | tooling |
-| Specification (`specification`) | `0.1.8` | documentation |
-| UI Prototype (`ui-prototype`) | `0.1.0` | prototype |
+| Specification (`specification`) | `0.1.9` | documentation |
+| UI Prototype (`ui-prototype`) | `0.2.0` | prototype |
 <!-- component-versions:end -->
+
+### Added — interactive UI blueprints and versioned execution plan, 2026-11-09
+
+- Add offline English Workspace and browser companion designs with synthetic local
+  assets, light/dark and responsive layouts, connected core consent/revision flows,
+  stage/role/state previews and separate popup/side-panel/options surfaces.
+- Specify 23 Workspace screens and nine companion surface groups, including private
+  versus public projections, browser provenance, pairing, explicit upload consent,
+  pause/stop and unregistered-session recovery; select ADR-011.
+- Expand all 78 EWP tasks into 11 dependency-ordered milestones with proposed product
+  targets, technical steps, owners, outputs, migration/recovery and evidence gates.
+  Preserve the 170 requirements/76 runtime scenarios and independent production gate.
+- Add a dependency-free isolated-Chrome design smoke checker and seven inspected
+  synthetic screenshots; runtime application/extension/security proof remains pending.
+
+UI Prototype advances to 0.2.0, Specification to 0.1.9 and design revision to 0.10.
+No runtime feature, MV3 installation, schema migration, deployment or product release
+is created; future product/component numbers in the plan are proposed coordinates.
 
 ### Refined — production preservation and protected byte delivery, 2026-11-09
 

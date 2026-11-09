@@ -3,13 +3,14 @@
   "schema_version": 1,
   "name": "ui-prototype",
   "display_name": "UI Prototype",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "status": "prototype",
   "runtime": "html-js",
   "planned_path": null,
   "owned_paths": [
     "components/ui-prototype/component.json",
-    "index.html"
+    "index.html",
+    "design/**"
   ],
   "responsibilities": [
     "interactive-design-reference"
@@ -19,6 +20,9 @@
   ],
   "depends_on": [],
   "checks": [
-    "python3 scripts/validate_workspace.py"
+    "python3 scripts/validate_workspace.py",
+    "node --check design/workspace.js",
+    "node --check design/extension.js",
+    "node --check design/verify-ui.mjs"
   ]
 }
