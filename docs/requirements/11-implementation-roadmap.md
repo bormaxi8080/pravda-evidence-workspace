@@ -198,3 +198,13 @@ only after their owning stages; EWP-52 provides the integrated handoff dossier.
 [Document 38](38-companion-roadmap-and-acceptance.md) defines exact prerequisites,
 outputs and acceptance. This branch never becomes a new prerequisite for IMP-08/09
 or silently expands V0. Native API feasibility precedes profile implementation.
+
+## Technical subtasks and later U stages
+
+[Document 49](49-infrastructure-and-identity-delivery.md) decomposes existing build,
+runner, DB and operations work as EWP-61–68 and updates parent gate dependencies.
+Core qualification now requires actual container/DB/network/backup/recovery evidence,
+not a plausible Compose file. EWP-69/70/71 deliver U1/U2/U3 after qualified V0;
+EWP-72 hands off the actual supported technical feature set without waiting for
+unimplemented identity stages. No new product release/deployment is authorized by
+the roadmap, and no user-facing role changes exist until their migration is implemented.

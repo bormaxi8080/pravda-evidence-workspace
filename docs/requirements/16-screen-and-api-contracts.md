@@ -171,3 +171,14 @@ private evidence. GET remains read-only. Every command/worker/download rechecks
 current authority/revisions/fences rather than trusting an earlier rendered button.
 The future mixed-stage DTO/cursor makes archive time basis explicit; V0's existing
 captured_at ordering is unchanged until that adapter/version is qualified.
+
+## Future U-stage API/UX migration
+
+Document 48 specifies later user lifecycle, role preview/assignment, invitation,
+space/group/identity-link and move-preview commands. They require explicit typed
+DTO/version/permission/policy revisions, cookie CSRF, bounded previews and safe
+transactional audit; they are not added to the current V0 routes by this prose.
+The U1 migration replaces literal admin/editor checks with reviewed capabilities,
+while U2 filters every list/count/history/download/derived path by current custody
+scope. Old unscoped clients cannot silently fall back to shared when a restricted
+scope is required. Provider linkage is never inferred from email/name.

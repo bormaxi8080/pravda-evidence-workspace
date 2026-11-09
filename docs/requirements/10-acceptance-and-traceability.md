@@ -185,10 +185,11 @@ The existing 36 governance tests validate engineering tooling only; they do not
 execute the proposed runtime scenarios above.
 
 The V0 registry now has 70 requirements (67 original, history and two context/triage).
-The 88 later-stage requirements have coverage in the
+The 100 later-stage requirements have coverage in the
 [comparison/monitoring matrix](26-adoption-roadmap-and-acceptance.md) and
 [investigation matrix](33-investigation-roadmap-and-acceptance.md) and
-[browser companion matrix](38-companion-roadmap-and-acceptance.md).
+[browser companion matrix](38-companion-roadmap-and-acceptance.md) and
+[future identity matrix](49-infrastructure-and-identity-delivery.md).
 Their gates apply to their stated later stages, not as hidden V0 prerequisites.
 
 ## Integrated refinement verification
@@ -199,3 +200,8 @@ of purpose eligibility, dependencies/removal, reservations and rollout/restore;
 SYS-ACC-09 and other disabled C/H/B interactions remain stage-specific. Existing
 70-ID V0 coverage above is unchanged. All 158 IDs retain complete owning matrices
 in 10/26/33/38; the additional matrix is refinement evidence, not duplicate scope.
+
+OPS-ACC-01–08 in document 49 refine actual core container/DB/deploy/recovery checks.
+OPS-ACC-09–12 apply only to corresponding implemented U stages; they cannot become
+hidden V0/baseline-production identity prerequisites. V0 still has 70 requirement
+IDs. The twelve new IAM definitions have complete later-stage coverage in 49.

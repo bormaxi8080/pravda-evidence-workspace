@@ -49,3 +49,13 @@ not an attempted login or confirmed live exploit. They are implementation blocke
 for pilot use. [Selected contracts](requirements/13-selected-v0-baseline.md) and
 [assignable tickets](requirements/18-assignable-work-packages.md) now specify the
 intended fixes and required evidence; prototype runtime remains unchanged.
+
+## Deployment/DB continuation review
+
+The [technical source register](reference/deployment-and-database-platform-review.md)
+records a fresh static read of Compose/Dockerfile/Nginx/package metadata: two services,
+host-published DB/web, literal development DB credentials, no explicit non-root image
+user, Chromium in the web image and unqualified package-install ordering/backend.
+No live .env, daemon, network exposure, DB volume or real data was inspected. ADR-009
+and requirements 44–49 specify the target fixes and evidence. This source review
+changes no runtime file and does not claim a successful build or exploit.

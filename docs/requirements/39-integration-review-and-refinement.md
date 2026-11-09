@@ -26,7 +26,7 @@ conflicts; changing an immutable format still requires its own version/migration
 
 ## Scope and sequence
 
-The requirement registry stays 158: 70 V0 and 88 later. No IDs are copied/renumbered.
+This revision-0.7 refinement kept 158 requirements: 70 V0 and 88 later. No IDs are copied/renumbered.
 Documents 40–43 map concrete rules to existing owners/IDs and add ten integration
 scenarios plus eight implementation tasks. New total: 60 tasks and 56 scenarios.
 
@@ -69,3 +69,8 @@ services. Document 42 resolves this with an explicitly isolated synthetic
 qualification-only deployment, without weakening runtime controls or presenting it
 as production readiness. EWP-59 is a reusable framework; owning stage tickets run
 their candidate cases before each corresponding qualification gate.
+
+ADR-009/documents 44–49 subsequently add twelve explicitly later IAM definitions
+and technical subtask detail; the current package index reports 170 requirements,
+72 tasks and 68 scenarios. Findings/dispositions above remain the historical
+integration pass, not a claim that the current registry stopped at 158.

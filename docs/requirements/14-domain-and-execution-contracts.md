@@ -158,3 +158,19 @@ counter/edge/audit writes share transactions. Root removal fences and current ac
 checks are revalidated before commit/serving; a precomputed allowed result is not
 authority. Claiming uses both per-type slots and the shared one-heavy-task ceiling.
 Existing immutable evidence/revision semantics remain unchanged.
+
+## Docker/DB implementation detail and later scope
+
+ADR-009/document 44 selects a fixed host-trusted launcher transport for capture-
+engine/1: the worker calls a private bounded job interface, and per-job input/output
+is isolated from DB/final storage. Browser has no initiating application/control/DB
+route or daemon socket. Prior control-response allowance is not permission for an
+untrusted renderer to call back into arbitrary app services. Launcher independently
+checks configured active-job/template/resource ceilings, not caller-provided images/
+mounts/commands. Fencing/finalization authority remains PostgreSQL/controller.
+
+Document 45 materializes runtime DB principals, pool/transaction/DDL/constraint
+budgets. Future U1 role bundles and U2 custody relationships in 48 are separate
+application-domain migrations: collections stay within a capture's one AccessSpace,
+and role/scope changes affect current long-running authority without changing bytes.
+The current shared V0 dictionary and approved publication semantics remain intact.

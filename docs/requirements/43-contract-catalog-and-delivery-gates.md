@@ -2,9 +2,10 @@
 
 Date: 2026-11-09. Status: **implementation specification; artifacts/tests not created**.
 Owner: engineering/evidence/API/security/operator. Authority: ADR-008.
-The requirement registry remains 158 (70 V0 / 88 later). This document refines
-existing IDs, adds EWP-53–60 and SYS-ACC-01–10, and brings task/scenario totals to
-60/56. Named roles are assignment slots, not fabricated individuals or approvals.
+This ADR-008 pass refines 158 requirements (70 V0 / 88 later), adding EWP-53–60
+and SYS-ACC-01–10 for task/scenario totals of 60/56. ADR-009/document 49 later add
+12 future IAM IDs and technical detail: current totals 170 requirements, 72 tasks
+and 68 scenarios. Named roles are assignment slots, not fabricated individuals or approvals.
 
 ## Materialization order and contract ownership
 
@@ -186,3 +187,18 @@ start/end/outcome, safe failure artifact reference, reviewer/assignee when real,
 and limitations. Status is pending/passed/failed/blocked/not_applicable with explicit
 scope. Never mark a gate passed from prose, empty/skipped suites, metadata-only
 checks or unrelated model/mocked results. No runtime result is recorded in this pass.
+
+## Technical/IAM contract catalogue continuation
+
+ADR-009/documents 44–49 extend materialization with CTR-13 fixed job-launcher/1
+request/lifecycle/resource templates; CTR-14 validated settings/redacted effective
+config and deployment/backup manifest; CTR-15 DB migration/role/pool/maintenance
+report; CTR-16 U1–U3 user/bundle/space/invitation/link/workload schemas. These are
+future versioned data/tool contracts, not implemented files or working commands.
+
+Application owns authorization/state/migration bindings; Deployment owns image/
+network/host enforcement; Evidence Contracts owns actual shared DTO/schema examples
+when activated. U contracts cannot make V0 depend on planned schemas/runtime. Use
+existing fixture/evidence rules and OPS scenarios, with actual role/host/DB/process
+proof. The added IAM complete matrix is in 49; the original 158 IDs keep their
+existing owning coverage, with no duplicated definitions.

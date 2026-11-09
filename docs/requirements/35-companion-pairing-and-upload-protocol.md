@@ -208,3 +208,9 @@ An offline/unregistered local item cannot be inserted retroactively into that ep
 retain it for explicit manual B1 review/new intent with an unverified historical
 session claim, preserving original bytes/metadata rather than fabricating B2 proof.
 Grant/session revoke still rejects continuation; no automatic fallback or recapture.
+
+Future U1/U2 from ADR-009/document 48 must replace literal old role checks with
+capability/current-space checks before that stage activates. Existing grants cannot
+gain new scope implicitly. A negotiated scoped-context DTO is required for U2;
+unscoped/stale clients fail rather than writing into a default shared space. The
+workload protocol in U3 is separate from companion pairing/scopes/credentials.

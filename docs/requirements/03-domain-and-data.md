@@ -149,3 +149,13 @@ present in source. Dependency writes commit with consumer identity; pins/counter
 are reconciled from authoritative references; no cached policy answer grants access.
 Core V0 uses only actual capture/export/publication dependencies. Channel-specific
 foreign/browser claims remain separate from receipt/integrity/permission facts.
+
+## Later identity/access domain
+
+Document 48 adds future IdentityAssociation/UserLifecycle, versioned RoleBundle/
+RoleAssignment, Invitation, AccessSpace/SpaceMembership/flat GroupGrant and scoped
+ServicePrincipal. User-facing roles are independent of PostgreSQL roles in 45.
+U2 gives each capture exactly one custody space; collections and derived selections
+must stay within it. Global URL identity is not a grant or a way to reveal hidden
+capture history. Scope moves mutate audited access metadata and fences, never
+original bytes/provenance. V0 still implements none of these future privacy claims.

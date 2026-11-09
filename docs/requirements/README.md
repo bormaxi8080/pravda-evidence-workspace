@@ -1,6 +1,6 @@
 # Evidence Workspace requirements package
 
-Date: 2026-11-09. Revision: 0.7. Status: **selected engineering design baseline;
+Date: 2026-11-09. Revision: 0.8. Status: **selected engineering design baseline;
 runtime qualification pending**.
 Owner: product/engineering roles; individual assignees are not yet designated.
 Versioned component: Specification. No runtime feature, independent review sign-off,
@@ -37,6 +37,9 @@ production obligations or granting cookies/admin/publication authority.
 ADR-008/documents 39–43 refine the existing requirements across profile eligibility,
 dependencies/removal, shared resources, rollout/restore and executable contract gates.
 They resolve integration conflicts without adding product requirements.
+ADR-009/documents 44–49 refine Docker, PostgreSQL, deployment and maintenance,
+and select future U1/U2/U3 identity/access stages. Only these future stages add
+12 IAM definitions; V0's shared two-role scope remains unchanged.
 
 ## Reading order and deliverables
 
@@ -86,6 +89,12 @@ They resolve integration conflicts without adding product requirements.
 | [41 Dependencies/removal](41-dependencies-retention-and-removal.md) | Exact dependency edges, pins, expiry, root fences and emergency cleanup |
 | [42 Capacity/rollout](42-capacity-rollout-and-recovery.md) | Shared permits/reservations/fairness, effective feature state and recovery |
 | [43 Contracts/delivery gates](43-contract-catalog-and-delivery-gates.md) | Executable contract catalogue, synthetic fixtures, SYS scenarios and EWP-53–60 |
+| [44 Docker/runtime](44-docker-runtime-and-host-requirements.md) | Host, images, service/network/volume/secret matrix and isolated launcher |
+| [45 PostgreSQL](45-postgresql-schema-and-data-operations.md) | DB roles, schema/index/migration, pools, backup and maintenance |
+| [46 Deployment/configuration](46-deployment-configuration-and-upgrades.md) | Environment/settings contract, clean install, upgrade and rotation |
+| [47 Maintenance/recovery](47-maintenance-observability-and-recovery.md) | Schedules, safe telemetry, incidents, backups and clean-host drills |
+| [48 Future identity/access](48-future-users-roles-and-access-spaces.md) | U1 users/capability bundles, U2 AccessSpace scope and U3 federation/workloads |
+| [49 Infrastructure/IAM delivery](49-infrastructure-and-identity-delivery.md) | 12 IAM mappings, OPS scenarios, EWP-61–72 and core/later-stage gates |
 
 Related source research: [changedetection.io review](../reference/changedetection-io-review.md).
 The [Hunchly comparison](../reference/hunchly-comparison.md) distinguishes public
@@ -101,12 +110,13 @@ ADR-001 remains governance; ADR-005 records staged adoption. Deferred items in
 document 27 remain evaluations. ADR-006 records investigation/handoff adoption.
 ADR-007 records browser-channel adoption, supported by the
 [primary platform review](../reference/browser-extension-platform-review.md).
-The registry now has 158 selected requirements: 70 V0 (67 original, history and two
-context/triage requirements), 88 later-stage, all with explicit acceptance coverage.
-The implementation registry has 60 tasks across documents 18, 26, 33, 38 and 43.
-ADR-008 refines existing IDs; 56 scenario definitions cover core/stage/integration
-verification. The complete requirement matrices remain 10/26/33/38; document 43
-adds refinement traceability and never duplicates a normative definition.
+The registry now has 170 selected requirements: 70 V0 (67 original, history and two
+context/triage requirements), 100 later-stage, all with explicit acceptance coverage.
+The implementation registry has 72 tasks across documents 18/26/33/38/43/49 and
+68 scenario definitions. Complete matrices are 10/26/33/38 plus the 12 future IAM
+IDs in 49; documents 43/49 also add existing-requirement refinement traceability.
+No normative ID is duplicated. The [technical platform review](../reference/deployment-and-database-platform-review.md)
+separates current source/primary references from unperformed operational tests.
 
 Core invariants apply to V0 as well as production: private by default, explicit
 publication, immutable captured bytes, editable editorial context, durable job state,

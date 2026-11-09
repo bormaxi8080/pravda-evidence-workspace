@@ -110,8 +110,8 @@ real feasibility/qualification gate, not a tested property of this prose.
 
 ## Revision 0.7 integration self-review
 
-ADR-008/documents 39–43 refine existing 158 IDs, 70 V0 / 88 later. Current delivery
-registry: 60 tasks and 56 named scenarios. The new review records cross-profile
+ADR-008/documents 39–43 refine existing 158 IDs, 70 V0 / 88 later. That delivery
+pass had 60 tasks and 56 named scenarios. The new review records cross-profile
 eligibility, byte/provenance/time distinctions, dependent-copy removal, shared
 resource pressure, feature/schema/restore gates, contract materialization and the
 B2 stop-versus-upload distinction. Baseline task prerequisites now include only
@@ -122,3 +122,18 @@ in 39. Original complete matrices stay in 10/26/33/38; 43 adds refinement mappin
 No new runtime, schema file, production policy engine or readiness claim is created.
 Future proof must use actual recorded fixtures/commands/environment and independently
 verifiable artifacts; a coherent specification still requires measured feasibility.
+
+## Revision 0.8 technical and future identity review
+
+ADR-009/documents 44–49 refine Docker/host/job isolation, PostgreSQL grants/schema/
+connection/query/maintenance, environment/config/install/upgrade, and measurable
+operator backup/telemetry/recovery. The source/primary register distinguishes
+reviewed static files/vendor facts from unperformed daemon/DB/browser tests.
+
+Twelve new IAM IDs select U1–U3 without changing V0's 70 requirements. Current
+totals: 170 requirements (100 later-stage), 72 tasks and 68 scenario definitions.
+Core parent dependencies now use actual build/runner/DB/deployment/recovery subtasks;
+no U stage is a baseline prerequisite. Future AccessSpace, fixed role bundles and
+qualified federation are architecture/data/API migrations, not hidden flags on the
+existing collections or imported credentials. Runtime and planned-component status
+remain unchanged; no real account, build, SQL migration or restore is claimed.

@@ -1,6 +1,6 @@
 # Selected V0 baseline and parameter register
 
-Date: 2026-11-09. Revision: 0.7. Status: **engineering choices selected; runtime
+Date: 2026-11-09. Revision: 0.8. Status: **engineering choices selected; runtime
 qualification pending**. Owner: engineering lead; reviewer roles remain unassigned
 to individuals. This continuation resolves design alternatives without claiming
 human sign-off, tested behavior, a production release or implementation of contracts.
@@ -33,6 +33,7 @@ Empirical feasibility can reopen a choice; it cannot waive evidence/privacy inva
 | DEC-14 | ADR-006: explicit private submission context and independent importance in V0; H1–H4 investigation/handoff later | EWP-31 before V0 qualification; HUN-ACC and stage gates in document 33 |
 | DEC-15 | ADR-007: optional post-V0 MV3 companion, explicit server/local modes and narrow paired intake | EWP-41–52, B-ACC-01–12; native API/permission/fidelity/restore gates before enablement |
 | DEC-16 | ADR-008: shared profile policy, dependency fences, capacity and feature/restore state; registered B2 observation versus upload consent | EWP-53–60 and applicable SYS-ACC-01–10, no new product requirement or V0 extension dependency |
+| DEC-17 | ADR-009: concrete Docker/job isolation, PostgreSQL/schema/pool, deployment/maintenance and later U1/U2/U3 | Documents 44–49; real OPS gates and explicit future-role/access migration, not live configuration changes |
 
 ADR-005 supersedes the earlier optional-candidate treatment: C0 Source history is
 explicit V0 scope; C1–C4 are selected later-stage work. Documents 21–26 define the
@@ -101,7 +102,7 @@ monitoring/send becomes a V0 requirement.
 [ADR-006](../decisions/0006-investigation-context-and-handoff.md) adds REQ-ORG-001/002
 to V0: immutable private request context and separately revisioned shared triage.
 The ADR-006 pass produced 134 requirements, including 70 V0 and 64 later-stage.
-ADR-007 adds 24 browser-channel requirements: current total 158, 70 V0 / 88 later.
+ADR-007 added 24 browser-channel requirements: that pass totaled 158, 70 V0 / 88 later.
 [Document 28](28-investigation-context.md) defines H0 fields, races and migration.
 Documents 28–32 own later-stage bounds for tasks/views, annotations, search/cues,
 reports and native transfer. Those limits do not enable a feature in V0 or replace
@@ -124,6 +125,17 @@ ADR-008/documents 39–43 refine existing IDs and limits without adding V0 featu
 Per-operation slots are ceilings under the shared heavy permit, not simultaneous
 capacity promises. Document 42 owns the shared counter/fairness details; documents
 40/41 own purpose-specific profile eligibility and dependency/removal authority.
-Current totals remain 158 requirements (70 V0 / 88 later), with 60 implementation
-tasks and 56 named scenario definitions. Measured environment and real runtime
-qualification remain pending.
+The ADR-008 pass totals 158 requirements (70 V0 / 88 later), with 60 implementation
+tasks and 56 named scenario definitions. ADR-009/document 49 subsequently bring
+current totals to 170 requirements (70 V0 / 100 later), 72 tasks and 68 scenarios.
+Measured environment and real runtime qualification remain pending.
+
+## Detailed operational parameter authority
+
+ADR-002's 4 CPU/8 GiB/40 GiB free-space test envelope remains a qualification
+candidate, not measured capacity. Document 44 owns concrete image/launcher/network/
+mount and 150s stop-grace design; 45 owns PG16 role/pool/query/migration budgets
+(max100 DB connections, <=30 aggregate runtime); 46/47 own settings/installation/
+upgrade/maintenance/recovery defaults. Those operation-specific authorities refine
+this register without changing evidence profile inventories or enabling features.
+Document 48 owns future IAM scope/caps; no U-stage default applies to V0 users.

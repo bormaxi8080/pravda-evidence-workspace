@@ -143,3 +143,10 @@ removed content from resurfacing; shared reservations protect the one-host model
 and qualified feature/schema gates control rollout/restore. The
 [integrated contract and delivery catalogue](requirements/43-contract-catalog-and-delivery-gates.md)
 refines the existing 158 requirements rather than expanding the product scope.
+
+[ADR-009](decisions/0009-deployment-database-and-future-identity.md) and
+[the technical/identity delivery plan](requirements/49-infrastructure-and-identity-delivery.md)
+make Docker job isolation, PostgreSQL authority, deployment and maintenance concrete.
+Future U1–U3 add explicit capability bundles, AccessSpace custody and qualified
+federation/workload identities. V0 keeps the shared two-role newsroom; restricted
+spaces do not pretend the trusted host/DB operator cannot access stored evidence.

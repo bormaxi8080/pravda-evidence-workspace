@@ -175,3 +175,19 @@ only bounded control/chunk/dispatch paths use their separately specified budgets
 Root fences deny affected reads/promotions before paged cleanup completes. These
 core contracts are materialized with V0; C/H/B-specific adapters arrive only with
 their stages. Actual memory/egress/DB/filesystem qualification is still required.
+
+## Concrete infrastructure and future access extension
+
+ADR-009/documents 44–47 materialize the selected topology: separate role-specific
+images/DB/edge/egress, private mounts/secrets and one host-trusted fixed-template
+launcher for per-job browser/offline containers. It alone crosses the daemon/host
+operator boundary; application/worker/browser/decoder containers have no Docker
+socket. Its private bounded API is not a general remote container executor. EWP-01
+must prove this mechanism or reopen topology without relaxing containment.
+
+Document 45 defines DB owner/runtime/migrator separation and finite pool/transaction
+budgets; 46/47 define installation, upgrade, maintenance and clean recovery. Future
+U2 adds one custody AccessSpace per evidence object and scope-aware dependencies/
+read/command paths. It does not add SaaS/microservices or make the development MCP
+graph an application security service. Every new identity scope is a later schema/
+protocol/adapter migration, not a flag on old collection membership.

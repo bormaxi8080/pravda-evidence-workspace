@@ -135,3 +135,12 @@ dependency/removal authority, shared capacity/feature compatibility and executab
 contract/fixture materialization. ADR-008 resolves the named conflicts; this is a
 refinement of 158 existing requirements, with 60 tasks and 56 scenario definitions.
 V0 implements only its current core subset; later branch adapters remain disabled.
+
+## Revision 0.8 technical and identity detail
+
+ADR-009/documents 44–49 refine the selected Docker/host/process, PostgreSQL role/
+schema/query, deployment/settings/upgrade and maintenance/recovery contracts. U1–U3
+add 12 explicitly later-stage identity/access definitions. Current totals: 170
+requirements (70 V0 / 100 later), 72 tasks and 68 scenario definitions. Complete
+IAM coverage and technical refinement gates live in 49; runtime qualification remains
+pending. No source config, account, live deployment or backup was changed.

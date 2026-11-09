@@ -5,7 +5,9 @@ Owner: browser/backend/evidence/security/operations. Authority: ADR-007.
 Documents 34–37 add 24 later-stage requirements to the prior 134. Current total:
 158 requirements, 70 V0 / 88 later; this pass has 52 implementation tasks.
 ADR-008/document 43 subsequently refine delivery to 60 tasks and 56 scenarios,
-without adding product requirements or changing stage scope.
+without adding product requirements or changing stage scope. ADR-009/document 49
+subsequently add 12 future IAM IDs; current totals are 170 requirements/72 tasks/68
+scenarios. Browser stage scope/owning requirement IDs stay unchanged.
 
 ## Stages and independence
 

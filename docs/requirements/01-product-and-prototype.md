@@ -141,3 +141,13 @@ without replaying credentials on the server. None is a prerequisite for the
 concept's baseline production release, and accepted browser bytes remain private.
 Cookie stores, hidden/background/all-sites collection and automatic public browser
 publication remain excluded. Server public-target capture restrictions are unchanged.
+
+## Future identity/access boundary
+
+ADR-009/document 48 selects U1 fixed role bundles/user lifecycle, U2 AccessSpace
+custody with restricted-space collections, and U3 qualified federation/workload
+principals. These are future-version requirements, not new V0 controls or tenant
+routing. V0 remains shared editor/admin with admin-only publication. Existing
+collections gain no inferred privacy from this design. No U stage is required for
+baseline production; technical deployment hardening in 44–47 still implements
+already mandatory core requirements.

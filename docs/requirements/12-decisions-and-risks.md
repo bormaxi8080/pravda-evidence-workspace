@@ -28,6 +28,7 @@ the table below retains alternative/context and qualification obligations.
 | DEC-14 Investigation/handoff | ADR-006: H0 explicit request context/importance in V0; H1–H4 annotations, search/cues, reports and native transfer later | Product + evidence/security/operations | Documents 28–33: provenance/revision/disclosure/quarantine limits and EWP-31 before V0 qualification |
 | DEC-15 Browser companion | ADR-007: independent MV3 B0/B1/B2, narrow expiring pairing/API, client-claimed acquisition profiles and verified quarantine; no baseline dependency | Browser + evidence/security/operations | Documents 34–38; real native API/permission/target/memory feasibility, B acceptance and EWP-41–52 |
 | DEC-16 Integrated policy/delivery | ADR-008: shared purpose eligibility, dependency/removal authority, aggregate resource reservations, feature/schema gates and registered-observation upload consent | Evidence/backend/security/operator | Documents 39–43; EWP-53–60 with actual core/owning-stage SYS evidence, not added product requirements |
+| DEC-17 Technical deployment and future identity | ADR-009: pinned role-specific images, host-trusted bounded launcher, DB role/pool/migration authority, operator lifecycle and later U1/U2/U3 | Deployment/database/security/product | Documents 44–49; real OPS gates, 12 post-V0 IAM IDs, no baseline U-stage dependency |
 
 V0 written design choices now have selected dispositions in ADR-002–004 and
 documents 13–17. Production WARC fidelity and measured operational objectives remain
@@ -54,6 +55,8 @@ in [the four-wave review](19-documentation-review.md).
 | Per-feature slots multiply host pressure | Queue starvation, OOM/full spool or lost work | One aggregate heavy permit, shared byte/position reservations and fair classes; backend/deployment lead |
 | Delayed cleanup leaves stale derived content readable | Renewed disclosure after source removal | Root fence before paged closure and current-read/finalizer checks; security/evidence lead |
 | Disabled flag masks incompatible writers/readers | Invalid data or accidental restored actions | Effective feature/schema/qualification/restore gate and compatibility rehearsal; operator/backend lead |
+| App role confused with DB/host privilege or private-space grant | Host compromise or unauthorized evidence disclosure | Separate principals, explicit bundle/space closure, trusted launcher boundary and real deny tests; security/domain lead |
+| Backups/maintenance appear healthy without coherent restore | False recovery assurance | Protected independent target, exact inventory/ledger/key and clean-host drill; operator/database lead |
 | Scope expands into crawler/AI/OSINT platform | Prototype never qualifies | Enforce V0/production/out-of-scope matrix; product lead |
 | Hashes marketed as truth/trusted time | False assurance | Precise receipt/UI language and known limitations; product/evidence lead |
 | Operator backup cannot restore | Irrecoverable newsroom evidence | Clean isolated restore with byte/record verification; operations lead |

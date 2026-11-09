@@ -129,3 +129,18 @@ requires a separate profile-specific disclosure/security gate; a normal editoria
 approval cannot bypass profile ineligibility. No URL/cookie/session authority is
 imported from saved HTML. Browser-profile and source-locality limits are explicit
 in document 36; B0 retains actual server-side SSRF enforcement.
+
+## Later U-stage authority and technical containment
+
+ADR-009/document 48 is a future refinement of the two-role matrix, not a change to
+V0. U1 maps existing effective rights explicitly into fixed capability bundles;
+U2 adds AccessSpace closure and optional review separation; U3 qualifies identity
+federation/workload grants. App admin is not host/DB operator, and future workspace
+administration alone is not restricted-content/publication authority. Publication
+still requires exact eligible evidence, revision and disclosure; raw originals and
+annotations do not become public from a role or imported grant.
+
+Document 44 places daemon access only in a host-trusted fixed job launcher. Browser/
+web/worker/decoder containers have no socket, broad host mounts or DB admin secrets.
+This is a containment design requiring real proof, not an assertion that Docker or
+an official Playwright image is safe for hostile content without qualification.

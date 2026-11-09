@@ -6,6 +6,8 @@ to the stable prior 107: two H0/V0, 25 later-stage. Total 134; V0 has 70 applica
 requirements, and later stages have 64 in this adoption pass. ADR-007/document 38
 subsequently bring requirement totals to 158, 70 V0 / 88 later and 52 tasks in that
 pass. ADR-008/document 43 refines delivery to 60 tasks/56 scenarios with IDs unchanged.
+ADR-009/document 49 subsequently add 12 future IAM requirements: current overall
+totals 170 requirements, 72 tasks and 68 scenarios, with H-stage IDs unchanged.
 Original IDs/scenarios stay stable.
 
 ## Stage boundaries and original implementation

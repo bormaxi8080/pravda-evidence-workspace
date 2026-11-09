@@ -151,3 +151,16 @@ feature enablement. Importing a passing-looking JSON report alone cannot grant a
 feature; the operator validates provenance/applicability. An ordinary service never
 self-promotes because a test process wrote a success flag. EWP-59 provides the
 rehearsal framework; each owning stage supplies its candidate and required cases.
+
+## Technical and future identity authority
+
+ADR-009/documents 44–47 provide concrete Docker/host launcher, PostgreSQL pool/role,
+settings and operations enforcement beneath these existing counters/descriptors.
+Per-job launcher capacity is independently bounded even if a faulty controller
+requests another process; launcher compromise remains a host-operator trust issue.
+
+U1/U2/U3 descriptors stay unsupported/disabled until document 49 gates. U2 requires
+scope-complete readers/writers for every actually enabled adapter; disabling an
+unsupported optional adapter is explicit, never a cross-space access fallback.
+Permission/schema changes preserve the same admission/worker/serving rechecks and
+restore hold. No U stage becomes a condition for core V0/baseline production.

@@ -107,3 +107,12 @@ cancel or removal fence still blocks finalizer commit. Server does not attest th
 a client truthfully observed the claimed interval.
 
 See documents 41–43 for dependency closure, resource/rollout and SYS verification.
+
+## Future identity scope refinement
+
+ADR-009/document 48 retains this purpose/profile policy and adds current effective
+capabilities and one AccessSpace custody predicate only when U stages are implemented.
+A privileged role, group, matching URL or imported scope cannot upgrade source
+provenance or profile eligibility. Derived selections/dependencies remain within
+one authorized space initially; move/publication/old-download disposition is explicit.
+Host/DB role privileges are not application content/publication permissions.

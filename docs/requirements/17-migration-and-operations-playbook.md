@@ -180,3 +180,19 @@ serving hold until reconciled. Restore replays the protected ledger, rotates epo
 verifies accepted bytes and marks missing temporary uploads interrupted before any
 resume. EWP-57/58 qualify the core procedure; EWP-59 exercises each later enabled
 branch. Commands/procedures remain target interfaces, not executed operations.
+
+## Concrete infrastructure/user continuation
+
+Documents 44–47 refine the target Compose/build/runtime, DB role/migration/pool,
+settings/installation/update and scheduled maintenance/clean-host drill contracts.
+Only edge ports are public; temporary job containers get no application/daemon
+credentials. DB backup alone does not capture accepted artifacts or current removal
+ledger. EWP-61–68 provide real subtask evidence for core parent gates; no procedure
+here was executed against a live installation.
+
+Future U1/U2/U3 migration in 48/49 previews effective permissions, preserves the
+shared default scope/history, prevents last-admin lockout and applies scoped access
+only after complete installed-adapter qualification. Preserve unknown historic
+privacy; do not label old collections restricted. Host/DB operator recovery remains
+separate from application role administration. Restore invalidates old grants and
+keeps stage-specific automation disabled until authority/scope/ledger checks pass.

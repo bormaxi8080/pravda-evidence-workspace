@@ -15,9 +15,27 @@ The inherited Python package 1.1.0 is a prototype baseline, not a newly issued r
 | Deployment (`deployment`) | `0.1.0` | prototype |
 | Evidence Contracts (`evidence-contracts`) | `0.0.0` | planned |
 | Governance (`governance`) | `0.1.2` | tooling |
-| Specification (`specification`) | `0.1.6` | documentation |
+| Specification (`specification`) | `0.1.7` | documentation |
 | UI Prototype (`ui-prototype`) | `0.1.0` | prototype |
 <!-- component-versions:end -->
+
+### Added — technical deployment and future identity design, 2026-11-09
+
+- Select ADR-009 and English Docker/host/isolation, PostgreSQL/schema/role/pool,
+  deployment/config/upgrade and maintenance/telemetry/recovery specifications,
+  grounded in current source and primary platform references.
+- Define a fixed host-trusted launcher with per-job isolation and no Docker socket
+  in application/browser/decoder containers; retain real sandbox/egress proof gates.
+- Add 12 post-V0 IAM requirements: fixed role bundles/user lifecycle, one-space
+  evidence custody and group/move policy, qualified federation/workload principals.
+- Add EWP-61–72 and OPS-ACC-01–12, refine core task prerequisites and preserve the
+  shared admin/editor V0 boundary. Totals: 170 requirements (70 V0/100 later),
+  72 tasks and 68 scenario definitions.
+
+Specification advances to 0.1.7; design revision to 0.8. Runtime Docker/DB/config,
+application/deployment component versions, credentials and product release remain
+unchanged. No build, daemon operation, SQL migration, real account, backup,
+deployment, identity-provider or recovery qualification was performed.
 
 ### Refined — integrated evidence policy and delivery gates, 2026-11-09
 
