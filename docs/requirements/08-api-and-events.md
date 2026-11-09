@@ -12,11 +12,12 @@ authorized services directly. Public/auth/health routes have separate purposes.
 
 | Method/path | Purpose | Permission and principal result |
 | --- | --- | --- |
-| POST `/captures` | Submit one capture intent | Editor/admin; 202 with capture/job IDs and initial state |
+| POST `/captures` | Submit one capture intent with explicit collection_ids and optional rationale | Editor/admin; 202 with capture/job IDs and initial state |
 | GET `/captures`, `/captures/{id}` | Bounded list/detail | Editor/admin; authorized DTO without host paths |
 | GET `/sources/{id}/captures` | Paged Source history, including non-complete/identical captures | Editor/admin; requested_at/ID descending, no GET mutation or public history |
 | GET `/captures/{id}/artifacts/{artifact_id}` | Private download | Editor/admin; artifact belongs to capture, safe file response |
 | PATCH `/captures/{id}/editorial` | Notes/title/tags/review command | Editor/admin; expected revision and resulting revision |
+| PATCH `/captures/{id}/triage` | Set normal/important with expected_triage_revision | Editor/admin; independent revision/audit, no review/public effect |
 | POST `/captures/{id}/retry` | New linked terminal-capture request | Editor/admin; 202, new capture/job IDs |
 | GET `/jobs/{id}`, `/jobs/{id}/events` | Current status and SSE | Editor/admin; no cross-object access leak |
 | POST `/jobs/{id}/cancel` | Cancel queued/request running stop | Editor/admin; actual accepted/current state |

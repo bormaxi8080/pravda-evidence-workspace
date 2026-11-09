@@ -4,7 +4,7 @@ Date: 2026-11-09. Revision: 0.3. Status: **engineering documentation pass comple
 implementation and qualification pending**. Owner: engineering lead.
 This is a self-review, not an independent human review or a runtime test report.
 
-This revision-0.3 review records the preceding pass. The current revision 0.4
+This revision-0.3 review records the preceding pass. The subsequent revision 0.4
 adoption is ADR-005 and documents 20–27: 107 selected requirements, including 68 V0
 and 39 later-stage, plus EWP-19–30. Original requirement IDs and prior source/test
 observations remain stable; C0 history now explicitly refines the V0 handoff.
@@ -77,3 +77,19 @@ link checks, requirement/scenario coverage and work-package dependency/reference
 checks. Inspect staged diff and versions. These establish documentation/tooling
 consistency only. Record actual command results in delivery; never infer runtime
 ACC results from them. Upstream review was source-only and imports no code/assets.
+
+## Revision 0.5 investigation/handoff refinement
+
+Official Hunchly documentation was compared in
+[the source register](../reference/hunchly-comparison.md); the product was not installed
+or tested. ADR-006/documents 28–33 add 27 requirements with HUN-ACC-01–10 and
+EWP-31–40. Current totals are 134 requirements (70 V0, 64 later-stage), 40 tasks.
+The earlier review/counts above record their historical pass, not current scope.
+
+Consistency refinements: keep Collection rather than duplicate Case; pin explicit
+submission context without worker overwrites; isolate importance from editorial
+approval; distinguish cue matching from CSS extraction; preserve exact quote/crop
+anchors; freeze report revisions/disclosure; quarantine native imports without
+foreign authority. The core V0 matrix/API/domain/qualification dependency includes
+H0. H1–H4 remain later-stage work. All new runtime scenarios are unexecuted; no
+independent review or implementation claim follows from this documentation pass.

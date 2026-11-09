@@ -14,9 +14,25 @@ The inherited Python package 1.1.0 is a prototype baseline, not a newly issued r
 | Deployment (`deployment`) | `0.1.0` | prototype |
 | Evidence Contracts (`evidence-contracts`) | `0.0.0` | planned |
 | Governance (`governance`) | `0.1.1` | tooling |
-| Specification (`specification`) | `0.1.3` | documentation |
+| Specification (`specification`) | `0.1.4` | documentation |
 | UI Prototype (`ui-prototype`) | `0.1.0` | prototype |
 <!-- component-versions:end -->
+
+### Added — evidence-linked investigation and handoff design, 2026-11-09
+
+- Compare Hunchly's documented workflows with the current source and selected
+  target; record source dates, edition limits and acquisition/trust differences.
+- Select ADR-006 and 27 English requirements for request context, independent
+  importance, anchored annotations, research tasks/views, evidence content search,
+  literal research cues, frozen reports and Workspace-native case transfer.
+- Add two requirements to V0 and 25 to later stages: 134 total, 70 V0 and 64 later.
+  Extend traceability with HUN-ACC-01–10 and EWP-31–40, including V0 dependencies.
+- Specify resource, disclosure, revision, quarantine, recovery and provenance
+  boundaries; defer browser-session capture, native attachments, regex and signatures.
+
+Specification advances to 0.1.4; design revision is 0.5. This is documentation
+design, not Hunchly interoperability, runtime implementation or qualification.
+No upstream code/assets, runtime dependencies or product release are introduced.
 
 ### Added — adopted comparison and monitoring design, 2026-11-09
 

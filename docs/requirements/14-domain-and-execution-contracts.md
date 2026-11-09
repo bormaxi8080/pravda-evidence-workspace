@@ -18,6 +18,8 @@ owning contract and is never a path for arbitrary unknown fields or executable c
 | Capture | id, source_id, requester_id, requested_at, options_revision, outcome, selected_attempt_id nullable, profile_id, manifest_sha256 nullable, legacy provenance flag | Capture/finalizer; accepted evidence fields immutable after terminalization |
 | Attempt | id, capture_id, job_id, attempt_no, generation, started/finished, deadline, engine/browser/options actuals, error_code, staging_key | Worker under current lease; unique(job_id,attempt_no), immutable finished history |
 | Artifact | id, attempt_id/capture_id, kind, storage_key, MIME, size bigint>=0, sha256 64 lowercase hex | Evidence finalizer; unique storage_key and unique(attempt_id,kind,path) |
+| CaptureIntentContext | capture_id unique, submitted collection_ids snapshot, optional rationale<=2048 chars, requester_id, submitted_at, origin=local/legacy_unknown | Admission transaction; immutable private context, never runner input or default evidence/export metadata |
+| CaptureTriage | capture_id unique, importance=normal/important, triage_revision, actor/time | Authorized revisioned triage service; default normal, audit; no editorial/review/publication mutation |
 | EditorialRevision | capture_id, revision, title, note, tag/membership snapshot, actor, timestamp, review state/reason | Editorial service; unique(capture_id,revision); append revisions, current pointer via compare-and-swap |
 | Publication | id, capture_id, slug unique, approved_revision, screenshot_artifact_id, public_metadata_json, active/revoked, publisher/time, revoke actor/time | Publication service; partial unique active publication per capture |
 | Job | id, type, entity_id, requester_id, status, state_revision, available_at, attempt_count, max_attempts, lease token/generation/expiry, cancel_requested_at, last_error | Job service; claimability index(status,available_at,id); state_revision changes on state mutation, not heartbeat |
@@ -68,6 +70,15 @@ approved/rejected -> in_review by explicit command or editorial edit. Approve re
 complete/integrity-valid evidence and expected editorial revision. Every editorial
 change increments revision and invalidates approval for future publication. Existing
 public projection is pinned; changing a tag must not silently alter its contents.
+
+Capture admission also pins the explicit context and initializes editorial membership
+and note/tag fields transactionally. Worker completion finalizes evidence only; it
+must not restore submission-time editorial values over edits made while queued.
+CSV preview pins batch-level context per selected row without adding CSV columns.
+Legacy unknown intent remains unknown. [Document 28](28-investigation-context.md)
+is authoritative for these H0/V0 additions. Triage is outside EditorialRevision;
+later annotation/task changes likewise do not approve evidence or alter a pinned
+public projection and have their own revision/disclosure contracts.
 
 ## CaptureEngine request/result
 

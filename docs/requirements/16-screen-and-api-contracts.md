@@ -44,17 +44,18 @@ stale revision is 409. State/audit/idempotency writes share a transaction.
 
 | Operation | Required input / optional fields | Success and important conflict |
 | --- | --- | --- |
-| POST `/captures` | `url`; condition_type default load; condition optional except css/text; title/note/tags optional | 202 `{capture_id,job_id,state:"queued",profile}`; policy/queue errors create no job |
-| GET `/captures` | q/host/creator/tag_ids/collection_id/states/date_start/date_end; cursor; limit 25 | 200 `{items,next_cursor}`; stable captured_at/id descending; unknown filter 422 |
-| GET `/captures/{id}` | Authorized ID | 200 capture outcome/profile/provenance/artifact summaries/editorial revision/review/publication summary; never host paths |
-| GET `/sources/{id}/captures` | Authorized source, cursor/limit | 200 safe capture history including identical/non-complete requests; requested_at/ID descending, no implicit change/ack |
+| POST `/captures` | `url`; condition_type default load; condition optional except css/text; title/note/tags, collection_ids and rationale<=2048 optional; explicit context confirmed | 202 `{capture_id,job_id,state:"queued",profile}`; policy/queue errors create no job |
+| GET `/captures` | q/host/creator/tag_ids/collection_id/states/date_start/date_end/importance; cursor; limit 25 | 200 `{items,next_cursor}`; stable captured_at/id descending; unknown filter 422; importance is shared triage, not approval |
+| GET `/captures/{id}` | Authorized ID | 200 capture outcome/profile/provenance/artifact summaries/editorial revision/review/publication summary, private submitted context and triage state/revision; never host paths |
+| GET `/sources/{id}/captures` | Authorized source, cursor/limit, optional importance filter | 200 safe capture history including identical/non-complete requests; requested_at/ID descending, no implicit change/ack |
 | GET `/captures/{id}/artifacts/{artifact_id}` | Artifact belongs to capture | Safe private byte response; MIME/attachment/no-store; missing/corrupt denied |
 | PATCH `/captures/{id}/editorial` | expected_revision; selected title/note/tag_ids/collection_ids | 200 new revision/current fields and review=in_review; empty no-op may return current revision |
+| PATCH `/captures/{id}/triage` | expected_triage_revision; importance=normal/important | 200 independent triage revision; stale 409, no review/public mutation |
 | POST `/captures/{id}/review` | expected_revision, state=in_review/approved/rejected, reason<=2048 chars | 200 new revision/state; reject approval if partial/integrity-blocked |
 | POST `/captures/{id}/retry` | Terminal capture; idempotency key; optional revised allowed options | 202 new linked capture/job; old result unchanged |
 | GET `/jobs/{id}` | Authorized ID | 200 state/state_revision/attempt/phase/next_retry/error/terminal capture ID, no fabricated progress |
 | POST `/jobs/{id}/cancel` | expected_revision matching job.state_revision | 202 cancel request or 200 already-cancelled replay; completed/stale revision conflicts |
-| POST `/batch-previews` | Multipart CSV upload or explicit text, never both | 201 preview id/revision/expiry/digest, row results; no jobs |
+| POST `/batch-previews` | Multipart CSV upload or explicit text, never both; explicit collection_ids/rationale defaults | 201 preview id/revision/expiry/digest, row results; no jobs |
 | POST `/batches` | preview_id, expected_revision, selected_rows, duplicate override; idempotency key | 202 batch ID + row/job mapping; actor/expiry/capacity conflicts are atomic |
 | GET `/batches/{id}` | cursor/limit | Aggregate authoritative counts + bounded row page, mixed outcomes explicit |
 | GET/POST `/collections` | Create name, optional description<=2048 | 200 list / 201 ID; normalized name collision 409 |
@@ -93,17 +94,25 @@ not mutate the current editorial revision or create a second active publication.
 If a 202 reply is lost, replay with the same key returns the original IDs. If queue
 admission fails, no subset of a confirmed batch is created.
 
+Submission context is pinned per request/tab and in the actor-bound CSV preview
+revision/digest; confirmation cannot silently use a subsequently switched collection.
+Initial editorial membership is created at admission; workers never overwrite later
+edits. Context and triage stay private and outside default evidence/export metadata.
+Importance has its own revision; the common expected_revision rule applies to the
+resource's named revision field, including expected_triage_revision here. See
+[document 28](28-investigation-context.md) for complete H0 bounds/migration behavior.
+
 ## Screen specification by observable behavior
 
 | Screen | Inputs / actions | Rendering and error contract |
 | --- | --- | --- |
 | Login | GitHub start; no registration bypass | Admission explanation, provider/denied/session-expired states; safe local return |
 | Dashboard | Recent jobs/captures, create/import links | Actual counts, private/public/review separate; empty state and degraded dependencies |
-| New capture | URL, four allowed condition types, notes/tags | Show engine-supported conditions and limits; retain safe entered data on field error, never secret query in generic error logs |
-| Batch preview | File/text, row/dedupe selections, explicit confirm | Every parsed row numbered; errors/duplicates explain selection; expired preview requires regeneration |
+| New capture | URL, four allowed condition types, notes/tags, explicit collections/rationale | Show engine-supported conditions and limits; retain safe entered data on field error, never secret query in generic error logs |
+| Batch preview | File/text, context defaults, row/dedupe selections, explicit confirm | Every parsed row numbered; errors/duplicates explain selection; expired preview requires regeneration |
 | Queue/job | State, attempt history, cancel/retry | Reconnecting banner with authoritative refresh; no spinner-only success and no percent invention |
 | Archive | Bound filters, stable cursor paging | Date interval invalidity shown; collections not described as private ACLs |
-| Capture detail | Screenshot, artifact/profile/integrity/provenance, editorial actions | Partial/missing/corrupt warnings; download attachments; terminal retry creates linked capture |
+| Capture detail | Screenshot, artifact/profile/integrity/provenance, editorial actions, independent importance | Partial/missing/corrupt warnings; download attachments; terminal retry creates linked capture |
 | Source history | Paged capture outcomes, safe times/profile/review/publication links | Same-byte/manual attempts retained, legacy unknown time explicit; no Compare/Watch/Notify controls before their stage |
 | Collections/tags | Group CRUD/membership | Explain group removal preserves captures; revision collisions reload rather than overwrite |
 | Review/publication preview | Approve/reject, admin preview/publish/revoke | Preview is exact anonymous projection; original secrets/notes not auto-selected; publish and review distinct |

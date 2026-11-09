@@ -69,3 +69,12 @@ and failure/recovery plan. Promote it through a new explicit ADR/requirement/tic
 set rather than interpreting this page as blanket implementation authorization.
 No deferred item may delay V0 or substitute for required production WARC/PDF/security
 and restore qualification.
+
+## Hunchly-inspired acquisition distinction
+
+[Document 32](32-transfer-and-acquisition-boundaries.md) keeps native photos,
+attachments, EXIF and browser-session acquisition separate from accepted HTML/PNG
+capture and Workspace-native transfer. A file digest verifies bytes; it does not
+establish the truth of EXIF, page ownership or a user's asserted origin. Future
+acquisition requires a format/provenance/security contract and independent fixtures;
+case import cannot silently activate these deferred capabilities.

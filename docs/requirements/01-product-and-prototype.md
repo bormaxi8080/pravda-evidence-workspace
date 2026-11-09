@@ -28,6 +28,7 @@ boundary. There is no claim of protecting evidence from an authorized host opera
 | Export | Private ZIP + HTML receipt and full checksum verification | Mandatory complete profile including WARC and PDF |
 | PDF | Optional, explicitly unavailable when disabled/failing | Required and tested; silent omission forbidden |
 | Editorial | Shared archive, collections, tags, notes, basic review/search | Usability-qualified complete core flow |
+| Investigation context | Explicit collection/rationale at submission; shared importance independent of review | Add anchored annotations, tasks/views, content search/cues, reports and native transfer at H1–H4 |
 | Source history | Authorized paged history of complete/partial/failed/cancelled captures; identical captures retained | Same evidence identity and history under later comparison/watch stages |
 | Publication | Admin-only explicit publish/revoke, screenshot and safe metadata | Same baseline; editor publishing only after policy decision |
 | Public downloads | Screenshot and public metadata only; raw evidence packages private | Optional explicitly approved downloads, with disclosure review |
@@ -56,6 +57,8 @@ UI shall state this model before use with different confidentiality groups.
 V0 shall support sign-in, URL/CSV submission, job progress, capture inspection,
 organization, notes, review, private export, explicit admin publication and revocation.
 Source detail also exposes the authorized capture history defined by REQ-HIS-001.
+REQ-ORG-001/002 add explicit submission context and independent shared importance;
+ADR-006 and documents 28–33 define their bounded V0 scope and later investigation stages.
 An editor shall not need a terminal for those activities. Operator maintenance
 may use documented CLI commands. Unsupported features shall not appear to work.
 

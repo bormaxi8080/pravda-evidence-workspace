@@ -36,9 +36,11 @@ implemented features or automatic additions to the V0 release gate.
 
 V0 now explicitly includes REQ-HIS-001: Source history using existing records,
 including failed/partial requests and identical manual captures. The original 67
-requirements remain stable, so V0 has 68 applicable requirements. Comparison,
-profiles, watches and delivery add 39 selected later-stage requirements. Total
-selected requirements are 107; no later-stage gate is silently imposed on V0.
+requirements remain stable. This ADR-005 pass produced 68 V0 plus 39 later-stage
+requirements (107 total). ADR-006 subsequently adds two V0 and 25 later-stage
+investigation requirements: current totals are 70 V0 and 64 later-stage (134).
+[Document 33](33-investigation-roadmap-and-acceptance.md) owns that continuation;
+no later-stage gate is silently imposed on V0.
 
 C1 starts after qualified V0. Production WARC/PDF/security/recovery remain mandatory
 and independent; comparison delivery cannot excuse their omission. No calendar,

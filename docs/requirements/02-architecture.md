@@ -128,3 +128,20 @@ See [the baseline register](13-selected-v0-baseline.md),
 [contracts and operator procedures](README.md) and
 [assignable work packages](18-assignable-work-packages.md).
 Implementation/qualification remain pending; source presence is not test evidence.
+
+## Investigation services and trust boundaries
+
+[ADR-006](../decisions/0006-investigation-context-and-handoff.md) reuses the modular
+monolith, PostgreSQL, durable jobs and artifact store for context/triage and later
+annotation, corpus/cue, report and transfer services. No browser companion or new
+search cluster is introduced. Exact bytes, editorial metadata, triage, derived
+findings and report snapshots are separate authorities with versioned references.
+
+Flow for later H stages: authorized original -> bounded offline derivation ->
+verified annotation/hit -> explicit frozen report/transfer selection -> controlled
+private rendering/package. Untrusted import -> private quarantine -> bounded offline
+validation -> admin mapping preview -> fenced staged promotion/transactional accept.
+Offline decoders/extractors/renderers have no external network or general secrets;
+only the trusted controller commits records/promotes output. The web process never
+unpacks case archives or executes archived content. See documents 28–33 for exact
+limits/permissions and qualification before enablement.

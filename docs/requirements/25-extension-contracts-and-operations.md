@@ -148,3 +148,10 @@ analysis versions/options, caveats and explicit content permission. Initial C1
 offers protected screen inspection only; shareable/public diff and derived-report
 export need separate acceptance before exposure. No content-bearing notification
 is an indirect substitute for that permission.
+
+H3 report profiles in [document 31](31-investigation-reports.md) are investigation
+reports with their own evidence/annotation disclosure gate. They do not silently
+export C1 diff outputs or C2/C3/C4 definitions/payloads. A shareable comparison-report
+profile remains separate work. H1 anchors/H2 runs reuse exact versioned C1 input
+references and the bounded derived-data dependency policy; pinned context cannot be
+evicted as ordinary cache. Original export inventories remain unchanged.

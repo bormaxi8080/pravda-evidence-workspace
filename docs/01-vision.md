@@ -114,3 +114,15 @@ now adopts C0 Source history into V0 and C1–C4 comparison/profile/watch/delive
 into later stages, grounded in the [changedetection.io source review](reference/changedetection-io-review.md).
 The [stage requirements and EWP-19–30](requirements/26-adoption-roadmap-and-acceptance.md)
 define that continuation; visual/native-format and richer transport ideas remain deferred.
+
+[ADR-006](decisions/0006-investigation-context-and-handoff.md) and the
+[Hunchly comparison](reference/hunchly-comparison.md) extend the vision from storing
+pages to preserving research context and handing off source-linked findings.
+V0 gains explicit collection/rationale context at submission and independent shared
+importance. Later H1–H4 add anchored annotations/tasks/views, private content search
+and research cues, frozen selective reports and reviewed native case transfer.
+An editor's assertion remains distinct from observed acquisition metadata; derived
+crops/quotes remain distinct from immutable originals. Reports pin selected revisions
+and inclusions rather than becoming a changing collection or an implicit public page.
+[Investigation requirements and EWP-31–40](requirements/33-investigation-roadmap-and-acceptance.md)
+define the staged continuation. Browser-session acquisition remains separate work.

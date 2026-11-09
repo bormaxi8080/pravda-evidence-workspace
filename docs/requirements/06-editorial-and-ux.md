@@ -105,3 +105,17 @@ See [the baseline register](13-selected-v0-baseline.md),
 [contracts and operator procedures](README.md) and
 [assignable work packages](18-assignable-work-packages.md).
 Implementation/qualification remain pending; source presence is not test evidence.
+
+## Hunchly-inspired workflow refinement
+
+For V0, [document 28](28-investigation-context.md) adds visible per-request collection/
+rationale context and a shared normal/important flag with independent revision.
+Capture, CSV preview, archive, detail and Source history expose these consistently.
+Importance is triage: it does not invalidate editorial approval, acknowledge a
+comparison, publish, or alter the public projection. Explicit collection/note/tag
+edits still use the existing editorial revision and invalidate future approval.
+
+H1–H4 screens in documents 28–33 remain later-stage work: anchored annotations,
+research tasks/saved views, content search/cues, frozen report preview and reviewed
+transfer/import. A server capture cannot be presented as the editor's browser
+viewport/session. Do not expose apparently working later-stage controls in V0.

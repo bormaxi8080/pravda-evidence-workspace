@@ -15,6 +15,8 @@ not a claim that corresponding tables or migrations exist.
 | Capture | Stable ID, source, requester, requested options/time, terminal outcome, selected successful attempt, profile, final manifest digest |
 | CaptureAttempt | Attempt ID/number, job/lease owner, engine/browser versions, start/navigation/end times, actual URL/status, warnings/error and output staging reference |
 | Artifact | Stable ID, capture/attempt, kind, MIME, relative storage key, size, SHA-256 and creation time |
+| CaptureIntentContext | Immutable private submitted collection IDs/rationale and requester/time; context assertion, not captured provenance |
+| CaptureTriage | Shared normal/important state, independent revision and actor/time; no approval/publication side effect |
 | CaptureEditorial | Capture ID, revision, title/note, review state, reviewer and timestamps; separate from capture provenance |
 | Collection / Tag | Unique normalized identifiers/names, title/description, creator, membership relations |
 | Publication | Stable ID/public slug, capture, status, revision of approved public metadata/artifact allowlist, publisher/time and revocation record |
@@ -100,6 +102,7 @@ artifacts. Rebuilding a projection must not reset review/publication or audit hi
 | --- | --- | --- |
 | Complete capture | Final manifest committed; review remains unreviewed | Automatic public link activation |
 | Change note/tag | New editorial revision | Rehashing/replacing original evidence |
+| Change importance | New triage revision/audit | Editorial approval invalidation or public projection changes |
 | Approve evidence | Approved review revision with actor/time | Publishing without separate admin command |
 | Edit after approval | Return to in_review for future publication | Silently changing an already published projection |
 | Revoke publication | Original publication slug remains revoked | Deleting underlying private evidence |
@@ -116,3 +119,12 @@ See [the baseline register](13-selected-v0-baseline.md),
 [contracts and operator procedures](README.md) and
 [assignable work packages](18-assignable-work-packages.md).
 Implementation/qualification remain pending; source presence is not test evidence.
+
+## Investigation domain continuation
+
+[ADR-006](../decisions/0006-investigation-context-and-handoff.md) and documents
+28–32 separate request context, current editorial grouping and triage. Later
+AnnotationRevision, ResearchTask, SavedView, ResearchCue/Hit, ReportRevision and
+CaseTransfer/Import are logical contracts owned by those stages. None is an ACL,
+an automatic evidence approval, or an implemented table. Byte/provenance history,
+editorial approval, triage, personal attention and report disclosure remain separate.

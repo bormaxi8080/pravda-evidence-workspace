@@ -3,8 +3,10 @@
 Date: 2026-11-09. Status: **selected stage requirements; scenarios/tasks not executed**.
 Owner: engineering/product/security. Authority: ADR-005. Original 67 requirements
 remain stable; this pass adds 40 requirements: one C0/V0 history requirement and
-39 requirements for adopted post-V0 stages. Total selected requirements: 107.
-V0 has 68 applicable requirements; later-stage definitions are not V0 exit gates.
+39 requirements for adopted post-V0 stages. This adoption pass produced 107 total,
+including 68 V0. ADR-006 and [document 33](33-investigation-roadmap-and-acceptance.md)
+subsequently bring totals to 134, including 70 V0 and 64 later-stage. This matrix
+still covers its original 40 additions; later-stage definitions are not V0 exit gates.
 
 ## Stage boundary and component ownership
 

@@ -3,8 +3,8 @@
 Date: 2026-11-09. Status: **proposed test design; scenarios not executed**.
 Owner: engineering/QA lead with security and operations reviewers.
 Sources: concept sections 30–34; [testing policy](../operations/testing.md);
-requirement documents 01–09 plus V0 history in document 21. This matrix is not
-test-result evidence; later-stage requirement coverage is in document 26.
+requirement documents 01–09, V0 history in document 21 and context/triage in 28.
+This matrix is not test-result evidence; later-stage coverage is in documents 26/33.
 
 ## Scenario catalogue
 
@@ -17,6 +17,8 @@ review and export. Assert bytes/digests stay unchanged and no public access appe
 Use real PostgreSQL, filesystem and isolated browser for end-to-end qualification.
 Include Source history with repeated byte-identical captures and non-complete
 requests; verify paging, authorization and no inferred content-change claim.
+Include explicit per-tab collection/rationale intent and a queued-edit race as
+HUN-ACC-01; importance changes/filtering use HUN-ACC-02 and never approve evidence.
 
 ### ACC-02 CSV and admission boundaries
 
@@ -24,6 +26,8 @@ Test empty/invalid UTF-8/quoted/malformed/oversized CSV, row limit and one-over-
 invalid/blocked URLs, duplicate groups, repeated confirmation, expired preview and
 capacity exhausted between preview and confirm. Assert preview creates no jobs,
 confirmation creates one atomic selected set and oversize input is not truncated.
+Pin explicit collection/rationale defaults per row in preview revision/digest; a
+context switch before confirm cannot silently submit a different selection.
 
 ### ACC-03 Lease, restart and notification loss
 
@@ -56,7 +60,9 @@ Two users edit the same revision: one succeeds, stale write conflicts. Review a
 complete capture; reject approval of partial/corrupt evidence. Change editorial
 revision and confirm review invalidation for future publication while existing
 public projection stays pinned. Remove collection/tag membership without deleting
-evidence. Archive only as admin after revoking public access; no silent hard purge.
+evidence. Independent triage revisions leave approval/public projection unchanged;
+stale triage writes conflict without a GET mutation (HUN-ACC-02). Archive only as
+admin after revoking public access; no silent hard purge.
 
 ### ACC-07 Export and integrity outside the installation
 
@@ -112,7 +118,8 @@ not an already completed test.
 ## Complete requirement-to-scenario coverage
 
 Source sections are recorded in the owning requirement documents. All identifiers
-below are normative definitions in documents 01–09 and REQ-HIS-001 in document 21,
+below are normative definitions in documents 01–09, REQ-HIS-001 in document 21
+and REQ-ORG-001/002 in document 28,
 not duplicate definitions here.
 Scenario references indicate planned verification, never passed status.
 
@@ -123,6 +130,7 @@ Scenario references indicate planned verification, never passed status.
 | REQ-SCP-004, REQ-SCP-005 | [Product](01-product-and-prototype.md) | ACC-02, ACC-04, ACC-08 |
 | REQ-SCP-006 | [Product](01-product-and-prototype.md) | ACC-09, ACC-12 |
 | REQ-HIS-001 | [Source history](21-source-history-and-comparison.md) | ACC-01, ACC-04, ACC-10, ACC-11; detailed MON-ACC-07 in document 26 |
+| REQ-ORG-001, REQ-ORG-002 | [Context/triage](28-investigation-context.md) | ACC-01, ACC-02, ACC-06, ACC-11; HUN-ACC-01/02 in document 33 |
 | REQ-ARC-001, REQ-ARC-002, REQ-ARC-003 | [Architecture](02-architecture.md) | ACC-01, ACC-03, ACC-08 |
 | REQ-ARC-004, REQ-ARC-006 | [Architecture](02-architecture.md) | ACC-03, ACC-04, ACC-09 |
 | REQ-ARC-005 | [Architecture](02-architecture.md) | ACC-05, ACC-07, ACC-08 |
@@ -160,7 +168,7 @@ Scenario references indicate planned verification, never passed status.
 
 ## Exit gates and evidence records
 
-V0 requires applicable ACC-01 through ACC-11 plus the documentation-ready gate,
+V0 requires applicable ACC-01 through ACC-11, HUN-ACC-01/02 and the documentation-ready gate,
 with disabled optional monitoring/PDF clearly recorded. No critical privacy,
 evidence-loss, isolation or authorization defect may be deferred behind "prototype".
 ACC-12 and all concept section 33 conditions are additional production gates.
@@ -176,7 +184,8 @@ explicitly excluded from that stage, with rationale and remaining production gat
 The existing 36 governance tests validate engineering tooling only; they do not
 execute the proposed runtime scenarios above.
 
-The V0 registry now has 68 requirements (67 original plus explicit history).
-The 39 adopted later-stage requirements are covered in
-[the extension acceptance matrix](26-adoption-roadmap-and-acceptance.md).
-Their gates apply when C1–C4 is implemented, not as hidden V0 prerequisites.
+The V0 registry now has 70 requirements (67 original, history and two context/triage).
+The 64 later-stage requirements have coverage in the
+[comparison/monitoring matrix](26-adoption-roadmap-and-acceptance.md) and
+[investigation matrix](33-investigation-roadmap-and-acceptance.md).
+Their gates apply to their stated later stages, not as hidden V0 prerequisites.

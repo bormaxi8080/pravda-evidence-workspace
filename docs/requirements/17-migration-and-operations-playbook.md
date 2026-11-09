@@ -137,3 +137,20 @@ storage reserve, integrity findings, backup success and restore rehearsal result
 Keep detailed job events 7 days/export spool 24h; retain job summaries/audit per
 explicit operator retention policy without UI deletion. Captures have no automatic
 retention purge in V0. Define production RPO/RTO/backup schedules after measurements.
+
+## H0 context/triage migration and later investigation rollout
+
+V0 migrations add private request context and independent triage with normal default.
+Do not infer legacy rationale/entry mode or historical importance from tags, notes,
+review or public flags. Preserve current editorial revisions and publication pins.
+CSV intent records include context in preview/admission digests; workers never
+restore stale editorial fields. Backups include these application records; default
+capture/export/public metadata does not. EWP-31/HUN-ACC-01/02 qualifies this delta.
+
+Later H1–H4 rollout follows documents 28–33: annotation revisions/dependency pins;
+versioned private corpus/cues; frozen report selections; native transfer/quarantine.
+Foreign identities remain claims, not accounts. Reconcile promoted package bytes
+against acceptance state on restart. Restore initially disables automatic analysis/
+generation/import acceptance, applies deletion/revocation ledgers, invalidates removed
+input dependencies and checks access before any resumed work. Include search snippets,
+crops, report spools and quarantine in the emergency-purge dependency report.

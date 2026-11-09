@@ -1,6 +1,6 @@
 # Selected V0 baseline and parameter register
 
-Date: 2026-11-09. Revision: 0.4. Status: **engineering choices selected; runtime
+Date: 2026-11-09. Revision: 0.5. Status: **engineering choices selected; runtime
 qualification pending**. Owner: engineering lead; reviewer roles remain unassigned
 to individuals. This continuation resolves design alternatives without claiming
 human sign-off, tested behavior, a production release or implementation of contracts.
@@ -29,6 +29,8 @@ Empirical feasibility can reopen a choice; it cannot waive evidence/privacy inva
 | DEC-10 | Preserve/map IDs; suspend unreviewed legacy public links with explicit mapping/report | Synthetic legacy migration and operator review rehearsal |
 | DEC-11 | Durable sessions, browser-bound OAuth state, operator bootstrap, enabled-role checks | Live OAuth and recovery/disablement tests |
 | DEC-12 | Concept production criteria retained; ADR-005 selects C0 in V0 and C1–C4 later | WARC/PDF/security/pilot/support remain independent; stage qualification per document 26 |
+| DEC-13 | ADR-005: C0 history in V0, C1–C4 comparison/monitoring later | Stage gates and extension resource/permission contracts in documents 21–26 |
+| DEC-14 | ADR-006: explicit private submission context and independent importance in V0; H1–H4 investigation/handoff later | EWP-31 before V0 qualification; HUN-ACC and stage gates in document 33 |
 
 ADR-005 supersedes the earlier optional-candidate treatment: C0 Source history is
 explicit V0 scope; C1–C4 are selected later-stage work. Documents 21–26 define the
@@ -66,6 +68,7 @@ retroactively relabel incomplete output as complete.
 | Ready export temp lifetime | 24 hours | Private, reauthorized each download; source capture not deleted |
 | List / input strings | 25 default, 100 max; URL 8,192 bytes; title 256 chars | Reject excess; do not truncate silently |
 | Notes / tags / names | Note 16,384 chars; 50 tags/capture; tag 64, collection 128 chars | Unicode display retained; comparison keys specified in document 14 |
+| Submission rationale | Optional, at most 2,048 chars | Private context assertion, pinned with explicit collection IDs; no default manifest/export/public inclusion |
 | Capture ports | HTTP 80, HTTPS 443 | Other ports excluded from V0; never implicit private-network exceptions |
 
 DB transactions for admission, state change and lease operations have a selected
@@ -87,3 +90,15 @@ Definition detail lives in documents 14–17. The original 67 requirement IDs re
 stable. REQ-HIS-001 adds explicit Source history to V0; the 39 comparison/profile/
 watch/delivery requirements apply only to selected later stages. No automatic
 monitoring/send becomes a V0 requirement.
+
+## Investigation/handoff adoption
+
+[ADR-006](../decisions/0006-investigation-context-and-handoff.md) adds REQ-ORG-001/002
+to V0: immutable private request context and separately revisioned shared triage.
+The registry now has 134 requirements, including 70 V0 and 64 later-stage.
+[Document 28](28-investigation-context.md) defines H0 fields, races and migration.
+Documents 28–32 own later-stage bounds for tasks/views, annotations, search/cues,
+reports and native transfer. Those limits do not enable a feature in V0 or replace
+the original engine/export budgets. Exact source/derivative/report identities and
+individual stage gates remain mandatory; selectors in Hunchly are research terms,
+not our browser readiness or comparison extraction CSS selectors.

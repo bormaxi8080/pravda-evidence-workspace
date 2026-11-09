@@ -129,3 +129,13 @@ diagnostics. Download expires after 24 hours; expiration removes only export spo
 not capture bytes. Client receives state/code/request ID and a new-export option.
 Production WARC/PDF fidelity and optional derived comparison profiles are different
 contracts; neither is silently appended to historical V0 evidence.
+
+## Private investigation-context boundary
+
+The H0/V0 CaptureIntentContext and CaptureTriage in documents 14/28 are application
+records. Collection/rationale submission context and importance do not enter
+`metadata/capture.json`, the capture manifest, default exports or public metadata.
+An explicit editorial export may contain the selected current editorial snapshot;
+it must not silently disclose historical submission rationale, tasks, annotations,
+queries or cues. Later reports/native transfer require the separate exact disclosure
+profiles in documents 31/32; no V0 evidence-profile revision is implied here.

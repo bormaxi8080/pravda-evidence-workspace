@@ -27,7 +27,7 @@ or throughput commitment is inferred from this table.
 | EWP-12 Publication and safe public viewer | EWP-05/06/08/10; publication/security/UX | Exact admin preview, pinned projection, new slug, revoke, no-store asset authorization and legacy mapping | ACC-05/06/10 anonymous/private/old slug/proxy asset tests, no raw evidence/notes/usernames; no GET state mutations |
 | EWP-13 Private export and verifier | EWP-02/06/08/10; evidence | Bounded ZIP/HTML/export job, independent verifier, explicit profile/PDF/metadata options, expiry | ACC-07 real package independent verification, empty/damaged/duplicate/path cases; safe receipt and required-PDF failure |
 | EWP-14 Install/backup/restore/upgrade | EWP-01/04/05/07/08/12/13; operations | Implement target workspace-admin interfaces from 17; maintenance boundary, coherent backup, isolated restore, emergency purge ledger and upgrade runbooks | ACC-09/10 clean install/restore with matching IDs/bytes/audit; old sessions/egress/publication disabled in rehearsal; no untested shell-command claim |
-| EWP-15 Integrated V0 qualification | EWP-09–14; engineering + security/operations/UX | Full applicable ACC-01–11 evidence dossier, measured environment/limits, browser/accessibility review and defect triage | All mandatory gates pass, no skipped required evidence; explicit optional PDF/monitoring gaps and no unresolved critical privacy/loss/isolation defect |
+| EWP-15 Integrated V0 qualification | EWP-09–14/31; engineering + security/operations/UX | Full 70-requirement V0 dossier including HUN-ACC-01/02 and applicable ACC-01–11, measured environment/limits, browser/accessibility review and defect triage | All mandatory gates pass, no skipped required evidence; explicit optional PDF/monitoring gaps and no unresolved critical privacy/loss/isolation defect |
 | EWP-16 V0 operator handoff | EWP-15; product/operator | Known limitations, editor/operator onboarding, support/incident path and reproducible pilot package manifest | Named operator can execute core/recovery runbooks on test environment; separate release decision, no automatic push/tag/deploy |
 | EWP-17 Production format/monitoring delta | EWP-16 + production design; evidence/operations | Explicit WARC fidelity profile/validator, safe required PDF, availability probes and automated monitored backups/upgrade | ACC-12 format/interoperability/security/restore evidence; old V0 profiles retain historical identity |
 | EWP-18 Production review and pilots | EWP-17; product/security/operations | Security/dependency review, measured supported limits/RPO/RTO, concept-target pilot evidence and release-candidate dossier | All concept section 33 conditions and critical defects closed; release/version/tag/publication separately authorized |
@@ -67,3 +67,11 @@ assign a person and validate its prerequisites; do not invent approvals or claim
 tests that have not run. The adopted C1–C4 continuation is defined as EWP-19–30 in
 [document 26](26-adoption-roadmap-and-acceptance.md); these later tickets are not
 silent V0 prerequisites. C0 Source history explicitly refines EWP-10/15.
+
+## Investigation continuation and V0 refinement
+
+[Document 33](33-investigation-roadmap-and-acceptance.md) adds EWP-31–40; together
+with EWP-19–30 in document 26, the registry has 40 assignable tasks. EWP-10/11 supply
+editorial and CSV foundations for EWP-31's explicit context/importance refinement.
+EWP-15 depends on EWP-31 so those two new V0 requirements cannot be skipped.
+EWP-31 does not depend on V0 qualification. H1–H4 tasks remain later-stage gates.

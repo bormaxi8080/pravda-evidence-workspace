@@ -108,3 +108,12 @@ UI review is required for user-visible state/error changes. Record review status
 document and reopen dependent sections when a contract changes. Do not estimate a
 calendar from page count. Estimate runtime tasks only after DOC-12, using a known
 team, infrastructure, capture-engine results and migration dataset constraints.
+
+## Revision 0.5 continuation
+
+[ADR-006](../decisions/0006-investigation-context-and-handoff.md) and documents
+28–33 apply the same four waves to Hunchly-inspired investigation/handoff. H0
+refines V0 context/triage; H1–H4 specify later annotations/search/reports/native
+transfer. The current source/requirement/scenario/task registry is linked from
+[the package index](README.md), with 134 requirements and 40 implementation tasks.
+A documentation gate remains distinct from measured runtime qualification.
