@@ -1,12 +1,14 @@
 # Decision register and risk ownership
 
-Date: 2026-11-09. Status: **open recommendations**, not accepted architecture ADRs.
+Date: 2026-11-09. Status: **design dispositions selected; qualification risks remain**.
 Owner: engineering lead; reviewer roles below require named assignees before delivery.
 Sources: concept sections 2.4, 34–35; [source review](../04-current-state.md).
-Only existing governance ADR-001 is accepted. Allocate future ADR-002 onward;
-the concept's example ADR numbers are not an adopted registry.
+Governance ADR-001 is unchanged; selected engineering ADR-002–004 now record
+V0 choices. The concept's example ADR numbers are not the adopted registry.
+[Document 13](13-selected-v0-baseline.md) is the current disposition/parameter register;
+the table below retains alternative/context and qualification obligations.
 
-## Decisions to resolve
+## Decision context and remaining qualification
 
 | ID | Recommendation and alternatives | Owner/reviewer | Blocking gate and evidence needed |
 | --- | --- | --- | --- |
@@ -23,10 +25,11 @@ the concept's example ADR numbers are not an adopted registry.
 | DEC-11 Admission/session/admin lifecycle | Fail-closed GitHub policy, durable opaque sessions, operator admin bootstrap, enabled/role checks, disable queued/stream access, protected audit | Security + operations | V0 identity: exact organization-membership failure policy, expiry/rotation, last-admin and incident recovery |
 | DEC-12 Production readiness and support | Maintain concept's WARC/PDF/security/recovery/pilot requirements, set performance/recovery objectives from measurements | Product + operations/security | Production release: complete acceptance/evidence matrix and known-limitations/support policy |
 
-All are open until their decision record names the chosen option, rationale,
-alternatives, consequences, compatibility and required verification. A provisional
-recommendation can guide specification drafting but cannot close an implementation
-gate that depends on an unresolved contradictory contract.
+V0 written design choices now have selected dispositions in ADR-002–004 and
+documents 13–17. Production WARC fidelity and measured operational objectives remain
+production work. No human reviewer sign-off or empirical qualification is fabricated.
+Failed feasibility reopens the affected choice and dependent tickets, as described
+in [the four-wave review](19-documentation-review.md).
 
 ## Risks and planned mitigations
 

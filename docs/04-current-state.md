@@ -15,6 +15,8 @@ No original investigations, credentials or runtime datasets were used.
 | Data | `models.py` has User, Snapshot, Job, collections/tags, UrlCheck and AuditLog | Source/Capture/Artifact/Publication separation, review state and migration history are not implemented |
 | Schema | `Base.metadata.create_all` on startup | Alembic upgrade/data-migration path is absent |
 | Sessions | `auth.py` maps random session tokens to logins in a process-local dictionary | Persistent/expiring sessions and multi-process behavior require design and tests |
+| Admission | `routers/auth.py` enters restriction logic only under `if allowed_logins and gh_login not in allowed_logins` | Org-only and empty allowlist configurations do not reach a fail-closed admission check in this source; EWP-05 requires regression coverage |
+| OAuth/logout | State is process-local, not browser-bound/expiring; logout deletes the cookie without revoking the dictionary token | Durable bound single-use state, session revocation/expiry and safe methods are required by the selected identity contract |
 | Publication | `Snapshot.is_public` defaults false; public routes check it | Publication records/revocation semantics are proposals; screenshot responses currently advertise a one-year immutable public cache |
 | Artifacts | PNG and MHTML written to paths from `DATA_DIR`; path strings stored in DB | Storage keys, atomicity/reconciliation and immutable artifact records require design |
 | Export | `forensic.py` writes MHTML/PNG/JSON/HTML/checksums, optional PDF | No WARC/manifest; PDF failures are swallowed, so completeness needs an explicit contract |
@@ -39,3 +41,11 @@ No original investigations, credentials or runtime datasets were used.
 Do not infer secure operation from the absence of a parser warning or from
 README claims. These findings guide a fuller prototype/threat-model audit before
 implementation planning. This baseline deliberately leaves runtime behavior unchanged.
+
+## Continuation finding and design disposition
+
+The additional admission/OAuth/logout findings above come from source inspection,
+not an attempted login or confirmed live exploit. They are implementation blockers
+for pilot use. [Selected contracts](requirements/13-selected-v0-baseline.md) and
+[assignable tickets](requirements/18-assignable-work-packages.md) now specify the
+intended fixes and required evidence; prototype runtime remains unchanged.

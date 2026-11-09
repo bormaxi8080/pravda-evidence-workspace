@@ -1,6 +1,6 @@
 # Capture, batch and durable execution requirements
 
-Date: 2026-11-09. Status: **proposed**. Owner: capture/backend lead.
+Date: 2026-11-09. Status: **selected execution design; implementation pending**. Owner: capture/backend lead.
 Sources: concept sections 8.4–8.6, 11–13, 18, 22, 30;
 current `capture.py`, `jobs.py`, `routers/job_routes.py`, `url_monitor.py`.
 Decisions: DEC-03, DEC-07, DEC-09. Limits: [prototype scope](01-product-and-prototype.md).
@@ -103,6 +103,14 @@ allowed network policy and output staging namespace. Output: actual engine/brows
 identity, exact provenance, artifact inventory with sizes, per-condition outcomes,
 warnings and structured failure. Credentials and arbitrary host paths are not inputs.
 
-Pending choices: heartbeat/lease/backoff values, preview lifetime, event retention,
-recovery authority and engine transport. Record them through DEC-03/07/09 and align
-API, UX and operations documents. Acceptance: ACC-01/02/03/04/08/11/12.
+Selected heartbeat/lease/backoff, preview/event retention and engine/CSV/SSE
+contracts are in [document 13](13-selected-v0-baseline.md) and
+[document 14](14-domain-and-execution-contracts.md). Real recovery/race evidence
+remains an implementation obligation. Acceptance: ACC-01/02/03/04/08/11/12.
+
+## Detailed selected design
+
+See [the baseline register](13-selected-v0-baseline.md),
+[contracts and operator procedures](README.md) and
+[assignable work packages](18-assignable-work-packages.md).
+Implementation/qualification remain pending; source presence is not test evidence.

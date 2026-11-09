@@ -1,6 +1,6 @@
 # Derived implementation roadmap
 
-Date: 2026-11-09. Status: **proposed after specification acceptance**.
+Date: 2026-11-09. Status: **selected delivery sequence; implementation pending**.
 Owner: engineering lead. Source: documents 01–10 and concept sections 30–35.
 This is the dependency-ordered software roadmap. The separate
 [documentation plan](00-documentation-plan.md) describes how to qualify its inputs.
@@ -32,7 +32,9 @@ the first time. No stage needs separate infrastructure for every logical module.
 
 ## IMP-00 Decision and prototype audit foundation
 
-Dependencies: DOC-12 documentation gate. Owner: engineering/product/security leads.
+Dependencies: DOC-12 written design review in document 19. EWP-01 supplies
+empirical feasibility before dependent runtime work; it does not depend on a
+full product runtime gate that it is meant to help establish. Owner: engineering/product/security leads.
 Components: Specification; Governance only if actual workflow tooling changes.
 
 Inventory current behavior, package/build defects, route/DB/file mappings and

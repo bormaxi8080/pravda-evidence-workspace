@@ -1,6 +1,6 @@
 # Domain and data requirements
 
-Date: 2026-11-09. Status: **proposed**. Owner: domain/backend lead.
+Date: 2026-11-09. Status: **selected domain design; implementation pending**. Owner: domain/backend lead.
 Sources: concept sections 9–12, 15–21, 24–25; current `models.py` and `database.py`.
 Decisions: DEC-04/05/07/08/10/11. Logical entities below are target contracts,
 not a claim that corresponding tables or migrations exist.
@@ -109,3 +109,10 @@ artifacts. Rebuilding a projection must not reset review/publication or audit hi
 V0 permits one active public publication per capture. Production may allow multiple
 projections only after defining independent audience/revision/disclosure rules.
 Acceptance scenarios: ACC-01/03/04/05/06/07/09/10.
+
+## Detailed selected design
+
+See [the baseline register](13-selected-v0-baseline.md),
+[contracts and operator procedures](README.md) and
+[assignable work packages](18-assignable-work-packages.md).
+Implementation/qualification remain pending; source presence is not test evidence.

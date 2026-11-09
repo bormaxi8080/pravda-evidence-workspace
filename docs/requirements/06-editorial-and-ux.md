@@ -1,6 +1,6 @@
 # Editorial functionality and UX requirements
 
-Date: 2026-11-09. Status: **proposed**. Owner: product/UX lead.
+Date: 2026-11-09. Status: **selected UX requirements; implementation pending**. Owner: product/UX lead.
 Sources: concept sections 2.2, 13, 17–20, 27; root `index.html` and existing
 Jinja templates. Decisions: DEC-01/05/06. The mockup is design input, not evidence
 that filters/settings/review/queue behavior are implemented.
@@ -38,7 +38,7 @@ Editors shall add/remove captures from multiple collections, normalize tags and
 edit title/notes without changing evidence. Collection/tag deletion removes the
 grouping, not its captures. All admitted users share V0 internal evidence; do not
 present collections as private folders. Filter/sort/pagination parameters shall
-survive navigation where useful and have stable documented ordering. Proposed V0:
+survive navigation where useful and have stable documented ordering. Selected V0:
 case-insensitive URL/title query, exact normalized host/creator, collection,
 all-selected-tags matching, review/publication/capture states and UTC date interval
 with inclusive start/exclusive end. Sort by capture time descending, then ID;
@@ -55,7 +55,7 @@ two-person approval is a later optional policy, not an implied safeguard.
 
 ### REQ-UX-004 Publication is a separate deliberate workflow
 
-Only admins publish/revoke in proposed V0. The UI shall preview exactly what an
+Only admins publish/revoke in selected V0. The UI shall preview exactly what an
 anonymous visitor can see and require an explicit action on approved complete
 evidence. Creating a capture, tagging, reviewing or exporting shall never publish it.
 Show an active public link and its withdrawal limits. Raw archive/private export
@@ -73,8 +73,8 @@ means unknown/not checked, never a reassuring "online" inferred from old HTTP st
 
 Provide keyboard-operable forms/actions, visible focus, associated labels, readable
 status/error text and non-color-only state indicators. Keep dark/light themes and
-responsive layouts from the prototype. Specify and test contrast/focus against
-the project's chosen accessibility target before making a compliance claim; no
+responsive layouts from the prototype. Use the WCAG 2.2 AA evaluation target selected in document 16 and test contrast/focus
+before making a compliance claim; no
 current conformance certification is asserted by this document.
 
 ### REQ-UX-007 Settings reflect actual configuration
@@ -98,3 +98,10 @@ not add mock controls for AI, tenancy or unsupported storage/engines as working 
 Keep destructive/irreversible consequences explicit in the product flow without
 exposing irrelevant implementation details to newsroom users. Acceptance:
 ACC-01/02/03/04/05/06/07/09/11/12.
+
+## Detailed selected design
+
+See [the baseline register](13-selected-v0-baseline.md),
+[contracts and operator procedures](README.md) and
+[assignable work packages](18-assignable-work-packages.md).
+Implementation/qualification remain pending; source presence is not test evidence.

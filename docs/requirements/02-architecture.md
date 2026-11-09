@@ -1,11 +1,11 @@
 # Architecture requirements
 
-Date: 2026-11-09. Status: **proposed**. Owner: engineering lead.
+Date: 2026-11-09. Status: **selected architecture; qualification pending**. Owner: engineering lead.
 Sources: concept sections 6–8, 12, 15, 22–29; current `main.py`, `capture.py`,
 `jobs.py`, `database.py` and Compose under `provereno-ui/`.
 Decisions: DEC-02, DEC-03, DEC-07, DEC-08, DEC-09.
 
-## Recommended shape
+## Selected shape
 
 One Python modular monolith serves editorial workflows, backed by PostgreSQL and
 a filesystem artifact store. Request serving and hostile browser execution are
@@ -55,9 +55,9 @@ The application shall call a versioned internal CaptureEngine contract, supplyin
 validated URL, capture options, limits and correlation IDs. The result shall contain
 artifact references/bytes, actual provenance, navigation outcome, warnings and
 structured errors. No provider-specific object becomes a domain model.
-Recommended V0: preserve direct Playwright behind an adapter in the isolated runner;
-Pravda remains the preferred candidate subject to contract/fidelity evaluation.
-Only one implementation is required for V0. DEC-03 must settle this before coding.
+Selected V0: direct Playwright behind an adapter in the isolated runner, per
+[ADR-002](../decisions/0002-v0-scope-and-topology.md). Pravda is a later evaluated
+adapter candidate; do not implement two engines for V0. EWP-01 proves feasibility.
 
 ### REQ-ARC-004 PostgreSQL owns durable workflow
 
@@ -85,8 +85,8 @@ not falsely completed captures. Never imply a cross-resource ACID transaction.
 ### REQ-ARC-007 Deployment and observability boundaries
 
 Use one-host Compose for V0: edge proxy, web, trusted worker, isolated runner,
-PostgreSQL and maintenance command/process. Whether runner is a Pravda service or
-project-owned Playwright service is DEC-03; do not deploy both unnecessarily.
+PostgreSQL and maintenance command/process. The selected runner is project-owned Playwright
+under ADR-002; do not deploy a second Pravda service unnecessarily.
 Only edge HTTP(S) is public in the target topology. Internal services/DB are not
 public ports. Correlate requests, jobs, attempts, captures and publications in logs.
 
@@ -118,5 +118,13 @@ serving stale grants. Disk exhaustion prevents finalization and new admission wi
 an operator-visible reason. Worker crash is governed by document 04, not by an
 unobserved background-task exception.
 
-Acceptance scenarios: ACC-03/04/08/09/10/12. Detailed deployment network/volume
-permissions and adapter selection are blocking design outputs, not implemented facts.
+Acceptance scenarios: ACC-03/04/08/09/10/12. Detailed network/volume/adapter contracts are in
+[document 14](14-domain-and-execution-contracts.md); implementation and isolation
+qualification remain EWP-01/09 obligations, not implemented facts.
+
+## Detailed selected design
+
+See [the baseline register](13-selected-v0-baseline.md),
+[contracts and operator procedures](README.md) and
+[assignable work packages](18-assignable-work-packages.md).
+Implementation/qualification remain pending; source presence is not test evidence.

@@ -43,7 +43,9 @@ is not imported into this product.
 Prefer a modular Python monolith, FastAPI/Jinja server rendering, PostgreSQL,
 separate worker/scheduler processes, a replaceable capture-engine boundary, local
 artifact storage, Nginx and Docker Compose. The concept favors Pravda/Playwright;
-the current prototype uses Playwright directly. Resolve the adapter choice in an ADR.
+the current prototype uses Playwright directly. [ADR-002](decisions/0002-v0-scope-and-topology.md)
+selects an isolated direct-Playwright runner for V0 behind a replaceable contract;
+Pravda remains a later evaluated adapter candidate. Runtime isolation is unqualified.
 
 One newsroom per deployment is the initial operational model. Keep deployment
 simple enough to install, upgrade, back up and restore without a permanent engineer.
@@ -86,10 +88,10 @@ mandatory signatures, browser extensions and semantic diffs are outside the init
 critical path. Locus and the country OSINT catalog stay independent repositories;
 no integration or cross-repository graph relationship is implied by MCP registration.
 
-Next decisions: package/product naming and release migration; direct Playwright vs
-Pravda adapter; evidence schemas/WARC strategy; queue/worker ownership; publication
-and cache withdrawal; permissions/deletion; migration from prototype data; storage
-consistency and recovery boundaries. Record alternatives and consequences as ADRs.
+Selected V0 decisions, parameters and contracts now live in
+[the baseline register](requirements/13-selected-v0-baseline.md) and ADR-002–004.
+Empirical build/isolation, runtime/migration/restore evidence, production WARC
+fidelity and measured support objectives remain work, not completed properties.
 
 ## Evidence for readiness
 
@@ -101,8 +103,11 @@ success and latency, queue recovery, storage growth, restore correctness and edi
 completion of the workflow; set numeric targets with pilot constraints later.
 
 The [requirements package](requirements/README.md) expands this vision into a
-proposed V0 boundary, architecture, functional/nonfunctional requirements,
+selected V0 boundary, architecture, functional/nonfunctional requirements,
 documentation work packages, acceptance scenarios and a derived implementation
 roadmap. The [original specification brief](05-next-design-phase.md) remains context.
-Architecture decisions and runtime qualification are still outstanding; the
-requirement package does not implement or certify the target product.
+The [four-wave review](requirements/19-documentation-review.md) and
+[18 assignable work packages](requirements/18-assignable-work-packages.md) record
+design handoff and pending qualification. The requirement package does not
+implement or certify the target product. Optional comparison/monitoring is proposed
+separately after a [source review of changedetection.io](reference/changedetection-io-review.md).

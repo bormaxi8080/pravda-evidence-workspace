@@ -1,6 +1,6 @@
 # Operations, migration and recovery requirements
 
-Date: 2026-11-09. Status: **proposed**. Owner: operations/backend lead.
+Date: 2026-11-09. Status: **selected operational design; qualification pending**. Owner: operations/backend lead.
 Sources: concept sections 23–26, 29–33; existing Compose/Dockerfile/Nginx,
 `main.py`, `config.py` and [source review](../04-current-state.md).
 Decisions: DEC-01/02/08/09/10/11. Nothing here asserts a working deployment runbook.
@@ -8,8 +8,8 @@ Decisions: DEC-01/02/08/09/10/11. Nothing here asserts a working deployment runb
 ## Deployment baseline to specify
 
 One Linux host, Compose, a qualified PostgreSQL version, filesystem volume and TLS
-edge. Existing Compose uses PostgreSQL 16 while README/concept mention 15; select
-and pin a tested major in DEC-02 rather than promising both. Pin the tested engine/
+edge. Existing Compose uses PostgreSQL 16 while README/concept mention 15; ADR-002 selects
+16 as the first qualification target. Pin actual build digests during EWP-01. Pin the tested engine/
 browser and Python/dependency builds; no unqualified latest-image compatibility claim.
 Document host architecture, storage permissions, temporary space and resource limits.
 
@@ -95,5 +95,13 @@ untrusted legacy absolute paths. Preserve bytes before relocation; refuse path
 traversal and do not ingest arbitrary host files. Imported audit history keeps its
 origin/unknowns. Never make a data migration public by default.
 
-Acceptance: ACC-01/03/04/05/07/08/09/10/12. Detailed executable commands and validated
-container/platform choices are implementation-stage outputs after decisions close.
+Acceptance: ACC-01/03/04/05/07/08/09/10/12. Target command interfaces and mapped
+procedures are in [document 17](17-migration-and-operations-playbook.md); executable
+commands and tested build/platform evidence remain EWP-01/14 outputs.
+
+## Detailed selected design
+
+See [the baseline register](13-selected-v0-baseline.md),
+[contracts and operator procedures](README.md) and
+[assignable work packages](18-assignable-work-packages.md).
+Implementation/qualification remain pending; source presence is not test evidence.

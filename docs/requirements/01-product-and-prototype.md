@@ -1,6 +1,6 @@
 # Product requirements and first-prototype boundary
 
-Date: 2026-11-09. Status: **proposed**. Owner: product lead.
+Date: 2026-11-09. Status: **selected V0 scope; qualification pending**. Owner: product lead.
 Sources: concept sections 1–6, 13, 27, 32–34, 36–37; HTML mockup;
 [current-state review](../04-current-state.md). Decisions: DEC-01, DEC-04, DEC-05,
 DEC-06, DEC-09, DEC-12 in [decision register](12-decisions-and-risks.md).
@@ -17,7 +17,7 @@ The initial deployment serves one mutually trusted editorial team. Admin is an
 application role; host/database administrators remain a separate operational trust
 boundary. There is no claim of protecting evidence from an authorized host operator.
 
-## Proposed scope matrix
+## Selected scope matrix
 
 | Capability | V0 controlled pilot prototype | Production baseline from concept |
 | --- | --- | --- |
@@ -35,7 +35,7 @@ boundary. There is no claim of protecting evidence from an authorized host opera
 | Operations | Clean install, migration rehearsal, manual quiesced backup/restore tested | Automated repeatable procedures, defined service objectives |
 | Quality | Core happy/denied/failure/recovery scenarios | Expanded integration/security/E2E, pilots and known limitations |
 
-The V0/production split is a new proposal. WARC and mandatory PDF are deferred
+The V0/production split is selected in ADR-002/003. WARC and mandatory PDF are deferred
 only from the controlled prototype, not deleted from the original concept.
 
 ## Requirements
@@ -67,11 +67,12 @@ trusted time or authorship. A public page is a projection of evidence, not a ful
 V0 shall validate configurable limits before accepting work where possible and
 stop bounded processing when a runtime limit is reached. It shall never silently
 truncate CSV rows, artifacts, exported files or results while claiming completeness.
-The proposed starting limits below require review and later resource tests.
+The starting limits below are selected design defaults; they require later resource tests.
+The complete authoritative parameter register is [document 13](13-selected-v0-baseline.md).
 
 | Setting | Proposed starting value | Intended behavior at boundary |
 | --- | --- | --- |
-| CSV rows | 500 maximum accepted rows | Reject larger input before job creation; preview invalid/duplicate rows |
+| CSV rows | 500 parsed data rows | Reject larger input before job creation; preview invalid/duplicate rows |
 | CSV bytes | 1 MiB | Reject excessive upload/text before full parsing |
 | Active browser captures | 1 per installation by default | Keep remaining jobs durable/queued; higher values require qualification |
 | Pending capture jobs | 1,000 | Reject admission beyond cap; batch confirmation is all-or-nothing |
@@ -81,8 +82,8 @@ The proposed starting limits below require review and later resource tests.
 | Artifact size | 100 MiB per artifact; 250 MiB per attempt | Abort bounded writes and preserve diagnosable partial state |
 | Interactive list size | 25 default, 100 maximum | Bound API/UI pagination; reject invalid page sizes |
 
-Maximum screenshot dimensions, export bytes and disk-reserve threshold are blocking
-configuration decisions in DEC-09. Byte limits must be enforced while streaming;
+Selected additional caps: 40,000,000 screenshot pixels, 512 MiB export ZIP, and
+free reserve max(1 GiB, 10% of the corresponding volume), detailed in document 13. Byte limits must be enforced while streaming;
 checking after a large file is fully allocated does not meet this requirement.
 
 ### REQ-SCP-005 Capture support boundaries
@@ -110,6 +111,13 @@ Mobile layout and dark/light themes remain UX expectations, not separate applica
 ## Acceptance and unresolved points
 
 Verification scenarios: ACC-01/02/03/04/05/07/09/11/12 in document 10.
-Scope, role/disclosure policy, hard resource ceilings and production profile must
-be reviewed before implementation. Existing code is input to migration, not a
+Scope, roles/disclosure, hard starting ceilings and V0 profiles are selected in
+ADRs 002–004 and documents 13–17; production format qualification remains separate. Existing code is input to migration, not a
 waiver of these requirements.
+
+## Detailed selected design
+
+See [the baseline register](13-selected-v0-baseline.md),
+[contracts and operator procedures](README.md) and
+[assignable work packages](18-assignable-work-packages.md).
+Implementation/qualification remain pending; source presence is not test evidence.

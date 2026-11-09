@@ -3,7 +3,7 @@
   "schema_version": 1,
   "name": "specification",
   "display_name": "Specification",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "status": "documentation",
   "runtime": "none",
   "planned_path": null,
@@ -15,7 +15,11 @@
     "docs/04-current-state.md",
     "docs/05-next-design-phase.md",
     "docs/requirements/**",
-    "docs/reference/specification-template.md"
+    "docs/reference/specification-template.md",
+    "docs/reference/changedetection-io-review.md",
+    "docs/decisions/0002-v0-scope-and-topology.md",
+    "docs/decisions/0003-evidence-and-publication.md",
+    "docs/decisions/0004-execution-storage-and-identity.md"
   ],
   "responsibilities": [
     "product-vision",

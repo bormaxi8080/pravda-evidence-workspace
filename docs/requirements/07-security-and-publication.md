@@ -1,11 +1,11 @@
 # Identity, security, publication and audit requirements
 
-Date: 2026-11-09. Status: **proposed**. Owner: security/backend lead.
+Date: 2026-11-09. Status: **selected security requirements; qualification pending**. Owner: security/backend lead.
 Sources: concept sections 6.2–6.4, 17, 20–22, 34; current `auth.py`,
 `routers/auth.py`, `routers/public.py`, `routers/snapshots.py`, `audit.py`.
 Decisions: DEC-05/06/09/11. No security review or runtime qualification is claimed.
 
-## Proposed V0 permissions
+## Selected V0 permissions
 
 | Operation | Anonymous | Editor | Admin |
 | --- | --- | --- | --- |
@@ -106,6 +106,13 @@ control/test table before enabling hostile public Internet capture. Security
 controls are required in V0; independent review breadth grows before production.
 
 Bootstrap admin with a documented operator command using a verified identity;
-never promote the first arbitrary registrant. DEC-11 resolves disablement, session
-invalidation, audit access and the last-admin recovery path. Acceptance:
+never promote the first arbitrary registrant. Selected DEC-11 session/admission, disablement and operator recovery contracts
+are detailed in documents 13/16/17; implementation tests remain pending. Acceptance:
 ACC-01/02/04/05/06/07/08/09/10/11/12.
+
+## Detailed selected design
+
+See [the baseline register](13-selected-v0-baseline.md),
+[contracts and operator procedures](README.md) and
+[assignable work packages](18-assignable-work-packages.md).
+Implementation/qualification remain pending; source presence is not test evidence.

@@ -1,11 +1,11 @@
 # API, service and event requirements
 
-Date: 2026-11-09. Status: **proposed contract design**. Owner: API/backend lead.
+Date: 2026-11-09. Status: **selected API design; implementation pending**. Owner: API/backend lead.
 Sources: concept sections 11–13, 20, 26–28; current routers under `provereno-ui/`.
 Decisions: DEC-06/07/09/10/11. This document does not publish OpenAPI or change
 existing routes. A machine-readable contract is a subsequent implementation artifact.
 
-## Proposed interface inventory
+## Selected interface inventory
 
 All internal JSON paths below have `/api/v1` prefix. SSR may invoke the same
 authorized services directly. Public/auth/health routes have separate purposes.
@@ -36,7 +36,7 @@ authorized services directly. Public/auth/health routes have separate purposes.
 Public: GET `/evidence/{slug}` and publication-scoped screenshot/metadata paths.
 Auth: GitHub start/callback/logout with safe method/protocol handling. Health:
 `/health/live`, `/health/ready` with public-safe minimal results and private diagnostics.
-Exact compatibility paths for existing `/public/evidence/{id}` are DEC-10.
+Selected compatibility behavior for `/public/evidence/{id}` is in documents 16/17.
 
 ## Requirements
 
@@ -91,10 +91,18 @@ link to private content without policy checks. Schema/profile unknown versions f
 explicitly. Published client contracts cannot be broken merely because V0 is a scope
 label; inherited package 1.x compatibility is addressed by DEC-01/10.
 
-## Details to finish before implementation
+## Detailed contract and implementation output
 
-OpenAPI/DTO examples, error code catalogue, idempotency retention and ownership,
-SSE replay bounds, cross-process notification behavior, rate-limit responses,
-user/role mutation routes and route-by-route legacy mapping must be explicit.
+[Document 16](16-screen-and-api-contracts.md) defines DTO/examples, errors, revision/
+idempotency behavior, user/role routes and legacy mapping; documents 13/14 define
+retention/SSE/queue limits. EWP-02 materializes and validates OpenAPI/DTO schemas.
+EWP-06–13 implement and verify the actual service behavior.
 The V0 API is for the same-origin editorial client; no token API/public integration
 SDK is implied. Acceptance: ACC-01/02/03/04/05/06/07/10/11/12.
+
+## Detailed selected design
+
+See [the baseline register](13-selected-v0-baseline.md),
+[contracts and operator procedures](README.md) and
+[assignable work packages](18-assignable-work-packages.md).
+Implementation/qualification remain pending; source presence is not test evidence.

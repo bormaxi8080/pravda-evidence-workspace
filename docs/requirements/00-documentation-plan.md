@@ -1,14 +1,16 @@
 # Documentation delivery plan
 
-Date: 2026-11-09. Status: **proposed**. Owner: engineering lead with product,
+Date: 2026-11-09. Status: **written design pass completed; runtime qualification pending**. Owner: engineering lead with product,
 security and operations reviewers. Affected component: Specification.
 Sources: concept sections 2, 29–35; [design brief](../05-next-design-phase.md).
 
 ## Objective
 
 Create an implementation-ready specification set before expanding prototype code.
-This change delivers the first written requirement baseline in documents 01–12.
-The work below explains how to complete, reconcile and qualify that baseline.
+The first baseline is documents 01–12. The continuation in documents 13–20 and
+ADRs 002–004 completes/refines the written design; [review results](19-documentation-review.md)
+and [assignable tickets](18-assignable-work-packages.md) record actual handoff limits.
+The work below remains the reusable method for completing and qualifying the baseline.
 It is a documentation work breakdown, distinct from the later runtime roadmap.
 No dates or team estimates are asserted without named owners and availability.
 
@@ -86,7 +88,7 @@ and unknowns as decision entries, not vague TODO statements.
 ## Implementation-ready documentation gate
 
 - Mandatory V0 requirements are unambiguous, assigned to domain owners and traceable.
-- All `blocks V0` decisions have dispositions; architecture recommendations have ADRs.
+- All V0 design choices have recorded dispositions/ADRs; empirical build/isolation gates remain ticket prerequisites.
 - State/permission/error tables agree across domain, jobs, API, UI and operations.
 - Numeric limits and configuration ownership are defined; no unmeasured SLA is promised.
 - Prototype migration, evidence-loss prevention and rollback limits are specified.

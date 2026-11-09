@@ -1,14 +1,15 @@
 # Evidence preservation, integrity and export requirements
 
-Date: 2026-11-09. Status: **proposed**. Owner: evidence/domain lead.
+Date: 2026-11-09. Status: **selected evidence design; implementation pending**. Owner: evidence/domain lead.
 Sources: concept sections 6.3–6.4, 14–17, 24, 34.2/34.5;
 current `capture.py`, `forensic.py`, `routers/export.py`.
 Decisions: DEC-04, DEC-05, DEC-08, DEC-09, DEC-12.
 
 ## Artifact profiles
 
-Proposed labels below identify contracts; machine-readable schema implementation
-and final IDs remain a future Evidence Contracts task.
+Selected profile IDs, serialization/inventory and finalization rules are specified
+in [document 15](15-evidence-and-publication-contracts.md). Machine-readable schema
+implementation remains EWP-02 and does not change planned component status here.
 
 | Artifact | V0 complete profile | Production complete profile |
 | --- | --- | --- |
@@ -47,8 +48,8 @@ exclude credentials/session material from ordinary metadata and all public proje
 SHA-256 shall cover exact stored bytes. The capture manifest lists required evidence
 and provenance metadata using normalized relative paths, MIME, sizes and digests;
 it does not list its own digest. Persist the exact deterministic UTF-8 manifest
-bytes and store their SHA-256 in the capture record. Define JSON serialization and
-field ordering before contract implementation. A checksum file may include the
+bytes and store their SHA-256 in the capture record. Use the selected JSON serialization/field ordering in document 15; validate it
+when materializing the schema/verifier. A checksum file may include the
 manifest plus listed files, but never its own checksum. The export manifest/checksum
 layer separately includes receipts and any export-time metadata.
 
@@ -119,3 +120,10 @@ evidence-<capture-id>.zip
 
 Production adds WARC at an explicitly named path. This illustration is not a
 released file-format schema. Acceptance: ACC-01/04/05/07/09/10/12.
+
+## Detailed selected design
+
+See [the baseline register](13-selected-v0-baseline.md),
+[contracts and operator procedures](README.md) and
+[assignable work packages](18-assignable-work-packages.md).
+Implementation/qualification remain pending; source presence is not test evidence.

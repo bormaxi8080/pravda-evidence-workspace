@@ -14,8 +14,9 @@
 > from this checkout. Read the [source/target review](docs/04-current-state.md) before
 > deployment. Start development with [AGENTS.md](AGENTS.md), [CONTRIBUTING.md](CONTRIBUTING.md),
 > the [vision](docs/01-vision.md), [component catalog](docs/03-components.md) and
-> [CHANGELOG](CHANGELOG.md). The proposed [requirements and implementation-design package](docs/requirements/README.md)
-> defines the first-prototype boundary and the documentation/implementation roadmap.
+> [CHANGELOG](CHANGELOG.md). The [requirements and implementation-design package](docs/requirements/README.md)
+> defines the selected first-prototype design, detailed contracts and assignable work;
+> implementation and runtime qualification remain pending.
 
 **Self-hostable web archive interface for fact-checkers and newsrooms**
 

@@ -14,9 +14,25 @@ The inherited Python package 1.1.0 is a prototype baseline, not a newly issued r
 | Deployment (`deployment`) | `0.1.0` | prototype |
 | Evidence Contracts (`evidence-contracts`) | `0.0.0` | planned |
 | Governance (`governance`) | `0.1.1` | tooling |
-| Specification (`specification`) | `0.1.1` | documentation |
+| Specification (`specification`) | `0.1.2` | documentation |
 | UI Prototype (`ui-prototype`) | `0.1.0` | prototype |
 <!-- component-versions:end -->
+
+### Added — selected design and source-monitoring research, 2026-11-09
+
+- Complete the written four-wave design pass with three selected engineering ADRs,
+  exact V0 parameters, domain/execution/engine, evidence/publication, screen/API and
+  migration/operations contracts, and a consistency/refinement review.
+- Derive 18 assignable implementation work packages with dependencies, responsible
+  roles, concrete outputs and verification gates; feasibility/runtime qualification remain pending.
+- Review changedetection.io at pinned commit c01f1546417a2fb34eb5add32b35ca56002e248c;
+  record source/test/license evidence, adoption priorities and implementation-level lessons.
+- Propose optional post-V0 comparison/filter/watch/notification increments while
+  preserving the 67 core requirements and existing prototype scope.
+
+Specification advances to 0.1.2; design revision is 0.3. Engineering choices are
+selected for planning, not represented as human sign-off or tested implementation.
+No upstream code/assets/dependencies, runtime behavior or release metadata changed.
 
 ### Added — proposed requirements package, 2026-11-09
 
