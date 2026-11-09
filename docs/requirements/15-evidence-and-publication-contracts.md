@@ -139,3 +139,14 @@ An explicit editorial export may contain the selected current editorial snapshot
 it must not silently disclose historical submission rationale, tasks, annotations,
 queries or cues. Later reports/native transfer require the separate exact disclosure
 profiles in documents 31/32; no V0 evidence-profile revision is implied here.
+
+## Browser profile extension
+
+[Document 36](36-browser-evidence-and-intake.md) defines separately versioned
+workspace-browser-viewport/1, workspace-browser-page/1 and workspace-browser-export/1.
+Original client bytes/inventory remain unchanged; server actor/receipt/verifier facts
+have a separate manifest and time scope. They do not extend the V0 capture/export
+inventory, prove HTTP/network fidelity or supply missing WARC. Initial browser
+submissions are private-only; legacy generic publish/export handlers must reject
+these profiles until their particular adapter/gate is qualified. H3/H4 support is
+an explicit EWP-51 subgate, not automatic acceptance of all client files.

@@ -116,3 +116,16 @@ See [the baseline register](13-selected-v0-baseline.md),
 [contracts and operator procedures](README.md) and
 [assignable work packages](18-assignable-work-packages.md).
 Implementation/qualification remain pending; source presence is not test evidence.
+
+## Optional companion security delta
+
+ADR-007/documents 35–37 add a separate scoped bearer boundary after V0. Same-origin
+cookie/CSRF rules still govern the web app and human pairing approval; companion
+endpoints never accept those cookies as bearer fallback. Check current actor/grant/
+instance epoch/ownership at chunk and finalizer commit, validate messages/host paths
+and quarantine all client bytes. CORS/client IDs do not authenticate collectors.
+Initial browser profiles remain private inspection/export only. Public publication
+requires a separate profile-specific disclosure/security gate; a normal editorial
+approval cannot bypass profile ineligibility. No URL/cookie/session authority is
+imported from saved HTML. Browser-profile and source-locality limits are explicit
+in document 36; B0 retains actual server-side SSRF enforcement.

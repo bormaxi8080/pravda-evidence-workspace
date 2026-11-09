@@ -24,8 +24,9 @@ the table below retains alternative/context and qualification obligations.
 | DEC-10 Legacy schema and public routes | Preserve bytes/IDs or explicit mappings; migrate old public flags via reviewed publication policy. Alternatives: compatible old links vs documented withdrawal with operator/user notice | Backend + product/security | V0 migration: table/path/route map, anomaly handling, old-link privacy and rollback/restore limits |
 | DEC-11 Admission/session/admin lifecycle | Fail-closed GitHub policy, durable opaque sessions, operator admin bootstrap, enabled/role checks, disable queued/stream access, protected audit | Security + operations | V0 identity: exact organization-membership failure policy, expiry/rotation, last-admin and incident recovery |
 | DEC-12 Production readiness and support | Maintain concept's WARC/PDF/security/recovery/pilot requirements, set performance/recovery objectives from measurements | Product + operations/security | Production release: complete acceptance/evidence matrix and known-limitations/support policy |
-| DEC-14 Investigation/handoff | ADR-006: H0 explicit request context/importance in V0; H1–H4 annotations, search/cues, reports and native transfer later | Product + evidence/security/operations | Documents 28–33: provenance/revision/disclosure/quarantine limits and EWP-31 before V0 qualification |
 | DEC-13 Adopted comparison/monitoring | C0 Source history in V0 and staged C1–C4 comparison/profile/watch/delivery, per ADR-005 | Product + evidence/security/operations | Documents 21–26: 40 requirements with stage gates; deferred investigations in 27 remain separate |
+| DEC-14 Investigation/handoff | ADR-006: H0 explicit request context/importance in V0; H1–H4 annotations, search/cues, reports and native transfer later | Product + evidence/security/operations | Documents 28–33: provenance/revision/disclosure/quarantine limits and EWP-31 before V0 qualification |
+| DEC-15 Browser companion | ADR-007: independent MV3 B0/B1/B2, narrow expiring pairing/API, client-claimed acquisition profiles and verified quarantine; no baseline dependency | Browser + evidence/security/operations | Documents 34–38; real native API/permission/target/memory feasibility, B acceptance and EWP-41–52 |
 
 V0 written design choices now have selected dispositions in ADR-002–004 and
 documents 13–17. Production WARC fidelity and measured operational objectives remain
@@ -46,6 +47,9 @@ in [the four-wave review](19-documentation-review.md).
 | Misleading success on empty/partial capture | Editorial reliance on missing evidence | Profile completion gates and visible partial outcome; capture/product lead |
 | Migration invents history or loses public-link meaning | Broken trust/compatibility | Preserve unknowns, explicit mapping/anomalies, rehearsal/backup; backend/operator |
 | Disk/browser/export resource exhaustion | Service failure/evidence loss | Streaming caps, admission control and reserve; operations lead |
+| Wrong tab or unintended authenticated content collected | Private browser content disclosure | Foreground/document generation checks, explicit scope/preview/consent, B2 pause and private-only profile gate; browser/security lead |
+| Compromised paired collector or leaked bearer | Forged provenance or unauthorized submission | Narrow expiring scopes, digest-only grants, revoke/epoch fencing, client-claim labels and quarantine; security/evidence lead |
+| Native browser API allocates before enforcing caps | Client exhaustion or misleading safety promise | Measure large-page native behavior, bound retained bytes, disable unqualified profiles; browser lead |
 | Scope expands into crawler/AI/OSINT platform | Prototype never qualifies | Enforce V0/production/out-of-scope matrix; product lead |
 | Hashes marketed as truth/trusted time | False assurance | Precise receipt/UI language and known limitations; product/evidence lead |
 | Operator backup cannot restore | Irrecoverable newsroom evidence | Clean isolated restore with byte/record verification; operations lead |

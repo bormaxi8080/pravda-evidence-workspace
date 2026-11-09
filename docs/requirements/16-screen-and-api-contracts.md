@@ -150,3 +150,13 @@ old toggle-public/delete endpoints return explicit 410 guidance, not silent togg
 or purge. Old public `/public/evidence/{id}` resolves through a reviewed publication
 mapping or safe unavailable response. Route migration changes are listed in the
 future package-major notes, tested in ACC-10 and reported before cutover.
+
+## Companion UI/API continuation
+
+The companion popup/options/later side panel and Workspace connection/received-
+evidence views are specified in documents 34–37. Add web UI flows for logged-in
+pairing approval with CSRF, own grant list/revoke, admin revoke-any and client-origin
+capture labels. Do not add browser-byte or token fields to POST `/captures` above:
+separate `/api/companion/v1` DTOs/scopes govern those operations. Uploaded/validating
+is not ready; client detail displays claimed capture time and separate server receipt.
+Unknown/ineligible browser profile cannot pass the existing publication command.

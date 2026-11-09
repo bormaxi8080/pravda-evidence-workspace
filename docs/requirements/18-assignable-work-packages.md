@@ -71,7 +71,14 @@ silent V0 prerequisites. C0 Source history explicitly refines EWP-10/15.
 ## Investigation continuation and V0 refinement
 
 [Document 33](33-investigation-roadmap-and-acceptance.md) adds EWP-31–40; together
-with EWP-19–30 in document 26, the registry has 40 assignable tasks. EWP-10/11 supply
+with EWP-19–30 in document 26, that pass has 40 assignable tasks. EWP-10/11 supply
 editorial and CSV foundations for EWP-31's explicit context/importance refinement.
 EWP-15 depends on EWP-31 so those two new V0 requirements cannot be skipped.
 EWP-31 does not depend on V0 qualification. H1–H4 tasks remain later-stage gates.
+
+## Browser companion continuation
+
+[Document 38](38-companion-roadmap-and-acceptance.md) adds EWP-41–52. The current
+registry has 52 tasks across documents 18/26/33/38. All browser tasks depend on
+qualified V0, never the reverse. B0 and B1 qualify independently of B2 and H/C
+adapters; these additions do not alter the 70 V0 requirements or EWP-15 gates.

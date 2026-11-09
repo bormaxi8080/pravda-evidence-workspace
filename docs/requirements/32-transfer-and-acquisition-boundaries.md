@@ -86,7 +86,9 @@ profile/completeness/integrity; unknown legacy/native profiles remain unsupporte
 ## Deferred acquisition paths and fidelity
 
 V0/H0–H4 do not passively collect an investigator's browsing, cookies, downloads or
-authenticated sessions. A future browser companion must have explicit per-session/
+authenticated sessions. ADR-007/documents 34–38 now select a separate B0–B2 companion
+with explicit local capture of authenticated page content, not credential replay.
+That design supersedes only the companion deferral here. The companion needs explicit per-session/
 case consent, visible pause, scoped permissions, origin/collector identity, transport
 authentication, partial-upload/replay and protected local buffering/purge semantics.
 Client-supplied bytes require a distinct acquisition profile and untrusted-input

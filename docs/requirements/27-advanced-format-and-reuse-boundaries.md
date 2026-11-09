@@ -78,3 +78,8 @@ capture and Workspace-native transfer. A file digest verifies bytes; it does not
 establish the truth of EXIF, page ownership or a user's asserted origin. Future
 acquisition requires a format/provenance/security contract and independent fixtures;
 case import cannot silently activate these deferred capabilities.
+
+ADR-007/documents 34–38 now select a browser channel separately from these native-
+format evaluations. Its PNG/MHTML profiles do not implement native downloads/EXIF,
+network WARC, full-page stitching or all-sites background capture. Actual profile
+adapters must preserve channel/trust/derivation labels before H/C integration.

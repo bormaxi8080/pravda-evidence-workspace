@@ -4,7 +4,7 @@ Date: 2026-11-09. Status: **proposed test design; scenarios not executed**.
 Owner: engineering/QA lead with security and operations reviewers.
 Sources: concept sections 30–34; [testing policy](../operations/testing.md);
 requirement documents 01–09, V0 history in document 21 and context/triage in 28.
-This matrix is not test-result evidence; later-stage coverage is in documents 26/33.
+This matrix is not test-result evidence; later-stage coverage is in documents 26/33/38.
 
 ## Scenario catalogue
 
@@ -185,7 +185,8 @@ The existing 36 governance tests validate engineering tooling only; they do not
 execute the proposed runtime scenarios above.
 
 The V0 registry now has 70 requirements (67 original, history and two context/triage).
-The 64 later-stage requirements have coverage in the
+The 88 later-stage requirements have coverage in the
 [comparison/monitoring matrix](26-adoption-roadmap-and-acceptance.md) and
-[investigation matrix](33-investigation-roadmap-and-acceptance.md).
+[investigation matrix](33-investigation-roadmap-and-acceptance.md) and
+[browser companion matrix](38-companion-roadmap-and-acceptance.md).
 Their gates apply to their stated later stages, not as hidden V0 prerequisites.

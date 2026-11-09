@@ -83,7 +83,7 @@ ACC results from them. Upstream review was source-only and imports no code/asset
 Official Hunchly documentation was compared in
 [the source register](../reference/hunchly-comparison.md); the product was not installed
 or tested. ADR-006/documents 28–33 add 27 requirements with HUN-ACC-01–10 and
-EWP-31–40. Current totals are 134 requirements (70 V0, 64 later-stage), 40 tasks.
+EWP-31–40. That pass totals 134 requirements (70 V0, 64 later-stage), 40 tasks.
 The earlier review/counts above record their historical pass, not current scope.
 
 Consistency refinements: keep Collection rather than duplicate Case; pin explicit
@@ -93,3 +93,17 @@ anchors; freeze report revisions/disclosure; quarantine native imports without
 foreign authority. The core V0 matrix/API/domain/qualification dependency includes
 H0. H1–H4 remain later-stage work. All new runtime scenarios are unexecuted; no
 independent review or implementation claim follows from this documentation pass.
+
+## Revision 0.6 companion refinement
+
+ADR-007/documents 34–38 select the optional browser channel with a primary-platform
+source register and explicit B0/B1/B2 boundary. Current totals: 158 requirements
+(70 V0, 88 later), 52 tasks and 46 named acceptance scenarios across four registries.
+New 24 requirements map to B-ACC-01–12; no previous ID is removed/renumbered.
+
+Cross-document decisions: distinguish B0 server handoff from B1 local observation;
+use narrow expiring grants instead of web cookies; keep collector claims separate
+from server byte verification; fence target/consent/upload generations; quarantine
+before acceptance; keep private browser profile publication/baselines disabled;
+rotate epoch on restore. MV3 permission/native-memory/timing behavior remains a
+real feasibility/qualification gate, not a tested property of this prose.

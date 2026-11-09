@@ -126,3 +126,12 @@ crops/quotes remain distinct from immutable originals. Reports pin selected revi
 and inclusions rather than becoming a changing collection or an implicit public page.
 [Investigation requirements and EWP-31–40](requirements/33-investigation-roadmap-and-acceptance.md)
 define the staged continuation. Browser-session acquisition remains separate work.
+
+[ADR-007](decisions/0007-browser-companion-acquisition.md) now selects that optional
+browser channel: B0 explicitly hands a public URL to the server; B1 preserves a
+user-selected local viewport/optional MHTML with client-claimed provenance; B2
+assists recording a single foreground tab/origin with visible pause and reviewed
+upload. These stages do not delay or become a dependency of baseline V0/production.
+Private submitted bytes are verified on receipt, not represented as independently
+witnessed server captures. [The browser delivery plan](requirements/38-companion-roadmap-and-acceptance.md)
+defines permissions, expiring pairing, offline recovery, trust and release gates.

@@ -94,3 +94,12 @@ logs. Import preserves query text only as disabled foreign context until reviewe
 The selected limits are starting values requiring resource/UX tests. Initial
 submission, collection mutation, task and triage races use existing transaction/
 audit/idempotency rules; source bytes and public projections remain independent.
+
+## Later browser context adapter
+
+ADR-007 B0 retains the server acquisition channel while recording explicit
+submitted_via=companion intent privately. B1 adds a versioned browser_companion
+entry mode only to the new intake contract, preserving V0 manual_url/csv meanings.
+The server records the authenticated actor and submitted collection/rationale as
+context, not technical source observation. H1 anchors are created only after exact
+accepted artifact/derivation validation; live selected text is not an anchor.

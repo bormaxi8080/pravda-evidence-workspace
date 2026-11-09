@@ -188,3 +188,13 @@ components/contracts, deliverables, dependency/decision IDs, migration/rollback
 effects, exact checks/environment and exit evidence. Record what is unavailable.
 Keep a stage incomplete when its required real DB/browser/isolation/restore gate
 has not run; neither source presence nor mock-only green tests close it.
+
+## Optional companion delivery branch
+
+After qualified V0 (EWP-16), EWP-41–45 deliver independently usable B0 pairing and
+URL handoff. EWP-46–49 add B1 local acquisition, verified intake/private export and
+operations. EWP-50 qualifies restricted B2; EWP-51 qualifies individual H/C adapters
+only after their owning stages; EWP-52 provides the integrated handoff dossier.
+[Document 38](38-companion-roadmap-and-acceptance.md) defines exact prerequisites,
+outputs and acceptance. This branch never becomes a new prerequisite for IMP-08/09
+or silently expands V0. Native API feasibility precedes profile implementation.

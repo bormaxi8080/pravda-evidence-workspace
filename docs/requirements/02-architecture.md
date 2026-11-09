@@ -133,8 +133,8 @@ Implementation/qualification remain pending; source presence is not test evidenc
 
 [ADR-006](../decisions/0006-investigation-context-and-handoff.md) reuses the modular
 monolith, PostgreSQL, durable jobs and artifact store for context/triage and later
-annotation, corpus/cue, report and transfer services. No browser companion or new
-search cluster is introduced. Exact bytes, editorial metadata, triage, derived
+annotation, corpus/cue, report and transfer services. This H-stage design introduces
+no search cluster. The browser companion is selected separately by ADR-007 below. Exact bytes, editorial metadata, triage, derived
 findings and report snapshots are separate authorities with versioned references.
 
 Flow for later H stages: authorized original -> bounded offline derivation ->
@@ -145,3 +145,18 @@ Offline decoders/extractors/renderers have no external network or general secret
 only the trusted controller commits records/promotes output. The web process never
 unpacks case archives or executes archived content. See documents 28–33 for exact
 limits/permissions and qualification before enablement.
+
+## Companion trust boundary
+
+[Document 34](34-browser-companion-architecture.md) adds an optional external MV3
+client and fixed HTTPS companion API to the existing topology. B0 calls authorized
+server capture admission; B1/B2 send untrusted client-generated artifacts into a
+separate quarantine/validation path. They do not call CaptureEngine or give a local
+browser DB, publication, general evidence-read or server-session credentials.
+
+Application owns PairingIntent/CompanionGrant/BrowserUpload/BrowserAcquisition and
+later ResearchSession/Observation services. New manifests/profiles live in the
+future Evidence Contracts component when implemented. Browser Extension remains
+planned 0.0.0; no existing runtime depends on its build. Per-slot offsets, generation,
+reservations and accepted byte identity reuse DB/finalization authority; isolated
+validators have no source-fetch authority. See documents 35–37 for the contracts.

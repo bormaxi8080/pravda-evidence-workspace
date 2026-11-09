@@ -128,3 +128,14 @@ AnnotationRevision, ResearchTask, SavedView, ResearchCue/Hit, ReportRevision and
 CaseTransfer/Import are logical contracts owned by those stages. None is an ACL,
 an automatic evidence approval, or an implemented table. Byte/provenance history,
 editorial approval, triage, personal attention and report disclosure remain separate.
+
+## Browser acquisition extension
+
+ADR-007/documents 35–37 introduce PairingIntent, CompanionGrant, BrowserUpload and
+ArtifactSlot, BrowserAcquisition and later ResearchSession/Observation. The upload
+is not a successful Capture until validated fenced acceptance. BrowserAcquisition
+holds client-claimed URL/time/environment separately from server submitter/receipt/
+verifier observations; origin_client_submitted is distinct from origin_imported and
+server acquisition. Existing review/publication/context/triage state stays separate.
+A Source groups claimed URL identity, not independently attested source ownership.
+Unknown browser profiles are ineligible for automatic baselines/publication.

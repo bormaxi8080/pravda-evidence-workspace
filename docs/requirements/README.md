@@ -1,6 +1,6 @@
 # Evidence Workspace requirements package
 
-Date: 2026-11-09. Revision: 0.5. Status: **selected engineering design baseline;
+Date: 2026-11-09. Revision: 0.6. Status: **selected engineering design baseline;
 runtime qualification pending**.
 Owner: product/engineering roles; individual assignees are not yet designated.
 Versioned component: Specification. No runtime feature, independent review sign-off,
@@ -30,6 +30,10 @@ scope; comparison/filter/watch/delivery are selected later stages, not V0 gates.
 ADR-006 adopts investigation/handoff ideas from Hunchly: explicit submission context
 and independent importance join V0; annotations, search/cues, reports and native
 transfer have separate later-stage gates in documents 28–33.
+ADR-007 now selects the browser companion in documents 34–38: B0 URL handoff,
+B1 explicit local acquisition and B2 bounded assisted recording, all post-V0.
+This supersedes the former browser-companion deferral without changing baseline
+production obligations or granting cookies/admin/publication authority.
 
 ## Reading order and deliverables
 
@@ -69,6 +73,11 @@ transfer have separate later-stage gates in documents 28–33.
 | [31 Investigation reports](31-investigation-reports.md) | Frozen selections, citation/disclosure profiles and bounded rendering |
 | [32 Transfer/acquisition](32-transfer-and-acquisition-boundaries.md) | Own-native export, quarantined import and deferred acquisition boundaries |
 | [33 Investigation acceptance/roadmap](33-investigation-roadmap-and-acceptance.md) | 27 new requirement mappings, HUN scenarios and EWP-31–40 |
+| [34 Browser architecture](34-browser-companion-architecture.md) | MV3 modules, B0/B1/B2 modes, permissions, journeys and scope |
+| [35 Pairing/upload protocol](35-companion-pairing-and-upload-protocol.md) | Narrow credentials, origin/scopes, resumable chunks, idempotency and errors |
+| [36 Browser evidence/intake](36-browser-evidence-and-intake.md) | New profiles, exact submitted bytes, fidelity, verification and eligibility |
+| [37 Companion lifecycle/operations](37-companion-lifecycle-security-and-operations.md) | Local spool, consent/recovery, revoke/restore, build and distribution |
+| [38 Companion acceptance/roadmap](38-companion-roadmap-and-acceptance.md) | 24 requirement mappings, B scenarios, EWP-41–52 and adapter subgates |
 
 Related source research: [changedetection.io review](../reference/changedetection-io-review.md).
 The [Hunchly comparison](../reference/hunchly-comparison.md) distinguishes public
@@ -82,8 +91,11 @@ API details are engineering choices, not quotations from the concept. Decision I
 `DEC-*` track those choices and qualification. ADR-002–004 record selected dispositions;
 ADR-001 remains governance; ADR-005 records staged adoption. Deferred items in
 document 27 remain evaluations. ADR-006 records investigation/handoff adoption.
-The registry now has 134 selected requirements: 70 V0 (67 original, history and two
-context/triage requirements), 64 later-stage, all with explicit acceptance coverage.
+ADR-007 records browser-channel adoption, supported by the
+[primary platform review](../reference/browser-extension-platform-review.md).
+The registry now has 158 selected requirements: 70 V0 (67 original, history and two
+context/triage requirements), 88 later-stage, all with explicit acceptance coverage.
+The implementation registry has 52 tasks across documents 18, 26, 33 and 38.
 
 Core invariants apply to V0 as well as production: private by default, explicit
 publication, immutable captured bytes, editable editorial context, durable job state,

@@ -129,3 +129,15 @@ See [the baseline register](13-selected-v0-baseline.md),
 [contracts and operator procedures](README.md) and
 [assignable work packages](18-assignable-work-packages.md).
 Implementation/qualification remain pending; source presence is not test evidence.
+
+## Selected optional browser channel
+
+The browser-extension V0 exclusion above remains. ADR-007 now selects a separate
+post-V0 companion implementation in documents 34–38 rather than leaving it an
+undefined future idea. B0 is server URL handoff; B1 is explicit local viewport/
+optional MHTML; B2 is restricted assisted local recording and reviewed upload.
+An already authenticated public-origin tab can supply private visible content
+without replaying credentials on the server. None is a prerequisite for the
+concept's baseline production release, and accepted browser bytes remain private.
+Cookie stores, hidden/background/all-sites collection and automatic public browser
+publication remain excluded. Server public-target capture restrictions are unchanged.

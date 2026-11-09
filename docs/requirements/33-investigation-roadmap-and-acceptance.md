@@ -3,7 +3,9 @@
 Date: 2026-11-09. Status: **selected documentation design; runtime not implemented**.
 Owner: product/evidence/engineering/security. Authority: ADR-006. Add 27 requirements
 to the stable prior 107: two H0/V0, 25 later-stage. Total 134; V0 has 70 applicable
-requirements, and later stages have 64. Original IDs/scenarios stay stable.
+requirements, and later stages have 64 in this adoption pass. ADR-007/document 38
+subsequently bring current totals to 158, 70 V0 / 88 later and 52 tasks.
+Original IDs/scenarios stay stable.
 
 ## Stage boundaries and original implementation
 
@@ -14,7 +16,8 @@ requirements, and later stages have 64. Original IDs/scenarios stay stable.
 | H2 | Private content search, literal research cues and source-linked candidate observations | H1/C1; separate first literal-search gate and later maintained built-in extractor gate |
 | H3 | Frozen selective reference/original-evidence reports | H1 + verified export; H2 search is helpful but not required |
 | H4 | Reviewed Workspace-native case transfer/import | H1 + verified export/migration/recovery; no Hunchly interchange claim |
-| Deferred | Browser companion, credentialed browsing, native photos/attachments/EXIF, regex/custom extractors, signatures/trusted time and graph integrations | Separate acquisition/format/trust work, not V0 or implicit H1–H4 capability |
+| Selected separate browser stages | B0 handoff, B1 manual local view/MHTML, B2 restricted assisted sessions | ADR-007/documents 34–38; post-V0, not implicit H1–H4 prerequisites |
+| Deferred | Credential replay/cookie jars, native photos/attachments/EXIF, regex/custom extractors, signatures/trusted time and graph integrations | Separate acquisition/format/trust work, not V0 or implicit H1–H4 capability |
 
 C0–C4 remain selected in documents 20–26. H stages reuse those foundations without
 turning research cues into CSS profiles, annotation edits into watch changes, or

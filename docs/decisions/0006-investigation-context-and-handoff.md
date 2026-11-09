@@ -49,3 +49,10 @@ No reviewer sign-off, running product test, vendor code/asset import, supported
 interchange or runtime feature is claimed by this document. Unsupported/partial
 extraction, stale annotation/report selection, removed inputs, import collisions,
 and restore/purge must be qualified before enabling their stage.
+
+## Subsequent browser decision
+
+[ADR-007](0007-browser-companion-acquisition.md) supersedes the blanket companion
+deferral for selected B0–B2 only. Cookie/credential replay, hidden all-sites capture
+and unsupported native/media/trust paths remain deferred. ADR-006's H0–H4 scope
+and historical counts above remain unchanged; the current registry is document 38.

@@ -114,6 +114,15 @@ team, infrastructure, capture-engine results and migration dataset constraints.
 [ADR-006](../decisions/0006-investigation-context-and-handoff.md) and documents
 28–33 apply the same four waves to Hunchly-inspired investigation/handoff. H0
 refines V0 context/triage; H1–H4 specify later annotations/search/reports/native
-transfer. The current source/requirement/scenario/task registry is linked from
-[the package index](README.md), with 134 requirements and 40 implementation tasks.
+transfer. That pass produced 134 requirements and 40 implementation tasks. The current
+source/requirement/scenario/task registry is linked from [the package index](README.md).
 A documentation gate remains distinct from measured runtime qualification.
+
+## Revision 0.6 browser-channel design
+
+ADR-007/documents 34–38 specify the previously deferred companion. The same waves
+cover mode/scope/architecture; coupled credentials/bytes/consent/finalization;
+UI/API/migration/operations; and complete B acceptance/task mapping. Primary Chrome
+and RFC sources are recorded separately from unperformed feasibility tests.
+Current registry: 158 requirements, 70 V0 / 88 later and 52 assignable tasks.
+B0/B1/B2 are later independent gates; V0 and baseline production scope is unchanged.

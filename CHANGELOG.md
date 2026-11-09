@@ -11,12 +11,29 @@ The inherited Python package 1.1.0 is a prototype baseline, not a newly issued r
 | --- | --- | --- |
 | Product release | `None` | development |
 | Application (`application`) | `1.1.0` | prototype |
+| Browser Extension (`browser-extension`) | `0.0.0` | planned |
 | Deployment (`deployment`) | `0.1.0` | prototype |
 | Evidence Contracts (`evidence-contracts`) | `0.0.0` | planned |
-| Governance (`governance`) | `0.1.1` | tooling |
-| Specification (`specification`) | `0.1.4` | documentation |
+| Governance (`governance`) | `0.1.2` | tooling |
+| Specification (`specification`) | `0.1.5` | documentation |
 | UI Prototype (`ui-prototype`) | `0.1.0` | prototype |
 <!-- component-versions:end -->
+
+### Added — optional browser companion implementation design, 2026-11-09
+
+- Select ADR-007 and B0 URL handoff, B1 explicit viewport/MHTML acquisition and B2
+  bounded foreground-tab assisted recording; preserve independent baseline V0 gates.
+- Add 24 English requirements for MV3 permissions/UI, expiring human-approved pairing,
+  narrow bearer API, resumable uploads, client/server provenance, offline spool,
+  quarantine/fenced acceptance, own export profile, revoke/restore and distribution.
+- Record current primary Chrome/RFC references, native API fidelity/resource limits,
+  B-ACC-01–12 and EWP-41–52. Totals: 158 requirements, 70 V0 / 88 later, 52 tasks.
+- Reserve the independent Browser Extension component at planned 0.0.0 with no
+  implementation dependency; update its catalog and component ownership/version ledger.
+
+Specification advances to 0.1.5, Governance to 0.1.2 for the component catalog, and
+design revision to 0.6. No extension/runtime/schema package, store listing, browser
+qualification, deployment or product release is produced by this documentation change.
 
 ### Added — evidence-linked investigation and handoff design, 2026-11-09
 

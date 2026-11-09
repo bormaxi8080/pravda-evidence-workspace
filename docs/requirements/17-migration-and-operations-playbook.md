@@ -154,3 +154,14 @@ against acceptance state on restart. Restore initially disables automatic analys
 generation/import acceptance, applies deletion/revocation ledgers, invalidates removed
 input dependencies and checks access before any resumed work. Include search snippets,
 crops, report spools and quarantine in the emergency-purge dependency report.
+
+## Companion rollout/restore continuation
+
+ADR-007/document 37 defines B0/B1/B2 flags default off, exact extension ID/origin
+allowlists, digest-only grants, quota-reserved quarantine and epoch rotation on
+restore. Add ordered schemas and source-channel labels without relabeling old
+server/imported captures. Back up accepted evidence/receipts/context; incomplete
+quarantine is temporary, and restored upload metadata cannot assert missing bytes
+survived. No token/session/recording restart after restore; deliberate re-pairing,
+reconciliation and removal-ledger replay precede serving. Intake uses separate
+one-slot bounded validation and existing installation admission/disk reserves.

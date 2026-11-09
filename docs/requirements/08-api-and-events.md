@@ -108,3 +108,14 @@ See [the baseline register](13-selected-v0-baseline.md),
 [contracts and operator procedures](README.md) and
 [assignable work packages](18-assignable-work-packages.md).
 Implementation/qualification remain pending; source presence is not test evidence.
+
+## Post-V0 companion protocol
+
+[Document 35](35-companion-pairing-and-upload-protocol.md) selects a separate
+`/api/companion/v1` bearer protocol for expiring pairing, narrow URL intents,
+owned upload slots/chunks/status/finalization and revoke. The existing `/api/v1`
+web contract is unchanged; UI grant approval/revoke uses cookie/CSRF services.
+No access token is accepted on arbitrary web/public endpoints. Capabilities negotiate
+protocol/profile versions; unknown browser metadata on the existing server capture
+DTO fails rather than selecting another acquisition channel. Generate OpenAPI,
+negative examples and TypeScript types at EWP-42, not a competing handwritten SDK.

@@ -134,3 +134,17 @@ or expired replay history yields reset + authoritative snapshot; never fabricate
 progress percentage. A 15-second transport heartbeat does not extend a job lease.
 Protected streams reauthorize within 30 seconds and bound slow-consumer buffering;
 close slow streams with a recoverable status path instead of unlimited memory growth.
+
+## Post-V0 browser-channel domain and execution
+
+Documents 35–37 extend the model with expiring digest-only PairingIntent/
+CompanionGrant, byte-reserved BrowserUpload/ArtifactSlot offsets and generation,
+and BrowserAcquisition client claims/server acceptance facts. The server CaptureEngine
+contract remains public-target acquisition only; it never receives client cookies
+or repairs a failed browser submission. Accepted client captures use separate
+profile/channel/provenance and existing immutable artifact/editorial authorities.
+
+Upload receipt, accepted capture ID and unique actor/instance/client_capture_id
+commit through fenced finalization; stale grant/cancel cannot bypass that boundary.
+B2 session consent/generation does not grant unlimited upload/publication authority.
+Actual tables/FKs/indexes/migrations/DTO schemas are EWP-42/43/47, not implemented here.

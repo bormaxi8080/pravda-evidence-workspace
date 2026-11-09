@@ -38,7 +38,9 @@ V0 now explicitly includes REQ-HIS-001: Source history using existing records,
 including failed/partial requests and identical manual captures. The original 67
 requirements remain stable. This ADR-005 pass produced 68 V0 plus 39 later-stage
 requirements (107 total). ADR-006 subsequently adds two V0 and 25 later-stage
-investigation requirements: current totals are 70 V0 and 64 later-stage (134).
+investigation requirements: that pass totals 70 V0 and 64 later-stage (134).
+ADR-007/document 38 subsequently add 24 browser requirements: current totals 158,
+70 V0 / 88 later. Comparison/watch scope below is unchanged.
 [Document 33](33-investigation-roadmap-and-acceptance.md) owns that continuation;
 no later-stage gate is silently imposed on V0.
 

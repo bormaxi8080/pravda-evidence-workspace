@@ -1,0 +1,23 @@
+{
+  "$schema": "../../release/component.schema.json",
+  "schema_version": 1,
+  "name": "browser-extension",
+  "display_name": "Browser Extension",
+  "version": "0.0.0",
+  "status": "planned",
+  "runtime": "none",
+  "planned_path": "browser-extension/",
+  "owned_paths": [
+    "components/browser-extension/component.json"
+  ],
+  "responsibilities": [
+    "future-browser-companion-ui-and-local-acquisition",
+    "future-revocable-workspace-intake-client"
+  ],
+  "must_not_own": [
+    "server-authorization-and-publication",
+    "trusted-time-or-collector-attestation-claims"
+  ],
+  "depends_on": [],
+  "checks": []
+}
