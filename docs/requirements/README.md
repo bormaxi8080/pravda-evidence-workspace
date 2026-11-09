@@ -1,6 +1,6 @@
 # Evidence Workspace requirements package
 
-Date: 2026-11-09. Revision: 0.3. Status: **selected engineering design baseline;
+Date: 2026-11-09. Revision: 0.4. Status: **selected engineering design baseline;
 runtime qualification pending**.
 Owner: product/engineering roles; individual assignees are not yet designated.
 Versioned component: Specification. No runtime feature, independent review sign-off,
@@ -24,7 +24,9 @@ means a recommendation requiring a documented alternative if changed. Source pre
 design selection, implementation and verification are separate statuses. The continuation request
 authorizes concrete engineering choices documented in ADR-002–004 and documents
 13–19, without inventing reviewer approval or implementing runtime changes.
-Document 20 is separately proposed optional scope, not part of V0 requirements.
+The user subsequently adopted the upstream-inspired direction through ADR-005:
+document 20 routes to staged requirements 21–26. Source history is explicit V0
+scope; comparison/filter/watch/delivery are selected later stages, not V0 gates.
 
 ## Reading order and deliverables
 
@@ -50,7 +52,14 @@ Document 20 is separately proposed optional scope, not part of V0 requirements.
 | [17 Migration/operations playbook](17-migration-and-operations-playbook.md) | Target procedures, mappings and observable operator outcomes |
 | [18 Assignable work packages](18-assignable-work-packages.md) | EWP-01–18 dependencies, role assignments, deliverables and gates |
 | [19 Documentation review](19-documentation-review.md) | Four-wave results, requirement refinement and honest handoff limits |
-| [20 Change-monitoring proposal](20-change-monitoring-proposal.md) | Optional post-V0 comparison/filter/schedule/notification candidates |
+| [20 Adopted roadmap](20-change-monitoring-proposal.md) | Stage boundary, adoption authority and former candidate mapping |
+| [21 History and comparison](21-source-history-and-comparison.md) | V0 Source history and C1 reproducible offline comparison |
+| [22 Profiles and attention](22-profiles-and-editorial-attention.md) | C2 focus/noise revisions, previews and personal acknowledgement |
+| [23 Watches and scheduling](23-watches-and-scheduling.md) | C3 due slots, windows/DST, quotas, epoch/baseline and recovery |
+| [24 Notifications and delivery](24-notifications-and-delivery.md) | C4 disclosure permission, minimal payload, outbox/retry/uncertainty |
+| [25 Extension contracts/operations](25-extension-contracts-and-operations.md) | APIs, resource limits, dependencies, migrations and restore |
+| [26 Adoption acceptance/roadmap](26-adoption-roadmap-and-acceptance.md) | 40 new requirement mappings, MON scenarios and EWP-19–30 |
+| [27 Later boundaries](27-advanced-format-and-reuse-boundaries.md) | Deferred visual/native-format/selector/inheritance/transport evaluations |
 
 Related source research: [changedetection.io review](../reference/changedetection-io-review.md).
 
@@ -60,7 +69,9 @@ Each requirement document names concept sections and relevant current files.
 New numeric defaults, admin-only publishing, simplified review, V0 deferrals and
 API details are engineering choices, not quotations from the concept. Decision IDs
 `DEC-*` track those choices and qualification. ADR-002–004 record selected dispositions;
-ADR-001 remains governance. Optional upstream-inspired suggestions remain candidates.
+ADR-001 remains governance; ADR-005 records staged adoption. Deferred items in
+document 27 remain evaluations. The registry now has 107 selected requirements:
+68 V0 (67 original plus history), 39 later-stage, all with explicit acceptance coverage.
 
 Core invariants apply to V0 as well as production: private by default, explicit
 publication, immutable captured bytes, editable editorial context, durable job state,

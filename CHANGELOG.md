@@ -14,9 +14,24 @@ The inherited Python package 1.1.0 is a prototype baseline, not a newly issued r
 | Deployment (`deployment`) | `0.1.0` | prototype |
 | Evidence Contracts (`evidence-contracts`) | `0.0.0` | planned |
 | Governance (`governance`) | `0.1.1` | tooling |
-| Specification (`specification`) | `0.1.2` | documentation |
+| Specification (`specification`) | `0.1.3` | documentation |
 | UI Prototype (`ui-prototype`) | `0.1.0` | prototype |
 <!-- component-versions:end -->
+
+### Added — adopted comparison and monitoring design, 2026-11-09
+
+- Adopt changedetection.io ideas through ADR-005 and detailed Source history,
+  offline comparison, profile/attention, watch/scheduling, notification/outbox and
+  shared API/storage/operations requirements in English.
+- Add 40 requirements with complete stage/scenario coverage: one explicit V0 history
+  requirement plus 39 later-stage requirements; retain the original 67 IDs unchanged.
+- Define EWP-19–30, resource limits, epoch/baseline and permission races, deterministic
+  cache rebuild, restore/purge behavior and honest uncertain-delivery semantics.
+- Separate later visual/native-format/selector/inheritance/transport investigations
+  from the selected C0–C4 delivery stages and mandatory production gates.
+
+Specification advances to 0.1.3; design revision is 0.4. Adoption is documentation
+and roadmap work only: runtime, schemas, dependency list and product release remain unchanged.
 
 ### Added — selected design and source-monitoring research, 2026-11-09
 

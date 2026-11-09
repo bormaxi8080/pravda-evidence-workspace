@@ -3,7 +3,7 @@
   "schema_version": 1,
   "name": "specification",
   "display_name": "Specification",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "status": "documentation",
   "runtime": "none",
   "planned_path": null,
@@ -19,7 +19,8 @@
     "docs/reference/changedetection-io-review.md",
     "docs/decisions/0002-v0-scope-and-topology.md",
     "docs/decisions/0003-evidence-and-publication.md",
-    "docs/decisions/0004-execution-storage-and-identity.md"
+    "docs/decisions/0004-execution-storage-and-identity.md",
+    "docs/decisions/0005-adopt-comparison-and-monitoring.md"
   ],
   "responsibilities": [
     "product-vision",

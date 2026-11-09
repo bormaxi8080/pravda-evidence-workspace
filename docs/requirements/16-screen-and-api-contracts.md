@@ -47,6 +47,7 @@ stale revision is 409. State/audit/idempotency writes share a transaction.
 | POST `/captures` | `url`; condition_type default load; condition optional except css/text; title/note/tags optional | 202 `{capture_id,job_id,state:"queued",profile}`; policy/queue errors create no job |
 | GET `/captures` | q/host/creator/tag_ids/collection_id/states/date_start/date_end; cursor; limit 25 | 200 `{items,next_cursor}`; stable captured_at/id descending; unknown filter 422 |
 | GET `/captures/{id}` | Authorized ID | 200 capture outcome/profile/provenance/artifact summaries/editorial revision/review/publication summary; never host paths |
+| GET `/sources/{id}/captures` | Authorized source, cursor/limit | 200 safe capture history including identical/non-complete requests; requested_at/ID descending, no implicit change/ack |
 | GET `/captures/{id}/artifacts/{artifact_id}` | Artifact belongs to capture | Safe private byte response; MIME/attachment/no-store; missing/corrupt denied |
 | PATCH `/captures/{id}/editorial` | expected_revision; selected title/note/tag_ids/collection_ids | 200 new revision/current fields and review=in_review; empty no-op may return current revision |
 | POST `/captures/{id}/review` | expected_revision, state=in_review/approved/rejected, reason<=2048 chars | 200 new revision/state; reject approval if partial/integrity-blocked |
@@ -103,6 +104,7 @@ admission fails, no subset of a confirmed batch is created.
 | Queue/job | State, attempt history, cancel/retry | Reconnecting banner with authoritative refresh; no spinner-only success and no percent invention |
 | Archive | Bound filters, stable cursor paging | Date interval invalidity shown; collections not described as private ACLs |
 | Capture detail | Screenshot, artifact/profile/integrity/provenance, editorial actions | Partial/missing/corrupt warnings; download attachments; terminal retry creates linked capture |
+| Source history | Paged capture outcomes, safe times/profile/review/publication links | Same-byte/manual attempts retained, legacy unknown time explicit; no Compare/Watch/Notify controls before their stage |
 | Collections/tags | Group CRUD/membership | Explain group removal preserves captures; revision collisions reload rather than overwrite |
 | Review/publication preview | Approve/reject, admin preview/publish/revoke | Preview is exact anonymous projection; original secrets/notes not auto-selected; publish and review distinct |
 | Public viewer | Active slug only | Screenshot/allowlisted metadata, hash/time caveat; generic 404 on unknown/private/revoked |

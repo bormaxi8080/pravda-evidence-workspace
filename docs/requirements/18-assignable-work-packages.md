@@ -22,7 +22,7 @@ or throughput commitment is inferred from this table.
 | EWP-07 Durable queue and events | EWP-03/06; backend | Admission/slot locking, leases/generations, attempts, cancel/retry/recovery, durable SSE sequence | ACC-03/04 real competing/late workers, lost NOTIFY, cancel race and bounded recovery; no false exactly-once claim |
 | EWP-08 Trusted artifact finalization | EWP-02/03/07; evidence/backend | Safe runner-output import, staged hashing/manifest/promotion, fenced DB commit and reconciliation | ACC-04/07/09 at each crash point; symlink/traversal/bounds/tamper tests, no evidence overwrite |
 | EWP-09 Isolated capture vertical slice | EWP-01/05/06/07/08; capture/security | Actual engine contract, readiness options/provenance and private submit -> complete capture detail flow | ACC-01/04/08 synthetic real browser + DB; limits/partial/HTTP404 outcomes, no browser execution in web lifespan |
-| EWP-10 Editorial UI and revision service | EWP-06/08/09; UX/backend | Archive/detail/dashboard, bounded filters, notes/tags/collections, revision-aware review, accessible themes/errors | ACC-01/06/11 real browser; conflicts/invalidation/metadata edits preserve original hashes; group deletion preserves evidence |
+| EWP-10 Editorial UI and revision service | EWP-06/08/09; UX/backend | Archive/detail/dashboard/Source history (REQ-HIS-001), bounded filters, notes/tags/collections, revision-aware review, accessible themes/errors | ACC-01/06/10/11 and MON-ACC-07 real browser; identical/partial history retained, conflicts/edits preserve hashes; group deletion preserves evidence |
 | EWP-11 CSV preview-confirm | EWP-06/07/10; backend/UX | Strict grammar/limits, actor-bound preview, dedupe choices, atomic capacity/idempotent confirmation and mixed batch progress | ACC-02/04/11 malformed/oversize/stale/duplicate/queue-full cases; no preview jobs/silent truncation/partial admission |
 | EWP-12 Publication and safe public viewer | EWP-05/06/08/10; publication/security/UX | Exact admin preview, pinned projection, new slug, revoke, no-store asset authorization and legacy mapping | ACC-05/06/10 anonymous/private/old slug/proxy asset tests, no raw evidence/notes/usernames; no GET state mutations |
 | EWP-13 Private export and verifier | EWP-02/06/08/10; evidence | Bounded ZIP/HTML/export job, independent verifier, explicit profile/PDF/metadata options, expiry | ACC-07 real package independent verification, empty/damaged/duplicate/path cases; safe receipt and required-PDF failure |
@@ -64,5 +64,6 @@ Unavailable checks / remaining defects / handoff:
 
 Scope is reviewable without waiting for names/estimates. Before starting a ticket,
 assign a person and validate its prerequisites; do not invent approvals or claim
-tests that have not run. Optional changedetection-inspired comparison/monitoring
-uses C1–C4 in document 20 and is not silently inserted into these V0 tickets.
+tests that have not run. The adopted C1–C4 continuation is defined as EWP-19–30 in
+[document 26](26-adoption-roadmap-and-acceptance.md); these later tickets are not
+silent V0 prerequisites. C0 Source history explicitly refines EWP-10/15.

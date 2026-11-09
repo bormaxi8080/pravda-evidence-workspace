@@ -109,5 +109,8 @@ roadmap. The [original specification brief](05-next-design-phase.md) remains con
 The [four-wave review](requirements/19-documentation-review.md) and
 [18 assignable work packages](requirements/18-assignable-work-packages.md) record
 design handoff and pending qualification. The requirement package does not
-implement or certify the target product. Optional comparison/monitoring is proposed
-separately after a [source review of changedetection.io](reference/changedetection-io-review.md).
+implement or certify the target product. [ADR-005](decisions/0005-adopt-comparison-and-monitoring.md)
+now adopts C0 Source history into V0 and C1–C4 comparison/profile/watch/delivery
+into later stages, grounded in the [changedetection.io source review](reference/changedetection-io-review.md).
+The [stage requirements and EWP-19–30](requirements/26-adoption-roadmap-and-acceptance.md)
+define that continuation; visual/native-format and richer transport ideas remain deferred.

@@ -4,6 +4,11 @@ Date: 2026-11-09. Revision: 0.3. Status: **engineering documentation pass comple
 implementation and qualification pending**. Owner: engineering lead.
 This is a self-review, not an independent human review or a runtime test report.
 
+This revision-0.3 review records the preceding pass. The current revision 0.4
+adoption is ADR-005 and documents 20–27: 107 selected requirements, including 68 V0
+and 39 later-stage, plus EWP-19–30. Original requirement IDs and prior source/test
+observations remain stable; C0 history now explicitly refines the V0 handoff.
+
 ## Four-wave results
 
 | Wave | Result produced | Evidence and remaining limits |

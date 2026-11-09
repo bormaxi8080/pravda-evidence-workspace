@@ -14,6 +14,10 @@ The work below remains the reusable method for completing and qualifying the bas
 It is a documentation work breakdown, distinct from the later runtime roadmap.
 No dates or team estimates are asserted without named owners and availability.
 
+Revision 0.4 further adopts changedetection.io ideas through ADR-005/documents
+20–27, formal requirements and EWP-19–30. This extends the same review/traceability
+method with a precise C0/V0 boundary and later-stage acceptance, not a runtime rewrite.
+
 ## Definition of a complete document
 
 Every specification needs stable requirement IDs, source rationale, target stage,

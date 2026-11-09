@@ -6,6 +6,11 @@ This is the dependency-ordered software roadmap. The separate
 [documentation plan](00-documentation-plan.md) describes how to qualify its inputs.
 No runtime stage is implemented or authorized merely by this document.
 
+ADR-005/document 26 now add a selected staged continuation: C0 history refines V0
+EWP-10/15; EWP-19–30 implement comparison/profiles/watches/delivery after qualified
+V0. The production IMP-08/09 requirements remain independent and cannot be postponed
+or relabeled complete because an extension stage ships.
+
 ## Sequencing principles
 
 Work in verifiable vertical increments. Establish authorization, isolation and

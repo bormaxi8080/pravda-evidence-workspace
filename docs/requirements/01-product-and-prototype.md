@@ -28,6 +28,7 @@ boundary. There is no claim of protecting evidence from an authorized host opera
 | Export | Private ZIP + HTML receipt and full checksum verification | Mandatory complete profile including WARC and PDF |
 | PDF | Optional, explicitly unavailable when disabled/failing | Required and tested; silent omission forbidden |
 | Editorial | Shared archive, collections, tags, notes, basic review/search | Usability-qualified complete core flow |
+| Source history | Authorized paged history of complete/partial/failed/cancelled captures; identical captures retained | Same evidence identity and history under later comparison/watch stages |
 | Publication | Admin-only explicit publish/revoke, screenshot and safe metadata | Same baseline; editor publishing only after policy decision |
 | Public downloads | Screenshot and public metadata only; raw evidence packages private | Optional explicitly approved downloads, with disclosure review |
 | Monitoring | Not required for V0 exit; show unknown/not checked honestly | Bounded availability probes, timestamps and failure semantics |
@@ -37,6 +38,9 @@ boundary. There is no claim of protecting evidence from an authorized host opera
 
 The V0/production split is selected in ADR-002/003. WARC and mandatory PDF are deferred
 only from the controlled prototype, not deleted from the original concept.
+ADR-005 now adopts a bounded C0 history requirement in V0 and selects C1–C4
+comparison/profile/watch/delivery stages after V0; see documents 20–26. These later
+stages cannot substitute for production WARC/PDF/security/recovery qualification.
 
 ## Requirements
 
@@ -51,6 +55,7 @@ UI shall state this model before use with different confidentiality groups.
 
 V0 shall support sign-in, URL/CSV submission, job progress, capture inspection,
 organization, notes, review, private export, explicit admin publication and revocation.
+Source detail also exposes the authorized capture history defined by REQ-HIS-001.
 An editor shall not need a terminal for those activities. Operator maintenance
 may use documented CLI commands. Unsupported features shall not appear to work.
 

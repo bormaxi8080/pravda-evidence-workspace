@@ -3,7 +3,8 @@
 Date: 2026-11-09. Status: **proposed test design; scenarios not executed**.
 Owner: engineering/QA lead with security and operations reviewers.
 Sources: concept sections 30–34; [testing policy](../operations/testing.md);
-requirement documents 01–09. This matrix is not test-result evidence.
+requirement documents 01–09 plus V0 history in document 21. This matrix is not
+test-result evidence; later-stage requirement coverage is in document 26.
 
 ## Scenario catalogue
 
@@ -14,6 +15,8 @@ admitted roles. Editor logs in, creates capture, sees progress, inspects require
 artifacts/provenance and verifies the capture manifest. Add note/tag/collection,
 review and export. Assert bytes/digests stay unchanged and no public access appears.
 Use real PostgreSQL, filesystem and isolated browser for end-to-end qualification.
+Include Source history with repeated byte-identical captures and non-complete
+requests; verify paging, authorization and no inferred content-change claim.
 
 ### ACC-02 CSV and admission boundaries
 
@@ -109,7 +112,8 @@ not an already completed test.
 ## Complete requirement-to-scenario coverage
 
 Source sections are recorded in the owning requirement documents. All identifiers
-below are normative definitions in documents 01–09, not duplicate definitions here.
+below are normative definitions in documents 01–09 and REQ-HIS-001 in document 21,
+not duplicate definitions here.
 Scenario references indicate planned verification, never passed status.
 
 | Requirement IDs | Owning document | Planned acceptance scenarios |
@@ -118,6 +122,7 @@ Scenario references indicate planned verification, never passed status.
 | REQ-SCP-003 | [Product](01-product-and-prototype.md) | ACC-04, ACC-07, ACC-12 |
 | REQ-SCP-004, REQ-SCP-005 | [Product](01-product-and-prototype.md) | ACC-02, ACC-04, ACC-08 |
 | REQ-SCP-006 | [Product](01-product-and-prototype.md) | ACC-09, ACC-12 |
+| REQ-HIS-001 | [Source history](21-source-history-and-comparison.md) | ACC-01, ACC-04, ACC-10, ACC-11; detailed MON-ACC-07 in document 26 |
 | REQ-ARC-001, REQ-ARC-002, REQ-ARC-003 | [Architecture](02-architecture.md) | ACC-01, ACC-03, ACC-08 |
 | REQ-ARC-004, REQ-ARC-006 | [Architecture](02-architecture.md) | ACC-03, ACC-04, ACC-09 |
 | REQ-ARC-005 | [Architecture](02-architecture.md) | ACC-05, ACC-07, ACC-08 |
@@ -170,3 +175,8 @@ Specification review also checks every mandatory requirement is implemented or
 explicitly excluded from that stage, with rationale and remaining production gate.
 The existing 36 governance tests validate engineering tooling only; they do not
 execute the proposed runtime scenarios above.
+
+The V0 registry now has 68 requirements (67 original plus explicit history).
+The 39 adopted later-stage requirements are covered in
+[the extension acceptance matrix](26-adoption-roadmap-and-acceptance.md).
+Their gates apply when C1–C4 is implemented, not as hidden V0 prerequisites.

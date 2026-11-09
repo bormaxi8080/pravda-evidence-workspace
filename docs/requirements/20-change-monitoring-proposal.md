@@ -1,116 +1,60 @@
-# Optional comparison and source-monitoring proposal
+# Adopted comparison and monitoring roadmap
 
-Date: 2026-11-09. Status: **candidate post-V0 extension; no feature adoption or
-implementation claim**. Owner: product/evidence lead. Origin: user-requested
-[changedetection.io review](../reference/changedetection-io-review.md).
-The 67 mandatory baseline requirements and V0 exit scope are unchanged.
+Date: 2026-11-09. Revision: 0.4. Status: **adopted into staged design; implementation pending**.
+Owner: product/evidence/engineering. The user explicitly requested adoption of
+changedetection.io ideas into the first-version/future implementation documentation.
+[ADR-005](../decisions/0005-adopt-comparison-and-monitoring.md) records that decision.
+The existing filename is retained for links; the former candidate proposal is
+superseded by the normative stage requirements linked below.
 
-## Product case
+## What adoption means
 
-A newsroom wants to see what changed between two preserved versions of a source,
-avoid reviewing navigation/timestamp noise, and later learn that a watched source
-may need another capture. Comparison helps editorial attention; it does not
-determine truth, prove who changed a page or approve publication automatically.
+Adopt the useful product/engineering ideas in Workspace's own domain and trust
+model. Preserve original evidence, private access, review and explicit publication.
+No upstream code, assets, runtime service or transport dependency is imported.
+The [pinned source review](../reference/changedetection-io-review.md) remains evidence
+for upstream observations; these stage choices are our design decisions.
 
-## Proposed increments
+## Selected stages
 
-| Increment | Included outcome | Prerequisites / explicit exclusions |
+| Stage | Selected behavior | Authoritative documents |
 | --- | --- | --- |
-| C1 Manual comparison | Source timeline, select two stored captures, escaped line/word diff, input/provenance links | Qualified immutable capture/storage/permissions; no live fetch, schedule or external notification |
-| C2 Focus and noise profiles | Versioned include/exclude regions and literal-ignore rules, preview, raw/filtered comparison, per-user attention acknowledgement | C1; bounded offline parser, missing-selector semantics; no arbitrary JS/jq/plugin execution |
-| C3 Durable watches | Opt-in source schedule/pause, bounded capture slots/quotas, internal change events and attention queue | C1/2 + stable recovery/security/operations; no catch-up storm or silent recapture |
-| C4 Delivery and formats | Opt-in destinations with outbox; later visual diff and native PDF/JSON profiles | C3 + disclosure/egress/secret policy, separate format contracts and operational evidence |
+| C0 / V0 | Paged authorized Source history; existing engine capabilities shown honestly | [21 History/comparison](21-source-history-and-comparison.md), original V0 capture contracts |
+| C1 after V0 | Manual ordered stored-capture comparison, offline derivation, safe diff and exact identity | [21 History/comparison](21-source-history-and-comparison.md) |
+| C2 | Immutable focus/noise profile revisions, previews and explicit personal attention | [22 Profiles/attention](22-profiles-and-editorial-attention.md) |
+| C3 | Opt-in durable watches, UTC/window scheduling, quotas/epochs/baselines and internal events | [23 Watches/scheduling](23-watches-and-scheduling.md) |
+| C4 | Explicit disclosure permissions, minimal payload, durable outbox and restricted delivery | [24 Notifications](24-notifications-and-delivery.md) |
+| Deferred evaluation | Visual diff, native PDF/JSON, visual selector, inheritance and more transports | [27 Later boundaries](27-advanced-format-and-reuse-boundaries.md) |
 
-Recommend C1 first after V0 qualification. C2/C3 require a separate scope decision;
-C4 is later. These are product suggestions, not dependencies of EWP-01–16.
+Shared API/resource/storage/migration/restore contracts are in
+[document 25](25-extension-contracts-and-operations.md). Complete requirement/scenario
+coverage and EWP-19–30 are in [document 26](26-adoption-roadmap-and-acceptance.md).
+These stages are selected roadmap work, not optional placeholders; they are not
+implemented features or automatic additions to the V0 release gate.
 
-## Candidate objects and states
+## First-version boundary
 
-- ComparisonProfileRevision: immutable include/exclude/ignore/order/normalization
-  options, extractor/algorithm versions, caps and effective fingerprint. No hidden
-  tag/global inheritance in the first increment; future inheritance pins resolved values.
-- DerivedRepresentation: input artifact SHA-256, extractor/profile/version, bounded
-  text/structure output, output digest and warnings. Original evidence is unchanged.
-- ComparisonRun: exact left/right capture/artifact hashes, profile/algorithm versions,
-  result changed/unchanged/incomparable/failed, changed fragments and diagnostics.
-- SourceWatch: source ID, enabled/paused, owner, frequency, timezone/window, next due,
-  quota, profile revision, last observation/result and failure/backoff state.
-- ChangeEvent: comparison/watch identity and input refs, internal attention state.
-  UserAttention stores per-user acknowledgement separately from editorial review.
-- NotificationIntent/DeliveryAttempt: destination secret reference, permitted payload
-  class, dedupe key, retry/expiry and delivered/failed/revoked outcome.
+V0 now explicitly includes REQ-HIS-001: Source history using existing records,
+including failed/partial requests and identical manual captures. The original 67
+requirements remain stable, so V0 has 68 applicable requirements. Comparison,
+profiles, watches and delivery add 39 selected later-stage requirements. Total
+selected requirements are 107; no later-stage gate is silently imposed on V0.
 
-An OriginObservation is availability only. It is not a ComparisonRun or an accepted
-Capture. HTTP 304/header checks do not create a fictional new complete browser
-capture. An explicit editor capture request is preserved even if byte-identical to
-an earlier one; comparison caching can save analysis work without deleting history.
+C1 starts after qualified V0. Production WARC/PDF/security/recovery remain mandatory
+and independent; comparison delivery cannot excuse their omission. No calendar,
+public release number or production qualification is claimed by stage labels.
 
-## Candidate acceptance rules
+## Former candidate mapping
 
-### CAND-01 Reproducible comparison, immutable originals
-
-Compare only authorized stored artifacts offline. Record both input hashes plus
-extractor, algorithm and profile revisions. Cache identity includes all those
-values, not just URLs or current profile name. Changed profile reprocesses unchanged
-inputs. Equal normalized text does not assert binary identity or semantic equivalence.
-Display which transformations were applied and link to originals/provenance.
-
-### CAND-02 Bounded extraction and noise filtering
-
-Start with escaped text/line comparison and literal ignore rules; add CSS focus only
-with bounded safe extraction. Do not execute archived scripts or fetch resources.
-Missing selector, parser failure, truncation and zero meaningful text yield explicit
-incomparable/error, not unchanged. Rules suppress attention, not preservation. Give
-raw versus filtered views; highlight that omitted regions may contain relevant changes.
-Regex/advanced query languages require separate complexity/time/sandbox qualification.
-
-### CAND-03 Attention is per-user and separate from approval
-
-Show new comparison events in an internal queue. Viewing a diff is not review approval,
-publication or a global team acknowledgement. Use an explicit idempotent POST to
-acknowledge a particular event for a particular user. No action changes source bytes
-or invalidates another user's attention state. No mutation occurs on ordinary GET.
-
-### CAND-04 Safe scheduling and recovery
-
-Default watches disabled; explicit authorized opt-in selects scope, interval/window,
-quota and retention policy. Persist due times in UTC and named timezone for windows;
-define DST missing/repeated-hour behavior and bounded jitter. A bad watch pauses
-itself and cannot stop global scheduling. Coalesce missed checks to at most one
-pending occurrence per watch, revalidate owner/policy and network controls, and
-respect installation capture capacity. Paused watches preserve existing evidence.
-
-### CAND-05 Notification is an explicit disclosure decision
-
-Start with internal alerts. External delivery is opt-in, admin-approved, destination-
-allowlisted and secret-referenced, with a durable transactional outbox. Default
-payload contains minimal event/status plus an approved authenticated-app link;
-no notes, raw URL queries, diffs, screenshots or evidence attachments without
-separate explicit payload permission. Delivery failure never rolls back evidence.
-Reauthorize before send/retry, bound retry/expiry/deduplication and protect egress.
-Evaluate Apprise behind an adapter later; do not expose arbitrary provider URLs
-or templates as unrestricted outbound execution.
-
-### CAND-06 Visual/native-format extensions preserve meaning
-
-Visual diff requires compatible viewport/locale/browser context and explicit crop/
-threshold/version data; differences are not a truth score. Native PDF/JSON inputs
-need their own original-byte/artifact profiles and bounded parsers. Do not create
-placeholder MHTML/PNG to force them into the HTML V0 success profile. Visual selector
-UX uses inert screenshot/element metadata rather than executing an archive in-app.
-
-## Candidate verification before adoption
-
-| Scenario | Required evidence |
+| Former label | Current normative home |
 | --- | --- |
-| MON-ACC-01 | Changed article versus rotating clock/menu; originals unchanged; filter/profile version change recomputes same bytes |
-| MON-ACC-02 | Selector disappears, parser/limit failure, reordered text, empty result and mismatched contexts are explicit, not stable by default |
-| MON-ACC-03 | Two users acknowledge independently; review/publication unchanged; unauthorized diff/input access denied; rendered diff/patch XSS payload inert |
-| MON-ACC-04 | Timezone/DST/bad configuration, restart/missed schedule, quota/paused owner and duplicate due claims do not stop other watches or flood capture |
-| MON-ACC-05 | Destination revoked/disabled between intent and send, provider outage, repeated retries and content-bearing payload denial preserve privacy/evidence |
-| MON-ACC-06 | Native PDF/JSON/visual-profile inputs verify as their actual format and declare extraction/fidelity limits |
+| CAND-01 Reproducible comparison | REQ-CMP-001–008 and REQ-EXT-001/002/005 |
+| CAND-02 Bounded extraction/noise | REQ-CMP-002/004/005 and REQ-PRF-001–006 |
+| CAND-03 Personal attention | REQ-ATT-001–004 |
+| CAND-04 Scheduling/recovery | REQ-MON-001–008 and REQ-EXT-003/004/005 |
+| CAND-05 Delivery permission | REQ-NTF-001–007 |
+| CAND-06 Visual/native formats | Deferred document 27; not a mandatory C0–C4 requirement |
 
-Existing ACC-01–12 remain baseline requirements; these MON scenarios are not
-reported as executed or added as V0 release gates. Adopted extension work will
-introduce its own requirement IDs, component contract changes and migration/evidence
-gates through a separately bounded implementation stage.
+MON-ACC-01–06 labels are retained and expanded in document 26; MON-ACC-07–12 add
+history, cache/cancel, epoch/baseline, restore and deployed-capacity coverage.
+Definitions appear once in that acceptance document, not in competing copies here.

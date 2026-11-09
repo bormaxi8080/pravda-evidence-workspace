@@ -31,8 +31,10 @@ Performance claims in upstream descriptions are not adopted as measurements.
 
 ## Adoption matrix
 
-The stage column is a Workspace recommendation, not an upstream promise or a new
-mandatory V0 requirement. Existing evidence/security/recovery scope retains priority.
+The original review recommendations below are now adopted through ADR-005 and
+requirements 20–26, except deferred investigations in document 27. The first-version
+addition is explicit Source history; automatic comparison/watch/delivery stays in
+later stages. These are Workspace design choices, not upstream guarantees.
 
 | Idea | Workspace use | Recommended stage | Adaptation required |
 | --- | --- | --- | --- |
@@ -110,7 +112,8 @@ not automatically cleared by this research. Workspace's own license is unchanged
 
 ## Workspace follow-up
 
-The bounded extension is specified in
-[comparison and monitoring proposal](../requirements/20-change-monitoring-proposal.md).
-Core design resolution and assignable tasks are in the requirements package.
-Optional monitoring remains outside V0 completion and cannot block basic evidence work.
+The selected continuation is routed through the
+[adopted roadmap](../requirements/20-change-monitoring-proposal.md), detailed in
+requirements 21–25, and mapped to acceptance/tickets in document 26. Advanced
+investigations remain document 27. V0 now has 68 requirements including history;
+39 later-stage requirements do not become V0 gates or replace evidence/recovery work.

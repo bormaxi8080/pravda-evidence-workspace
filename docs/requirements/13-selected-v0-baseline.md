@@ -1,6 +1,6 @@
 # Selected V0 baseline and parameter register
 
-Date: 2026-11-09. Revision: 0.3. Status: **engineering choices selected; runtime
+Date: 2026-11-09. Revision: 0.4. Status: **engineering choices selected; runtime
 qualification pending**. Owner: engineering lead; reviewer roles remain unassigned
 to individuals. This continuation resolves design alternatives without claiming
 human sign-off, tested behavior, a production release or implementation of contracts.
@@ -28,7 +28,12 @@ Empirical feasibility can reopen a choice; it cannot waive evidence/privacy inva
 | DEC-09 | Exact starting limits below; fail closed on unsupported resource enforcement | Measured resource and overload qualification |
 | DEC-10 | Preserve/map IDs; suspend unreviewed legacy public links with explicit mapping/report | Synthetic legacy migration and operator review rehearsal |
 | DEC-11 | Durable sessions, browser-bound OAuth state, operator bootstrap, enabled-role checks | Live OAuth and recovery/disablement tests |
-| DEC-12 | Concept production criteria retained; optional comparison/monitoring separated | WARC/PDF/security/pilot/support objectives before production |
+| DEC-12 | Concept production criteria retained; ADR-005 selects C0 in V0 and C1–C4 later | WARC/PDF/security/pilot/support remain independent; stage qualification per document 26 |
+
+ADR-005 supersedes the earlier optional-candidate treatment: C0 Source history is
+explicit V0 scope; C1–C4 are selected later-stage work. Documents 21–26 define the
+40 adopted requirements, parameter/permission boundaries and assigned-stage gates.
+V0 limits below remain independent; extension limits do not silently enable features.
 
 ## Starting configuration contract
 
@@ -79,4 +84,6 @@ a derived package with its own time/inventory. Comparison is a later derived
 analysis, never a substitute for Capture or Review.
 
 Definition detail lives in documents 14–17. The original 67 requirement IDs remain
-stable and are refined here; no optional monitoring feature is made mandatory for V0.
+stable. REQ-HIS-001 adds explicit Source history to V0; the 39 comparison/profile/
+watch/delivery requirements apply only to selected later stages. No automatic
+monitoring/send becomes a V0 requirement.

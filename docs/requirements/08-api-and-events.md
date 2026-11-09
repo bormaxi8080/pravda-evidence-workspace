@@ -14,6 +14,7 @@ authorized services directly. Public/auth/health routes have separate purposes.
 | --- | --- | --- |
 | POST `/captures` | Submit one capture intent | Editor/admin; 202 with capture/job IDs and initial state |
 | GET `/captures`, `/captures/{id}` | Bounded list/detail | Editor/admin; authorized DTO without host paths |
+| GET `/sources/{id}/captures` | Paged Source history, including non-complete/identical captures | Editor/admin; requested_at/ID descending, no GET mutation or public history |
 | GET `/captures/{id}/artifacts/{artifact_id}` | Private download | Editor/admin; artifact belongs to capture, safe file response |
 | PATCH `/captures/{id}/editorial` | Notes/title/tags/review command | Editor/admin; expected revision and resulting revision |
 | POST `/captures/{id}/retry` | New linked terminal-capture request | Editor/admin; 202, new capture/job IDs |
