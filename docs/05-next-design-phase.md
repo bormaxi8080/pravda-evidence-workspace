@@ -1,5 +1,9 @@
 # Brief for the next design phase
 
+The [requirements package](requirements/README.md) now develops this brief into
+separate proposed specifications and a [detailed documentation delivery plan](requirements/00-documentation-plan.md).
+This original brief is retained as source context; it is not the current work breakdown.
+
 Status: **proposed documentation scope**, not an implementation plan. The user
 intends to design implementation documentation and a detailed plan next.
 

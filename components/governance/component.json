@@ -3,7 +3,7 @@
   "schema_version": 1,
   "name": "governance",
   "display_name": "Governance",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "tooling",
   "runtime": "python",
   "planned_path": null,

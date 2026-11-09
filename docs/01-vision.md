@@ -100,6 +100,9 @@ URL rejection and restore into a clean deployment. Metrics should track capture
 success and latency, queue recovery, storage growth, restore correctness and editor
 completion of the workflow; set numeric targets with pilot constraints later.
 
-The next task is detailed documentation and planning, guided by
-[the specification brief](05-next-design-phase.md). No detailed implementation
-backlog or target-runtime refactor is introduced by this governance baseline.
+The [requirements package](requirements/README.md) expands this vision into a
+proposed V0 boundary, architecture, functional/nonfunctional requirements,
+documentation work packages, acceptance scenarios and a derived implementation
+roadmap. The [original specification brief](05-next-design-phase.md) remains context.
+Architecture decisions and runtime qualification are still outstanding; the
+requirement package does not implement or certify the target product.

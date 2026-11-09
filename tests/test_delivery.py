@@ -39,9 +39,12 @@ class GitDeliveryTests(unittest.TestCase):
         return subprocess.run(["git", "-C", str(self.root), *args], check=True,
                               capture_output=True, text=True).stdout.strip()
 
-    def update_specification(self, version="0.1.1", changelog=True):
+    def update_specification(self, version=None, changelog=True):
         path = self.root / "components/specification/component.json"
         manifest = json.loads(path.read_text())
+        if version is None:
+            major, minor, patch = map(int, manifest["version"].split("."))
+            version = f"{major}.{minor}.{patch + 1}"
         manifest["version"] = version
         path.write_text(json.dumps(manifest, indent=2) + "\n")
         if changelog:
