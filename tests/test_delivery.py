@@ -96,6 +96,8 @@ class AdditionalInvariantTests(unittest.TestCase):
 
     def test_planned_component_cannot_own_other_artifacts(self):
         manifests, _ = workspace.load_manifests(ROOT)
+        manifests["evidence-contracts"].update(status="planned", version="0.0.0",
+                                              planned_path="shared-contracts/", checks=[])
         manifests["evidence-contracts"]["owned_paths"].append("README.md")
         self.assertIn("planned component may own only its manifest", "\n".join(workspace.registry_errors(manifests, [])))
 

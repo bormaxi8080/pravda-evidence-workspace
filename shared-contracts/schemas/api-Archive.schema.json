@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","additionalProperties":false,"properties":{"expected_revision":{"maximum":2147483647,"minimum":1,"type":"integer"},"reason":{"maxLength":2048,"minLength":1,"type":"string"}},"required":["expected_revision","reason"],"title":"Archive","type":"object"}

@@ -3,20 +3,31 @@
   "schema_version": 1,
   "name": "evidence-contracts",
   "display_name": "Evidence Contracts",
-  "version": "0.0.0",
-  "status": "planned",
-  "runtime": "none",
-  "planned_path": "shared-contracts/",
+  "version": "0.1.0",
+  "status": "development",
+  "runtime": "python",
+  "planned_path": null,
   "owned_paths": [
-    "components/evidence-contracts/component.json"
+    "components/evidence-contracts/component.json",
+    "shared-contracts/**"
   ],
   "responsibilities": [
-    "future-evidence-and-manifest-contracts"
+    "versioned-evidence-inventory-contracts",
+    "versioned-engine-job-event-contracts",
+    "cookie-api-dto-openapi-contracts",
+    "synthetic-contract-fixtures-and-verification"
   ],
   "must_not_own": [
     "capture-execution",
     "unimplemented-contract-claims"
   ],
   "depends_on": [],
-  "checks": []
+  "checks": [
+    "python3 -m unittest discover -s shared-contracts/tests -p 'test_*.py' -v",
+    "python3 shared-contracts/build_engine.py --check",
+    "python3 shared-contracts/build_core.py --check",
+    "python3 shared-contracts/build_core_fixtures.py --check",
+    "python3 shared-contracts/build_api.py --check",
+    "python3 shared-contracts/build_index.py --check"
+  ]
 }

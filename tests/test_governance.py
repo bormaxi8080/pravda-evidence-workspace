@@ -17,6 +17,14 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import validate_workspace as workspace
 
 
+def planned_contract_fixture(manifests):
+    """Keep planned-state tests independent of live component activation."""
+    manifests["evidence-contracts"].update(
+        version="0.0.0", status="planned", runtime="none",
+        planned_path="shared-contracts/",
+        owned_paths=["components/evidence-contracts/component.json"], checks=[])
+
+
 class RegistryTests(unittest.TestCase):
     def setUp(self):
         self.manifests, errors = workspace.load_manifests(ROOT)
@@ -40,10 +48,12 @@ class RegistryTests(unittest.TestCase):
         self.assertTrue(any("version" in error for error in errors))
 
     def test_planned_version_is_reserved(self):
+        planned_contract_fixture(self.manifests)
         self.manifests["evidence-contracts"]["version"] = "0.1.0"
         self.assertIn("planned components need reserved 0.0.0", self.issues())
 
     def test_planned_component_cannot_claim_existing_code(self):
+        planned_contract_fixture(self.manifests)
         self.files.append("shared-contracts/schema.json")
         self.assertIn("planned component contains implementation files", self.issues())
 
@@ -69,6 +79,7 @@ class RegistryTests(unittest.TestCase):
         self.assertIn("dependency cycle", self.issues())
 
     def test_existing_component_cannot_depend_on_planned_runtime(self):
+        planned_contract_fixture(self.manifests)
         self.manifests["governance"]["depends_on"].append("evidence-contracts")
         self.assertIn("existing artifact depends on a planned component", self.issues())
 
@@ -115,6 +126,9 @@ class BaselineTests(unittest.TestCase):
         self.assertIn("component version regressed", self.issues())
 
     def test_planned_metadata_does_not_claim_implementation_version(self):
+        planned_contract_fixture(self.manifests)
+        self.previous["components"]["evidence-contracts"] = "0.0.0"
+        self.current["components"]["evidence-contracts"] = "0.0.0"
         self.assertEqual(self.issues(["components/evidence-contracts/component.json"]), "")
 
     def test_normal_work_cannot_change_product_release(self):
