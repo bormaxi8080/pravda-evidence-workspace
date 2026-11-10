@@ -70,3 +70,35 @@ backup/restore where required; a second folder on one disk is not disaster recov
 The later Linux iteration reuses code/locks/synthetic fixtures, then independently
 qualifies native builds, storage, isolation and clean-host recovery. Do not copy the
 Mac's Paperclip DB, personal browser profile or agent credentials to that target.
+
+
+## Approved project runtime connection — 2026-11-10
+
+The operator explicitly authorized the original Codex project profile to use the
+local Docker Desktop API and loopback development servers. The private launcher
+selects the independent `pravda-macos-local` Docker context through its own
+DOCKER_CONFIG, with Desktop CLI/plugin discovery and a writable owned buildx cache.
+It does not copy the user's registry credentials or change the global context.
+The precise approved Desktop Unix socket is configured by the operator; agents
+must not infer authority to use unrelated sockets or alter profiles themselves.
+
+The broad allow_local_binding flag was rejected by automatic approval review and
+is not enabled: it disables the private-network guard more widely than needed.
+Use project containers with explicit 127.0.0.1 published ports for agent-started
+HTTP services/fixtures while native host bind remains restricted. Record the actual
+allocated port; do not bind 0.0.0.0 or reuse Paperclip ports. For native development
+without a sandboxed listener, in-process tests remain useful but do not replace the
+actual container/browser workflow. Broader access needs a separate concrete decision.
+
+A sandbox probe verified the isolated context, arm64 Engine/Compose, public command
+HTTP denial and an owned non-root read-only HTTP fixture returning its expected
+marker through a loopback-only published port. The fixture had no host mounts or
+application/DB secrets, dropped capabilities and no-new-privileges; its exact
+container/network were removed afterward. Its owned bridge network was a trusted
+fixture transport, not browser egress/isolation qualification. The tested internal
+network did not expose a usable published port in this environment, so record that
+observation instead of weakening the product capture network policy.
+
+Docker API authority is an explicitly trusted engineering/operator capability.
+Never mount its socket into web/browser/decoder test processes or treat access to
+the engine as proof that the application's hostile-content boundary is qualified.

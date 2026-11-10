@@ -14,10 +14,21 @@ The inherited Python package 1.1.0 is a prototype baseline, not a newly issued r
 | Browser Extension (`browser-extension`) | `0.0.0` | planned |
 | Deployment (`deployment`) | `0.1.0` | prototype |
 | Evidence Contracts (`evidence-contracts`) | `0.0.0` | planned |
-| Governance (`governance`) | `0.1.3` | tooling |
+| Governance (`governance`) | `0.1.4` | tooling |
 | Specification (`specification`) | `0.1.10` | documentation |
 | UI Prototype (`ui-prototype`) | `0.2.0` | prototype |
 <!-- component-versions:end -->
+
+### Documented — approved local Mac runtime transport, 2026-11-10
+
+- Record the operator-approved isolated Docker Desktop project context/socket and
+  loopback HTTP through owned containers, without copying registry authentication
+  or disabling the private-network guard.
+- Record real sandbox Docker/Compose and loopback HTTP smoke/cleanup evidence,
+  preserving the distinction between a trusted fixture and capture isolation.
+
+Governance advances to 0.1.4. No application feature, production or Linux
+qualification, release, global Docker context change or broad network grant.
 
 ### Changed — macOS development and separate Linux qualification, 2026-11-10
 
