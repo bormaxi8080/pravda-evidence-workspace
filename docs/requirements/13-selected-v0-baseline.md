@@ -18,7 +18,7 @@ Empirical feasibility can reopen a choice; it cannot waive evidence/privacy inva
 | Decision | Selected disposition | Remaining qualification |
 | --- | --- | --- |
 | DEC-01 | V0 scope label; compatible patch fixes first; future incompatible runtime package 2.0.0; no product release now | Migration/route compatibility tests and release operation later |
-| DEC-02 | Modular Python 3.12 SSR monolith, PostgreSQL 16, one-host Compose, Linux x86_64 qualification target | Pin image/dependency/browser digests after real build tests |
+| DEC-02 | Modular Python 3.12 SSR monolith, PG16, macOS arm64/Desktop development; native Linux x86_64 qualification later under ADR-012 | Pin per-platform image/dependency/browser identities; independent lane evidence in document 56 |
 | DEC-03 | Direct Playwright in isolated runner, one engine/capability contract; Pravda adapter deferred | Egress/sandbox/output feasibility in EWP-01 |
 | DEC-04 | Separate capture/export V0 profiles; WARC and required PDF remain production delta | Format/verifier tests; WARC fidelity design before EWP-17 |
 | DEC-05 | Admin-published screenshot/allowlisted metadata, no-store, new slug on republish | Anonymous/proxy asset and disclosure tests |
@@ -155,3 +155,11 @@ V0 profiles/defaults remain historical and independently supported; EWP-77 imple
 only the actual V0 byte-serving subset. Production recorder/schema/renderer support
 must pass its owning gates before default-profile migration. Requirement counts
 remain 170 (70 V0 / 100 later); current delivery has 78 tasks and 76 scenarios.
+
+## Platform sequencing update — 2026-11-10
+
+[ADR-012](../decisions/0012-macos-development-and-linux-qualification.md) and
+[document 56](56-macos-development-and-linux-qualification.md) supersede the former
+Linux-first DEC-02 scheduling interpretation. Existing limits and security/data
+contracts remain applicable; Mac implementation and native Linux support have
+separate evidence and completion gates.

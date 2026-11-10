@@ -107,3 +107,12 @@ operator absence. Each has stop/contain/diagnose/recover/verify/resume steps and
 required authority. No daemon-global prune, volume deletion, audit erasure or
 restoring stale grants is an acceptable generic fix. EWP-67/68 and OPS-ACC-07/08
 materialize and qualify these procedures before claiming supported operations.
+
+## Platform execution policy — 2026-11-10
+
+Implement and test locally on macOS arm64/Docker Desktop under
+[document 56](56-macos-development-and-linux-qualification.md). Real local PG,
+configuration, recovery and safety checks remain required. Native server/kernel,
+Linux installation and target host-loss qualification belong to its later Linux
+iteration; they do not block Mac implementation. Keep per-lane evidence and never
+claim Linux/production acceptance from local results alone.

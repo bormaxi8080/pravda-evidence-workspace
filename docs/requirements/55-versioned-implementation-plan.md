@@ -1,6 +1,6 @@
 # Versioned implementation plan
 
-Date: 2026-11-09. Design revision: 0.10. Status: **selected delivery decomposition;
+Date: 2026-11-10. Design revision: 0.11. Status: **selected delivery decomposition;
 future release numbers are proposed targets; runtime implementation pending**.
 Owners: product/engineering, evidence/security, database/deployment, browser and QA.
 Individual assignees, team capacity, estimates, dates and release approval are not
@@ -86,6 +86,21 @@ Component versions remain independent:
   Product packaging pins exact component/image/contract identities rather than
   assigning one shared number to all of them.
 
+## 2.1 Current platform lane and separate Linux iteration
+
+[ADR-012](../decisions/0012-macos-development-and-linux-qualification.md) and
+[document 56](56-macos-development-and-linux-qualification.md) select MAC-DEV for
+current implementation, local real tests and human acceptance. PC-SETUP-03 prepares
+this Mac; native Linux provisioning is not an F0-DEV entry gate. Existing product
+milestones above describe eventual usable/release boundaries. Their current Mac
+implementation instances are F0-DEV/E0-DEV/P0-DEV and local R1/G1/D1–D6 readiness;
+no Mac task acceptance by itself claims a pilot, Linux support or production G1.
+
+LINUX-SETUP-01, LINUX-QUAL-01 and LINUX-QUAL-02 are separate later orchestration
+items, not additional EWP/requirement/scenario IDs. Their target evidence remains
+mandatory before Linux/production enablement. Current EWP dependencies refer to
+accepted MAC-DEV outputs; they do not wait for those deferred Linux items.
+
 ## 3. Target architecture and technical workstreams
 
 | Workstream | Target implementation boundary | First delivered / evidence |
@@ -100,10 +115,11 @@ Component versions remain independent:
 | Operations | Role-specific images, pinned deployment, config preflight, safe metrics, coherent backup and clean restore | F0–P0 and each new feature; exact environment and measured outcomes |
 | Future access | U1 bundles, U2 custody/scoped adapters, U3 federation/workloads through one authorization authority | D3/D5/D6; migration and full installed-surface denial matrix |
 
-Use the selected Python 3.12 / PostgreSQL 16 / Linux x86_64 Ubuntu 24.04 candidate
-baseline and isolated role-specific images from documents 44–49. The candidate
-4 CPU / 8 GiB / 40 GiB free envelope needs measurement; it is not a supported capacity
-claim. Do not retain the historical README's 2 GiB deployment claim as qualification.
+Use Python 3.12/PostgreSQL 16 on this macOS arm64 host, with native development
+tools and Docker Desktop linux/arm64 role images from documents 44–49/56. The later
+native Linux x86_64/Ubuntu 24.04 candidate has a separate measured dossier; its
+4 CPU/8 GiB/40 GiB envelope is not a Mac allocation or supported-capacity claim.
+Do not retain the historical README's 2 GiB deployment claim as qualification.
 Web/worker roles receive only required credentials and mounts. No Docker socket,
 DB credential or writable final artifact store goes into browser/decoder containers.
 Use a fixed host launcher contract rather than arbitrary container commands.
@@ -141,6 +157,14 @@ Every ticket must deliver:
    suites are failures, not partial success. Runtime findings reopen the affected
    contract/ADR rather than silently weakening it.
 
+For current tickets, completion means the entire MAC-DEV scope is accepted and
+integrated with real applicable local evidence. Native-target-only cases carry
+explicit deferred-linux obligations in the separate Linux tickets; they are not
+skipped local tests or a production claim. Linux-only assumptions below are read
+through document 56. Keep failed local isolation features disabled; independent
+implementation may proceed. Accepted upstream commits may be integrated into a
+consumer task branch; unaccepted work/main merges remain outside task authority.
+
 Acceptance catalogues: 12 ACC, 12 MON-ACC, 10 HUN-ACC, 12 B-ACC, 10 SYS-ACC,
 12 OPS-ACC and 8 PRD-ACC = 76 definitions. Execute only the applicable stage subset
 and relevant regressions, with exclusions explicit. This plan creates no duplicate
@@ -151,7 +175,9 @@ scenario definitions. The full requirement matrices remain documents 10/26/33/38
 **Outcome:** clean builds, reviewed machine contracts, a proven isolation boundary
 and a real schema foundation. Only synthetic engineering use; no pilot evidence
 or public exposure. Primary order: EWP-61 + 02 → 62 → 01; 02 + 61 → 63 → 03 → 64.
-Build/contracts can proceed independently before their joins.
+Build/contracts can proceed independently before their joins. Current execution
+is F0-DEV on the Mac after PC-SETUP-03 local readiness, not after Linux provisioning.
+Real local gates still apply; native target reruns belong to L1/L2 in document 56.
 
 1. Fix packaging/build ordering from the source review and reproduce a clean wheel
    install. Split web, capture and offline images, lock dependencies and identify
@@ -1446,7 +1472,11 @@ runtime table above or the [verification policy](../operations/testing.md).
 
 ## 17. Dependency and assignment control
 
-The full task graph remains acyclic. Important joins to preserve when creating issues:
+The full task graph remains acyclic. Current platform prerequisite PC-SETUP-03
+means Mac readiness. Put native Linux setup/qualification in separate backlog items
+without an edge from them to current Mac implementation. Preserve the accepted
+LOC-1/2 history and LOC-4 code/reviews. The platform transition does not admit every
+backlog EWP or authorize a release. Important feature joins to preserve:
 
 - EWP-01 waits for images/launcher (61/62); contracts 02 precede DB bootstrap 63 and
   schema 03. Writing application routes before shared auth/service contracts is

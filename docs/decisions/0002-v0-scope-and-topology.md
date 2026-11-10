@@ -13,10 +13,12 @@ content comparison, external notifications and authenticated-target browser step
 outside V0. Require privacy, bounded capture, durable state and clean restore in V0.
 
 Keep one Python monolith at `provereno-ui/`, SSR/Jinja, PostgreSQL 16 and filesystem
-storage. Select Python 3.12 and Linux x86_64/Ubuntu 24.04 as the initial qualification
-target; runtime dependency/browser/image digests are pinned by the build task after
-install tests. A starting test host budget is 4 CPUs, 8 GiB RAM and 40 GiB free
-storage, not a measured minimum or service guarantee. Other platforms are unqualified.
+storage. Select Python 3.12 and PostgreSQL 16. [ADR-012](0012-macos-development-and-linux-qualification.md)
+supersedes the original Linux-first sequencing: macOS arm64/Docker Desktop is the
+current development target; native Linux x86_64/Ubuntu 24.04 is a separate later
+qualification iteration. Pin platform-specific dependency/browser/image digests
+after install tests. The candidate 4 CPU/8 GiB/40 GiB Linux envelope is unmeasured;
+Mac allocations must be recorded independently. Neither lane implies production readiness.
 
 Separate edge, web, trusted worker/maintenance and browser runner. Reuse direct
 Playwright behind CaptureEngine in an isolated runner for V0; do not build a Pravda

@@ -1,6 +1,6 @@
 # Evidence Workspace requirements package
 
-Date: 2026-11-09. Revision: 0.10. Status: **selected engineering design baseline;
+Date: 2026-11-10. Revision: 0.11. Status: **selected engineering design baseline;
 runtime qualification pending**.
 Owner: product/engineering roles; individual assignees are not yet designated.
 Versioned component: Specification. No runtime feature, independent review sign-off,
@@ -48,7 +48,16 @@ ADR-011/documents 54–55 add local interactive Workspace/companion UI blueprint
 a detailed versioned implementation plan for all 78 existing tasks. Future product
 numbers are planning targets; runtime qualification and release remain pending.
 
+ADR-012/[document 56](56-macos-development-and-linux-qualification.md) selects
+macOS arm64/Desktop as the current development environment and native Linux as a
+separate later qualification iteration. This supersedes older Linux-first task
+sequencing without weakening evidence/security invariants or changing the 78 EWP
+and 76 scenario identities. Current Mac completion does not declare Linux support.
+
 ## Reading order and deliverables
+
+Start current execution with [56 macOS/Linux lanes](56-macos-development-and-linux-qualification.md)
+and the [Mac runbook](../operations/macos-development.md), then the owning technical document.
 
 | Document | Responsibility |
 | --- | --- |

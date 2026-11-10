@@ -23,3 +23,9 @@ tagging, publishing or deployment authority. Refresh/check the matching MCP inde
 after changes and keep graph/runtime artifacts ignored.
 
 Return what changed, actual check results, limitations and commit identity if created.
+
+
+For current work record MAC-DEV host/guest identities and required local results.
+Use `docs/requirements/56-macos-development-and-linux-qualification.md` to separate
+native Linux obligations. Accepted/integrated Mac implementation can close its lane
+ticket without claiming production or Linux qualification; skipped local gates cannot.

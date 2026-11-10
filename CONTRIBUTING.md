@@ -75,3 +75,11 @@ Follow [testing policy](docs/operations/testing.md) for runtime behavior. No run
 browser, API or database tests are claimed by these governance checks. Do not build
 containers for documentation-only changes. Required runtime gates cannot pass on
 empty/skipped suites or mock-only evidence for real database/browser guarantees.
+
+## Platform evidence
+
+Current changes target MAC-DEV under [document 56](docs/requirements/56-macos-development-and-linux-qualification.md).
+Record host and guest architecture, actual local checks and explicit deferred-linux
+obligations. Native Linux setup is not a dependency for local implementation.
+Human acceptance and integration still gate task completion; production/platform
+qualification and actual release remain separate.

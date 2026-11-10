@@ -48,3 +48,11 @@ truth, permissions, evidence integrity, recovery, compatibility and version/chan
 consistency. Run applicable checks, report concrete findings with paths and state
 what remains unverified. Do not rewrite unrelated work.
 ```
+
+## Current platform instruction
+
+Use MAC-DEV and [document 56](../requirements/56-macos-development-and-linux-qualification.md)
+for current tickets. Implement/test on this Mac; preserve real local evidence and
+move native-target-only qualification to the linked Linux iteration. A missing
+local dependency/access path needs a concrete Mac bootstrap handoff, not a request
+for a Linux machine. Human review, upstream integration and release boundaries remain.

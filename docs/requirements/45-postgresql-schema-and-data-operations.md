@@ -135,3 +135,12 @@ concurrency measured explicitly. These are tuning inputs, not total-memory
 guarantees: concurrent queries/plan nodes/connections/background processes consume
 additional memory. Retain runtime connection and heavy-task limits; qualify OOM/
 connection-loss recovery instead of disabling durability or exhausting host RAM.
+
+## Platform execution policy — 2026-11-10
+
+Implement and test locally on macOS arm64/Docker Desktop under
+[document 56](56-macos-development-and-linux-qualification.md). Real local PG,
+configuration, recovery and safety checks remain required. Native server/kernel,
+Linux installation and target host-loss qualification belong to its later Linux
+iteration; they do not block Mac implementation. Keep per-lane evidence and never
+claim Linux/production acceptance from local results alone.

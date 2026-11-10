@@ -8,11 +8,17 @@ The source two-service Compose is not this topology; platform evidence is in the
 
 ## Host and environment contract
 
-Initial qualification: Linux x86_64/Ubuntu 24.04, supported pinned Docker Engine and
-Compose v2, Python 3.12/PostgreSQL 16, 4 CPU/8 GiB RAM and 40 GiB free local storage.
-Recheck vendor support/security at each real release; do not promise an old patch
-as perpetually supported. Docker Desktop/ARM/Windows are development candidates,
-not production-qualified by using similar YAML. Kubernetes/multi-host HA remain deferred.
+Current development: macOS arm64, Python 3.12/PostgreSQL 16, Docker Desktop and
+its tested Compose plugin with linux/arm64 images. [Document 56](56-macos-development-and-linux-qualification.md)
+is the platform/acceptance authority under ADR-012. Record actual plugin features
+and versions, not an obsolete mandatory major-2 assumption. Mac resources and guest
+limits are measured during PC-SETUP-03; local work does not wait for a Linux server.
+
+Separate later qualification: native Linux x86_64/Ubuntu 24.04 with pinned supported
+Engine/Compose, candidate 4 CPU/8 GiB/40 GiB envelope and real target checks. Recheck
+vendor support/security at actual qualification/release. Desktop guest results, ARM
+or emulated amd64 builds do not establish native x86_64 production support.
+Kubernetes/multi-host HA remain deferred.
 
 Host preflight checks CPU architecture, cgroup/resource enforcement, UID mappings,
 filesystem atomic rename/fsync behavior, time sync, disk/inodes/reserve, private

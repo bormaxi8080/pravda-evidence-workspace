@@ -158,3 +158,11 @@ scope, safe required PDF/export, independent verification/replay and bounded
 protected byte serving. Recorder/renderer feasibility remains proof to obtain;
 old V0/browser/foreign captures never gain stronger historical provenance from
 an app upgrade or later receipt generation.
+
+## Current development platform — 2026-11-10
+
+Develop the system on the operator's macOS arm64 machine using native tools and
+Docker Desktop where needed. [ADR-012](decisions/0012-macos-development-and-linux-qualification.md)
+and [document 56](requirements/56-macos-development-and-linux-qualification.md)
+separate local implementation/acceptance from later native Linux qualification.
+The production concept and private evidence invariants remain unchanged.

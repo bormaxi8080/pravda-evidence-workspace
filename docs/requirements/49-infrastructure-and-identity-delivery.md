@@ -181,3 +181,14 @@ EWP-73–78/PRD-ACC-01–08. Current overall totals are 170 requirements, 78 tas
 and 76 scenarios; this document's twelve IAM IDs/owning matrix and technical task
 scope stay unchanged. Neither production WARC nor U-stage implementation becomes
 a new V0 dependency.
+
+## Current platform and completion scope — 2026-11-10
+
+[ADR-012](../decisions/0012-macos-development-and-linux-qualification.md) and
+[document 56](56-macos-development-and-linux-qualification.md) select Mac development
+first. EWP-61–68 now implement and exercise their applicable local behavior on the
+Mac/Desktop topology; native Linux reruns are separate orchestration work. The
+scenario bodies above retain their invariants and IDs. Record the lane/host/guest
+and exact deferred target cases; do not call skipped local PG/security/recovery
+checks passed. MAC-DEV task completion unlocks local dependants, not Linux support
+or production enablement. PC-SETUP-03 is Mac readiness, not Linux provisioning.

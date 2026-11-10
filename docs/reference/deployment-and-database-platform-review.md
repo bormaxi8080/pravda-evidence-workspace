@@ -47,3 +47,12 @@ principals, not copies of user-facing roles. PostgreSQL RLS is defense-in-depth
 evaluation for a future qualified migration, not an implemented V0 feature or a
 substitute for application authorization. No upgrade to another PostgreSQL major,
 automatic HA, public deployment or current software-version guarantee is inferred.
+
+## Mac development boundary reviewed on 2026-11-10
+
+Docker's [Desktop networking documentation](https://docs.docker.com/desktop/features/networking/)
+places the engine/network boundary in a guest VM. Its
+[multi-platform build guide](https://docs.docker.com/build/building/multi-platform/)
+separates architecture variants and emulation. These support independent Mac
+local-development and later native-server evidence in ADR-012; neither establishes
+application isolation or a supported release without the project's actual checks.

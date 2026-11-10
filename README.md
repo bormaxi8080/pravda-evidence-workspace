@@ -16,7 +16,9 @@
 > the [vision](docs/01-vision.md), [component catalog](docs/03-components.md) and
 > [CHANGELOG](CHANGELOG.md). The [requirements and implementation-design package](docs/requirements/README.md)
 > defines the selected first-prototype design, detailed contracts and assignable work;
-> implementation and runtime qualification remain pending.
+> implementation and runtime qualification are evidenced per task. Current development is
+> [macOS first, with separate later Linux qualification](docs/requirements/56-macos-development-and-linux-qualification.md);
+> use the [Mac development runbook](docs/operations/macos-development.md).
 > Review the new [Workspace UI](design/index.html), [browser companion UI](design/extension.html),
 > [UI contracts](docs/requirements/54-ui-blueprints-and-interaction-map.md) and
 > [detailed versioned plan](docs/requirements/55-versioned-implementation-plan.md).

@@ -14,10 +14,26 @@ The inherited Python package 1.1.0 is a prototype baseline, not a newly issued r
 | Browser Extension (`browser-extension`) | `0.0.0` | planned |
 | Deployment (`deployment`) | `0.1.0` | prototype |
 | Evidence Contracts (`evidence-contracts`) | `0.0.0` | planned |
-| Governance (`governance`) | `0.1.2` | tooling |
-| Specification (`specification`) | `0.1.9` | documentation |
+| Governance (`governance`) | `0.1.3` | tooling |
+| Specification (`specification`) | `0.1.10` | documentation |
 | UI Prototype (`ui-prototype`) | `0.2.0` | prototype |
 <!-- component-versions:end -->
+
+### Changed — macOS development and separate Linux qualification, 2026-11-10
+
+- Adopt ADR-012 and platform requirements/runbook: macOS arm64 with native tools,
+  PG16 and Docker Desktop is the current implementation and local evidence lane.
+- Retarget PC-SETUP-03 to actual Mac readiness and move native Linux setup, V0 and
+  production qualification into separate deferred orchestration tickets. Preserve
+  existing EWP dependencies, human reviews, delivered code and release boundaries.
+- Clarify local versus native-server acceptance across the versioned plan, Docker,
+  DB, operations, verification policy, agent entry point, skills and prompts.
+- Keep 170 requirement IDs, 78 product work items and 76 scenarios unchanged;
+  real local failures never become passing evidence by calling Linux deferred.
+
+Specification advances to 0.1.10, Governance to 0.1.3 and design revision to 0.11.
+No runtime release, application qualification, Linux host or dependency installation
+is created by this documentation change. Product release/date remain null.
 
 ### Added — interactive UI blueprints and versioned execution plan, 2026-11-09
 

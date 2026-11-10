@@ -7,8 +7,11 @@ to implement in EWP-13/14, not instructions that work in the current checkout.
 
 ## Environment and permissions
 
-Initial qualification target: Linux x86_64, Python 3.12, PostgreSQL 16, one-host
-Compose, TLS edge, private DB/worker/runner services and trusted local storage.
+Current development target: macOS arm64, Python 3.12, PG16 and Docker Desktop,
+with private owned local DB/worker/runner services and storage. Follow
+[document 56](56-macos-development-and-linux-qualification.md) and the
+[Mac runbook](../operations/macos-development.md). Native Linux x86_64/Ubuntu 24.04,
+server TLS and clean-target recovery qualification belong to the later Linux iteration.
 The build task pins exact dependency/Chromium/image digests and proves installability.
 The current Dockerfile/pyproject are not an accepted production build. Dev-only
 local HTTP is explicitly labeled and cannot enable a pilot config with insecure cookies.

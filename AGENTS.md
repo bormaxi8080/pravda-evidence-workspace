@@ -22,6 +22,16 @@ answer the user in their language. Preserve the Russian concept and source-langu
 evidence. Clearly distinguish proposed, present in source, tested and unavailable.
 The package's inherited `1.1.0` is a prototype version, not a production guarantee.
 
+## Development platform
+
+Current implementation lane is MAC-DEV on the operator's macOS arm64 host, with
+native tools and Docker Desktop linux/arm64 containers as appropriate. Read
+[platform requirements](docs/requirements/56-macos-development-and-linux-qualification.md)
+and the [Mac runbook](docs/operations/macos-development.md). Do not require a Linux
+server before local implementation. Record actual operator versus agent access.
+Real local tests remain mandatory; native Linux qualification is a separate later
+iteration. Mac task completion is not Linux support or production acceptance.
+
 ## Product invariants
 
 - Evidence is private until explicitly published; check permissions on every access path.

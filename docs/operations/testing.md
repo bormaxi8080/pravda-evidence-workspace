@@ -29,3 +29,15 @@ network/browser isolation, OAuth integration or restore correctness. Required ga
 fail on empty/skipped suites. Report commands, environment, results and unavailable
 checks precisely; do not label planned tests as passed. Current runtime evidence
 is absent at this baseline; see [source review](../04-current-state.md).
+
+## Platform lanes
+
+[ADR-012](../decisions/0012-macos-development-and-linux-qualification.md) and
+[document 56](../requirements/56-macos-development-and-linux-qualification.md)
+select MAC-DEV for current implementation. Execute required real local PG/browser/
+container/byte/recovery checks on this topology. Label host/guest/tool/image identity;
+keep local failure/blocked evidence distinct from deferred-linux cases. Empty,
+skipped or mock-only required local tests do not pass. Native Linux support,
+server-kernel enforcement and clean-host target qualification are later Linux
+iteration obligations; they do not hold all Mac coding/reviews. No arbitrary public
+capture or production release is enabled by reclassifying its unproven checks.

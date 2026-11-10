@@ -53,3 +53,10 @@ or baseline production prerequisite. Runtime components stay unchanged by prose.
 Specification advances only; no Docker/SQL/config/runtime file, secret, account,
 role grant, backup, deployment or store listing is created. All capacity, isolation,
 restore, permission and protocol assertions require actual stage evidence later.
+
+## Platform sequencing amendment — 2026-11-10
+
+[ADR-012](0012-macos-development-and-linux-qualification.md) supersedes Linux-first
+implementation scheduling. Mac local implementation/acceptance and later native
+Linux qualification have separate gates in document 56. Other technical/product
+invariants and the original requirement/task/scenario identities remain unchanged.

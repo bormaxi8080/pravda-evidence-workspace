@@ -108,3 +108,12 @@ leases/events/idempotency and shared limits already in the design, not process-l
 authority. Multi-host storage/HA/database failover, external secret managers and
 rolling upgrades need separate qualified adapters/procedures; they are not enabled
 by this document. EWP-65/66 and OPS-ACC-03/06/08 cover the selected deployment.
+
+## Platform execution policy — 2026-11-10
+
+Implement and test locally on macOS arm64/Docker Desktop under
+[document 56](56-macos-development-and-linux-qualification.md). Real local PG,
+configuration, recovery and safety checks remain required. Native server/kernel,
+Linux installation and target host-loss qualification belong to its later Linux
+iteration; they do not block Mac implementation. Keep per-lane evidence and never
+claim Linux/production acceptance from local results alone.

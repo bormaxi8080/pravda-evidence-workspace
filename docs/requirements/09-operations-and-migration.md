@@ -7,9 +7,11 @@ Decisions: DEC-01/02/08/09/10/11. Nothing here asserts a working deployment runb
 
 ## Deployment baseline to specify
 
-One Linux host, Compose, a qualified PostgreSQL version, filesystem volume and TLS
-edge. Existing Compose uses PostgreSQL 16 while README/concept mention 15; ADR-002 selects
-16 as the first qualification target. Pin actual build digests during EWP-01. Pin the tested engine/
+Current implementation runs on macOS arm64 with native tools and Docker Desktop,
+PostgreSQL 16 and owned local storage. [Document 56](56-macos-development-and-linux-qualification.md)
+defines MAC-DEV acceptance and the separate later native Linux/TLS deployment
+iteration. Existing Compose uses PG16 while inherited README/concept mention 15.
+Pin actual local and later target build digests during their owning work. Pin the tested engine/
 browser and Python/dependency builds; no unqualified latest-image compatibility claim.
 Document host architecture, storage permissions, temporary space and resource limits.
 

@@ -26,3 +26,9 @@ claim tests ran merely because they are specified.
 
 Update Specification/version and Unreleased for changed documents; planned contracts
 remain 0.0.0 until implemented. Implement runtime code only if the actual task includes it.
+
+
+Current platform planning follows `docs/requirements/56-macos-development-and-linux-qualification.md`:
+Mac implementation first; native Linux is a separate qualification lane. Preserve
+local real-test gates and explicit deferred target evidence instead of making
+Linux provisioning an implicit dependency for every current implementation task.
