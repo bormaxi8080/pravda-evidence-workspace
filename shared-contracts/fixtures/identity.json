@@ -1,0 +1,16 @@
+{
+  "fixture_version": 1,
+  "seed": "loc4-inventory-1",
+  "class": "synthetic-grammar-only",
+  "producer": "inline deterministic Python/base64 fixture construction",
+  "manifest_reference": {
+    "size_bytes": 714,
+    "sha256": "3e0ef0e505b7f8bf7d69872390b67759e69d31b86e4e304fbc725cb2fa97dad5"
+  },
+  "schema_sha256": "966ff9198d7288ae6dadb52db56d2f8eafb954dc739368b5af4d62e48d36db29",
+  "expected": {
+    "complete.manifest.json": "accepted",
+    "unknown-version.manifest.json": "unsupported_profile",
+    "missing-required-output.manifest.json": "schema_array_bound"
+  }
+}

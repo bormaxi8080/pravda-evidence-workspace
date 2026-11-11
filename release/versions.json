@@ -11,8 +11,8 @@
     "application": "1.1.0",
     "browser-extension": "0.0.0",
     "deployment": "0.1.0",
-    "evidence-contracts": "0.0.0",
-    "governance": "0.1.4",
+    "evidence-contracts": "0.1.0",
+    "governance": "0.1.5",
     "specification": "0.1.10",
     "ui-prototype": "0.2.0"
   }
