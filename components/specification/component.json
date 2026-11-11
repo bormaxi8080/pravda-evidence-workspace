@@ -3,7 +3,7 @@
   "schema_version": 1,
   "name": "specification",
   "display_name": "Specification",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "status": "documentation",
   "runtime": "none",
   "planned_path": null,

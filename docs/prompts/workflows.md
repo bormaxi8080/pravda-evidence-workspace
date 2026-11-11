@@ -51,6 +51,10 @@ what remains unverified. Do not rewrite unrelated work.
 
 ## Current platform instruction
 
+After whole-package human acceptance, integrate tested Paperclip tasks into local
+main under the standing authorization and [integration procedure](../operations/paperclip-integration.md).
+Resolve routine conflicts in the task branch and record the resulting main commit.
+
 Use MAC-DEV and [document 56](../requirements/56-macos-development-and-linux-qualification.md)
 for current tickets. Implement/test on this Mac; preserve real local evidence and
 move native-target-only qualification to the linked Linux iteration. A missing

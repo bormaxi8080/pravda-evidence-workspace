@@ -24,6 +24,12 @@ after changes and keep graph/runtime artifacts ignored.
 
 Return what changed, actual check results, limitations and commit identity if created.
 
+For Paperclip delivery, use the standing local main integration authorization in
+`docs/operations/paperclip-integration.md` after whole-package human acceptance.
+Resolve routine conflicts and validate in the assigned task branch, then use the
+serialized fast-forward helper. Record the main commit without asking for merge
+permission again. Read current canonical main policy when the task copy is older.
+
 
 For current work record MAC-DEV host/guest identities and required local results.
 Use `docs/requirements/56-macos-development-and-linux-qualification.md` to separate

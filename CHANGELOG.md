@@ -21,10 +21,25 @@ The inherited Python package 1.1.0 is a prototype baseline, not a newly issued r
 | Browser Extension (`browser-extension`) | `0.0.0` | planned |
 | Deployment (`deployment`) | `0.1.1` | prototype |
 | Evidence Contracts (`evidence-contracts`) | `0.1.0` | development |
-| Governance (`governance`) | `0.1.5` | tooling |
-| Specification (`specification`) | `0.1.10` | documentation |
+| Governance (`governance`) | `0.1.6` | tooling |
+| Specification (`specification`) | `0.1.11` | documentation |
 | UI Prototype (`ui-prototype`) | `0.2.0` | prototype |
 <!-- component-versions:end -->
+
+### Changed — standing Paperclip local main integration, 2026-11-11
+
+- Authorize project task agents to integrate whole-package accepted and tested
+  changes into local main without repeated merge permission questions.
+- Resolve conflicts in isolated task branches, retain component/changelog policy,
+  and serialize clean-tree fast-forwards with an expected-main commit check.
+- Align platform requirements, delivery skill and prompts with the granted scope.
+  The local original Codex launcher grants versioned main paths and exact Git
+  metadata files required by integration.
+- Integrate accepted LOC-5 source through the real sandbox at `2103219` and
+  retain the existing human review and final-verdict controls.
+
+Governance advances to 0.1.6 and Specification to 0.1.11. Product release/date
+remain null. Local merge authority is independent of push/release/deployment.
 
 ### Integrated — accepted LOC-4 contracts on the Mac baseline, 2026-11-11
 

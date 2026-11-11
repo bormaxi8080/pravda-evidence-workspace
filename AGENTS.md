@@ -17,6 +17,12 @@ does not need another approval. A local commit does not imply push, release,
 tagging, deployment or destructive cleanup. The OA is a read-only reference,
 never a runtime or build dependency.
 
+The operator authorizes Paperclip agents to integrate whole-package accepted and
+tested tasks into local `main` without another merge permission question. Implement
+in the assigned task worktree, resolve conflicts there, then follow the serialized
+fast-forward procedure in [local integration](docs/operations/paperclip-integration.md).
+Read that policy from canonical main if a retained task branch contains older rules.
+
 Use English for new canonical engineering documents, code comments and commits;
 answer the user in their language. Preserve the Russian concept and source-language
 evidence. Clearly distinguish proposed, present in source, tested and unavailable.

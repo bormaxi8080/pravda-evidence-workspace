@@ -152,7 +152,10 @@ missing local runtime evidence or a green governance suite alone is insufficient
 An unintegrated accepted upstream commit is a versioned artifact, not code already
 on the shared base. Consumers may integrate an accepted prerequisite commit into
 their own branch, resolving version/ownership/changelog conflicts and retaining
-source identity. Do not merge unaccepted code or push/merge main. Preserve reviewed
+source identity. After whole-package acceptance and required checks, agents may
+integrate into local main under the operator's standing authorization and the
+[serialized integration procedure](../operations/paperclip-integration.md).
+Preserve reviewed
 branches; clean unstarted worktrees may fast-forward to the new policy commit and
 new worktrees use the updated project base. Completion of a Mac release-readiness
 EWP does not authorize G1 production release or Linux support; L1/L2 remain gates.

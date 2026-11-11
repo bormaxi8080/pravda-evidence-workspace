@@ -43,6 +43,13 @@ Updating only derived ledger/changelog bookkeeping does not force Governance to 
 
 ## Commits and releases
 
+Paperclip task agents have standing operator authorization for local `main`
+integration after whole-package acceptance and required combined-tree checks.
+Resolve routine conflicts in the task branch and follow the serialized fast-forward
+[integration procedure](docs/operations/paperclip-integration.md). Record the resulting
+main commit in the task. Repeated merge permission requests are unnecessary once
+those gates pass. Preserve the existing human review and final-verdict controls.
+
 Use English `type(scope): imperative summary`; scope is a component ID or domain.
 Types: `feat`, `fix`, `docs`, `refactor`, `test`, `build`, `ci`, `chore`, `perf`, `security`.
 Explain compatibility and actual verification in the body when useful. Use `!`
