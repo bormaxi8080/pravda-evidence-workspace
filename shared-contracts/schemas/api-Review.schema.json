@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","additionalProperties":false,"properties":{"expected_revision":{"maximum":2147483647,"minimum":1,"type":"integer"},"reason":{"maxLength":2048,"type":"string"},"state":{"enum":["in_review","approved","rejected"]}},"required":["expected_revision","state","reason"],"title":"Review","type":"object"}

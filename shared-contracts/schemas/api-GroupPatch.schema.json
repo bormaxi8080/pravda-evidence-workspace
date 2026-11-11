@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","additionalProperties":false,"properties":{"description":{"maxLength":2048,"type":"string"},"expected_revision":{"maximum":2147483647,"minimum":1,"type":"integer"},"name":{"maxLength":128,"minLength":1,"type":"string"}},"required":["expected_revision"],"title":"GroupPatch","type":"object"}

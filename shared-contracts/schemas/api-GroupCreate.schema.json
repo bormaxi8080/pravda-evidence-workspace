@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","additionalProperties":false,"properties":{"description":{"maxLength":2048,"type":"string"},"name":{"maxLength":128,"minLength":1,"type":"string"}},"required":["name"],"title":"GroupCreate","type":"object"}

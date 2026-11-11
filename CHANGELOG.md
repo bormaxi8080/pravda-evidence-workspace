@@ -20,11 +20,49 @@ The inherited Python package 1.1.0 is a prototype baseline, not a newly issued r
 | Application (`application`) | `1.1.1` | prototype |
 | Browser Extension (`browser-extension`) | `0.0.0` | planned |
 | Deployment (`deployment`) | `0.1.1` | prototype |
-| Evidence Contracts (`evidence-contracts`) | `0.0.0` | planned |
-| Governance (`governance`) | `0.1.4` | tooling |
+| Evidence Contracts (`evidence-contracts`) | `0.1.0` | development |
+| Governance (`governance`) | `0.1.5` | tooling |
 | Specification (`specification`) | `0.1.10` | documentation |
 | UI Prototype (`ui-prototype`) | `0.2.0` | prototype |
 <!-- component-versions:end -->
+
+### Integrated — accepted LOC-4 contracts on the Mac baseline, 2026-11-11
+
+- Integrate the human-accepted EWP-02 source commit `06dab44` into local `main`,
+  retaining its contract bytes and the newer macOS-first policy without rewriting
+  either branch history.
+- Resolve parallel Governance versions at 0.1.5, retain Specification 0.1.10 and
+  design revision 0.11, and regenerate the combined component ledger/inventory.
+- Evidence Contracts is now 0.1.0 development. Earlier pending-review notes below
+  describe the original delivery stage; acceptance and integration are now recorded.
+  Runtime consumers, independent schema/OpenAPI qualification, production and
+  native Linux qualification remain outside this integration.
+
+Product release/date remain null; no push, tag, deployment or release is included.
+
+### Added — EWP-02 core contract implementation, 2026-11-10
+
+- Preserve the accepted inventory schema/fixtures and add capture-engine/1
+  request/result schemas from one deterministic Python authority with fingerprinted
+  synthetic success, partial, cancellation, failure and negative examples.
+- Validate request/result identity, generation, deadlines, output completeness,
+  readiness, header allowlist and resource bounds without granting digest-hint authority.
+- Keep this in the same Evidence Contracts 0.1.0 activation package.
+  Add metadata/export/legacy and job/attempt/event schemas, full package checksum
+  verification and generated cookie API DTO/OpenAPI with reproducible examples.
+  Whole-package acceptance and integration remain pending.
+
+### Added — EWP-02 first inventory review slice, 2026-11-09
+
+- Activate Evidence Contracts at 0.1.0 with actual shared-contracts ownership,
+  an exact workspace-capture-v0/1 manifest schema, synthetic positive/negative
+  fixtures and executable canonical-byte/inventory/digest checks.
+- Keep manifest self-hash external, reject unknown versions and missing outputs,
+  and document review bounds and unavailable independent validator/runtime evidence.
+- Advance Governance to 0.1.3: planned-state regression tests now construct their
+  own planned fixture rather than assuming Evidence Contracts stays unimplemented.
+- Remaining core profile/engine/API/OpenAPI contracts and whole-package acceptance
+  remain pending; no application dependency, migration or product release is added.
 
 ### Documented — approved local Mac runtime transport, 2026-11-10
 

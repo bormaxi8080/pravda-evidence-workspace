@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","additionalProperties":false,"properties":{"enabled":{"type":"boolean"},"expected_permission_revision":{"maximum":2147483647,"minimum":1,"type":"integer"},"role":{"enum":["admin","editor"]}},"required":["expected_permission_revision"],"title":"UserPatch","type":"object"}

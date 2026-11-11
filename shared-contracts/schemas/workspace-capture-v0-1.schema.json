@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "workspace-capture-v0/1 inventory manifest",
+  "description": "Exact complete inventory. Manifest excluded from its own artifacts. Byte rules and semantic verification are defined in ../README.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "profile",
+    "capture_id",
+    "attempt_id",
+    "artifacts",
+    "warnings",
+    "deferred_formats"
+  ],
+  "properties": {
+    "profile": {
+      "const": "workspace-capture-v0/1"
+    },
+    "capture_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "minLength": 36,
+      "maxLength": 36
+    },
+    "attempt_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "minLength": 36,
+      "maxLength": 36
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "prefixItems": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "kind",
+            "mime_type",
+            "size_bytes",
+            "sha256"
+          ],
+          "properties": {
+            "path": {
+              "const": "evidence/page.mhtml"
+            },
+            "kind": {
+              "const": "mhtml"
+            },
+            "mime_type": {
+              "const": "multipart/related"
+            },
+            "size_bytes": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 104857600
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$",
+              "minLength": 64,
+              "maxLength": 64
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "kind",
+            "mime_type",
+            "size_bytes",
+            "sha256"
+          ],
+          "properties": {
+            "path": {
+              "const": "evidence/screenshot.png"
+            },
+            "kind": {
+              "const": "screenshot"
+            },
+            "mime_type": {
+              "const": "image/png"
+            },
+            "size_bytes": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 104857600
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$",
+              "minLength": 64,
+              "maxLength": 64
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "kind",
+            "mime_type",
+            "size_bytes",
+            "sha256"
+          ],
+          "properties": {
+            "path": {
+              "const": "metadata/capture.json"
+            },
+            "kind": {
+              "const": "metadata"
+            },
+            "mime_type": {
+              "const": "application/json"
+            },
+            "size_bytes": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 104857600
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$",
+              "minLength": 64,
+              "maxLength": 64
+            }
+          }
+        }
+      ],
+      "items": false
+    },
+    "warnings": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 1024
+      }
+    },
+    "deferred_formats": {
+      "const": [
+        "warc"
+      ]
+    }
+  }
+}

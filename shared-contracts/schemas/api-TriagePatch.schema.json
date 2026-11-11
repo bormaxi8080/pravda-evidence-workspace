@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","additionalProperties":false,"properties":{"expected_triage_revision":{"maximum":2147483647,"minimum":1,"type":"integer"},"importance":{"enum":["normal","important"]}},"required":["expected_triage_revision","importance"],"title":"TriagePatch","type":"object"}

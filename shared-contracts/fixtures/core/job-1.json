@@ -1,0 +1,1 @@
+{"attempt_count":0,"available_at":"2026-11-09T12:00:00Z","contract":"workspace-job/1","entity_id":"00000000-0000-4000-8000-000000000003","id":"00000000-0000-4000-8000-000000000002","last_error":null,"max_attempts":3,"next_retry":null,"phase":null,"requester_id":"00000000-0000-4000-8000-000000000003","state":"queued","state_revision":1,"terminal_capture_id":null,"type":"capture"}
