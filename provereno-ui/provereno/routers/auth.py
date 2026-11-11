@@ -24,7 +24,7 @@ GITHUB_API   = "https://api.github.com"
 @router.get("/login")
 async def login(request: Request, error: str = ""):
     return request.app.state.templates.TemplateResponse(
-        "login.html", {"request": request, "error": error or None}
+        request=request, name="login.html", context={"request": request, "error": error or None}
     )
 
 

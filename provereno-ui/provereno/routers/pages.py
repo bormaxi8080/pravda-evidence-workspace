@@ -22,7 +22,7 @@ async def dashboard(request: Request, session: AsyncSession = Depends(get_db),
     active_jobs = (await session.execute(
         select(func.count(Job.id)).where(Job.status.in_(["queued", "capturing"]))
     )).scalar() or 0
-    return request.app.state.templates.TemplateResponse("dashboard.html", {
+    return request.app.state.templates.TemplateResponse(request=request, name="dashboard.html", context={
         "request": request, "user": user, "total_snaps": total_snaps,
         "recent": recent, "active_jobs": active_jobs, "active": "dashboard",
     })
@@ -38,7 +38,7 @@ async def audit_log(request: Request, page: int = 1,
         select(AuditLog).order_by(desc(AuditLog.created_at))
         .offset((page-1)*per_page).limit(per_page)
     )).scalars().all()
-    return request.app.state.templates.TemplateResponse("audit.html", {
+    return request.app.state.templates.TemplateResponse(request=request, name="audit.html", context={
         "request": request, "user": user, "logs": rows, "total": total,
         "page": page, "pages": max(1, (total+per_page-1)//per_page), "active": "audit",
     })

@@ -24,8 +24,8 @@ async def list_collections(request: Request, session: AsyncSession = Depends(get
     )
     collections = [{"collection": r[0], "count": r[1]} for r in rows.all()]
     return request.app.state.templates.TemplateResponse(
-        "collections.html",
-        {"request": request, "collections": collections, "user": user, "active": "collections"},
+        request=request, name="collections.html",
+        context={"request": request, "collections": collections, "user": user, "active": "collections"},
     )
 
 
@@ -64,7 +64,7 @@ async def view_collection(collection_id: str, request: Request, page: int = 1,
     all_snaps = (await session.execute(
         select(Snapshot).order_by(Snapshot.captured_at.desc()).limit(100)
     )).scalars().all()
-    return request.app.state.templates.TemplateResponse("collection_detail.html", {
+    return request.app.state.templates.TemplateResponse(request=request, name="collection_detail.html", context={
         "request": request, "collection": col, "snapshots": snaps,
         "all_snapshots": all_snaps, "total": total,
         "page": page, "pages": max(1, (total+per_page-1)//per_page),

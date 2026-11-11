@@ -3,7 +3,7 @@
   "schema_version": 1,
   "name": "deployment",
   "display_name": "Deployment",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "status": "prototype",
   "runtime": "mixed",
   "planned_path": null,
@@ -11,7 +11,11 @@
     "components/deployment/component.json",
     "provereno-ui/Dockerfile",
     "provereno-ui/docker-compose.yml",
-    "provereno-ui/nginx.conf"
+    "provereno-ui/nginx.conf",
+    "provereno-ui/.dockerignore",
+    "provereno-ui/locks/**",
+    "provereno-ui/build-tools/**",
+    "provereno-ui/IMAGES.md"
   ],
   "responsibilities": [
     "prototype-container-topology"

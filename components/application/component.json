@@ -3,7 +3,7 @@
   "schema_version": 1,
   "name": "application",
   "display_name": "Application",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "status": "prototype",
   "runtime": "python",
   "planned_path": null,

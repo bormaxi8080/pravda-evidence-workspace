@@ -42,8 +42,8 @@ async def job_wait(job_id: str, request: Request,
         raise HTTPException(404)
     templates = request.app.state.templates
     return templates.TemplateResponse(
-        "job_wait.html",
-        {"request": request, "job": job, "user": user},
+        request=request, name="job_wait.html",
+        context={"request": request, "job": job, "user": user},
     )
 
 
@@ -72,7 +72,7 @@ async def job_status(job_id: str,
 @router.get("/bulk", response_class=HTMLResponse)
 async def bulk_page(request: Request, user=Depends(require_auth)):
     templates = request.app.state.templates
-    return templates.TemplateResponse("bulk.html", {"request": request, "user": user})
+    return templates.TemplateResponse(request=request, name="bulk.html", context={"request": request, "user": user})
 
 
 @router.post("/bulk")
@@ -133,8 +133,8 @@ async def bulk_progress(batch_id: str, request: Request,
     jobs = rows.scalars().all()
     templates = request.app.state.templates
     return templates.TemplateResponse(
-        "bulk_progress.html",
-        {"request": request, "jobs": jobs, "batch_id": batch_id, "user": user},
+        request=request, name="bulk_progress.html",
+        context={"request": request, "jobs": jobs, "batch_id": batch_id, "user": user},
     )
 
 

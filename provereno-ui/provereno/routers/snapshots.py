@@ -40,7 +40,7 @@ async def list_snapshots(
 
     all_tags = (await session.execute(select(Tag.name).order_by(Tag.name))).scalars().all()
     templates = request.app.state.templates
-    return templates.TemplateResponse("snapshots.html", {
+    return templates.TemplateResponse(request=request, name="snapshots.html", context={
         "request": request, "snapshots": snapshots, "total": total,
         "page": page, "pages": max(1, (total + per_page - 1) // per_page),
         "q": q, "tag": tag, "all_tags": all_tags, "user": user, "active": "snapshots",
@@ -62,7 +62,7 @@ async def view_snapshot(
     tags = [r[0] for r in rows.all()]
     all_tags = (await session.execute(select(Tag.name).order_by(Tag.name))).scalars().all()
     templates = request.app.state.templates
-    return templates.TemplateResponse("snapshot_detail.html", {
+    return templates.TemplateResponse(request=request, name="snapshot_detail.html", context={
         "request": request, "snap": snap, "tags": tags,
         "all_tags": all_tags, "user": user,
     })

@@ -1,17 +1,14 @@
 """FastAPI application factory."""
 from __future__ import annotations
 from contextlib import asynccontextmanager
-import asyncio
+from pathlib import Path
+from sqlalchemy import text
 
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from provereno.capture import capture_service
 from provereno.database import engine
-from provereno.models import Base
-from provereno.url_monitor import url_monitor
-from provereno import jobs as job_module
 
 from provereno.routers import auth, snapshots, job_routes, export, collections, public, pages
 
@@ -29,26 +26,24 @@ def _datetimeshort(dt) -> str:
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
-    await capture_service.startup()
-    await url_monitor.start()
-    _worker_task = asyncio.create_task(job_module.worker())
-    yield
-    _worker_task.cancel()
-    await url_monitor.stop()
-    await capture_service.shutdown()
-    await engine.dispose()
+    # Schema migration and isolated workers are separate operator-owned steps.
+    async with engine.connect() as conn:
+        await conn.execute(text("SELECT 1"))
+    try:
+        yield
+    finally:
+        await engine.dispose()
 
 
 app = FastAPI(title="Provereno UI", lifespan=lifespan)
 
-templates = Jinja2Templates(directory="provereno/templates")
+PACKAGE_DIR = Path(__file__).resolve().parent
+templates = Jinja2Templates(directory=str(PACKAGE_DIR / "templates"))
 templates.env.filters["datetimefmt"]   = _datetimefmt
 templates.env.filters["datetimeshort"] = _datetimeshort
 app.state.templates = templates
 
-app.mount("/static", StaticFiles(directory="provereno/static"), name="static")
+app.mount("/static", StaticFiles(directory=str(PACKAGE_DIR / "static")), name="static")
 
 app.include_router(auth.router)
 app.include_router(job_routes.router)

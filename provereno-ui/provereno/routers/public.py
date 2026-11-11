@@ -18,8 +18,8 @@ async def public_evidence(snapshot_id: str, request: Request,
     if not snap or not snap.is_public:
         raise HTTPException(404, "Evidence not found or not public")
     return request.app.state.templates.TemplateResponse(
-        "public_evidence.html",
-        {"request": request, "snap": snap},
+        request=request, name="public_evidence.html",
+        context={"request": request, "snap": snap},
     )
 
 

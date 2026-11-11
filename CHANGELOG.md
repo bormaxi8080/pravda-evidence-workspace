@@ -6,13 +6,20 @@ The inherited Python package 1.1.0 is a prototype baseline, not a newly issued r
 
 ## [Unreleased]
 
+### Changed — role-specific MAC-DEV images (LOC-5 / EWP-61)
+
+- Correct wheel backend, source COPY order and packaged template/static lookup.
+- Add hash-locked web/capture/offline targets with UID 10001 and image/SBOM inventory tooling.
+- Keep unqualified capture admission disabled; web startup checks its explicitly configured DB without schema creation or embedded browser/worker startup.
+- Remove bundled development database credentials; runtime configuration is supplied externally. See `provereno-ui/IMAGES.md` for compatibility and actual evidence.
+
 <!-- component-versions:start -->
 | Component | Version | Status |
 | --- | --- | --- |
 | Product release | `None` | development |
-| Application (`application`) | `1.1.0` | prototype |
+| Application (`application`) | `1.1.1` | prototype |
 | Browser Extension (`browser-extension`) | `0.0.0` | planned |
-| Deployment (`deployment`) | `0.1.0` | prototype |
+| Deployment (`deployment`) | `0.1.1` | prototype |
 | Evidence Contracts (`evidence-contracts`) | `0.0.0` | planned |
 | Governance (`governance`) | `0.1.4` | tooling |
 | Specification (`specification`) | `0.1.10` | documentation |

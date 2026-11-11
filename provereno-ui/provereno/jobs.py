@@ -8,7 +8,6 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from provereno.audit import log_event
-from provereno.capture import capture_service
 from provereno.config import settings
 from provereno.database import AsyncSessionLocal
 from provereno.models import Job, Snapshot, SnapshotTag, Tag
@@ -55,18 +54,9 @@ async def enqueue(
     note: Optional[str] = None, tags: Optional[list] = None,
     created_by: Optional[str] = None, batch_id: Optional[str] = None,
 ) -> str:
-    job_id = str(uuid.uuid4())
-    async with AsyncSessionLocal() as session:
-        job = Job(
-            id=job_id, batch_id=batch_id, url=url,
-            condition_type=condition_type, condition=condition,
-            note=note, tags=tags or [], created_by=created_by,
-            status="queued", created_at=_utcnow(),
-        )
-        session.add(job)
-        await session.commit()
-    await _queue.put(job_id)
-    return job_id
+    # No runtime switch can enable the legacy in-process acquisition path.
+    from fastapi import HTTPException
+    raise HTTPException(503, "Capture is disabled pending isolated launcher qualification")
 
 
 async def _run_job(job_id: str) -> None:
@@ -81,6 +71,7 @@ async def _run_job(job_id: str) -> None:
     _publish(job_id, "progress", {"status": "capturing", "message": "Browser launching..."})
 
     try:
+        from provereno.capture import capture_service
         result = await capture_service.capture(
             url=job.url,
             condition_type=job.condition_type or "load",

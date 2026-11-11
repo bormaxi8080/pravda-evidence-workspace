@@ -1,0 +1,10 @@
+# Positive context inventory. Local .env/data/credentials cannot enter any layer.
+**
+!Dockerfile
+!pyproject.toml
+!locks/
+!locks/*.txt
+!provereno/
+!provereno/**
+provereno/**/__pycache__/
+provereno/**/*.pyc
